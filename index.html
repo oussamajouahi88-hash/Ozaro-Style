@@ -1,1885 +1,1616 @@
-```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>OZARO STYLE | Montres Homme & Femme</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
-<style>
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    background: #09090b;
-    color: white;
-}
-
-/* ================= HEADER ================= */
-
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(9,9,11,0.96);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid #222;
-}
-
-.navbar {
-    width: 92%;
-    max-width: 1250px;
-    margin: auto;
-    height: 80px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo {
-    color: white;
-    text-decoration: none;
-    font-family: 'Playfair Display', serif;
-    font-size: 25px;
-    letter-spacing: 3px;
-}
-
-.logo span {
-    color: #cba56b;
-}
-
-nav {
-    display: flex;
-    gap: 28px;
-}
-
-nav a {
-    color: #aaa;
-    text-decoration: none;
-    font-size: 13px;
-    transition: .3s;
-}
-
-nav a:hover {
-    color: #cba56b;
-}
-
-/* PANIER */
-
-.cart-button {
-    border: 1px solid #333;
-    background: transparent;
-    color: white;
-    padding: 11px 18px;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: .3s;
-}
-
-.cart-button:hover {
-    border-color: #cba56b;
-    color: #cba56b;
-}
-
-.cart-count {
-    background: #cba56b;
-    color: #000;
-    padding: 3px 7px;
-    border-radius: 50%;
-    font-size: 11px;
-    margin-left: 5px;
-}
-
-/* ================= HERO ================= */
-
-.hero {
-    min-height: 88vh;
-
-    display: flex;
-    align-items: center;
-
-    background:
-    linear-gradient(
-        90deg,
-        rgba(0,0,0,.94),
-        rgba(0,0,0,.60),
-        rgba(0,0,0,.25)
-    ),
-    url("https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1800&q=90");
-
-    background-size: cover;
-    background-position: center;
-}
-
-.hero-content {
-    width: 92%;
-    max-width: 1250px;
-    margin: auto;
-}
-
-.small-title {
-    color: #cba56b;
-    font-size: 11px;
-    letter-spacing: 4px;
-    margin-bottom: 18px;
-}
-
-.hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(48px, 7vw, 85px);
-    max-width: 750px;
-    line-height: 1.05;
-}
-
-.hero h1 span {
-    color: #cba56b;
-}
-
-.hero p {
-    max-width: 570px;
-    color: #aaa;
-    line-height: 1.8;
-    margin: 25px 0 35px;
-    font-size: 14px;
-}
-
-.btn {
-    display: inline-block;
-    background: #cba56b;
-    color: #050505;
-    padding: 15px 27px;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 600;
-    transition: .3s;
-}
-
-.btn:hover {
-    background: #e1bd83;
-}
-
-.btn-dark {
-    background: transparent;
-    border: 1px solid #444;
-    color: white;
-    margin-left: 8px;
-}
-
-.btn-dark:hover {
-    background: white;
-    color: black;
-}
-
-/* ================= SECTION ================= */
-
-.section {
-    width: 92%;
-    max-width: 1250px;
-    margin: auto;
-    padding: 90px 0;
-}
-
-.section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    margin-bottom: 40px;
-}
-
-.section-header h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 40px;
-}
-
-.section-header p {
-    max-width: 420px;
-    color: #777;
-    font-size: 13px;
-    line-height: 1.7;
-}
-
-/* ================= CATEGORIES ================= */
-
-.categories {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.category {
-    height: 450px;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.category img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: .7s;
-}
-
-.category:hover img {
-    transform: scale(1.06);
-}
-
-.category::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background:
-    linear-gradient(
-        transparent,
-        rgba(0,0,0,.9)
-    );
-}
-
-.category-text {
-    position: absolute;
-    bottom: 35px;
-    left: 35px;
-    z-index: 2;
-}
-
-.category-text span {
-    color: #cba56b;
-    font-size: 10px;
-    letter-spacing: 3px;
-}
-
-.category-text h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    margin: 8px 0;
-}
-
-.category-text p {
-    color: #ccc;
-    font-size: 12px;
-}
-
-/* ================= PRODUCTS ================= */
-
-.products {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 20px;
-}
-
-.product {
-    background: #111114;
-    border: 1px solid #1d1d20;
-    overflow: hidden;
-    transition: .35s;
-}
-
-.product:hover {
-    transform: translateY(-6px);
-    border-color: #4c3c28;
-}
-
-.product-image {
-    height: 300px;
-    position: relative;
-    overflow: hidden;
-    background: #151519;
-}
-
-.product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: .5s;
-}
-
-.product:hover img {
-    transform: scale(1.05);
-}
-
-.badge {
-    position: absolute;
-    top: 13px;
-    left: 13px;
-    z-index: 2;
-
-    background: #cba56b;
-    color: black;
-
-    padding: 6px 9px;
-    font-size: 9px;
-    font-weight: bold;
-}
-
-.product-info {
-    padding: 18px;
-}
-
-.product-category {
-    color: #666;
-    font-size: 9px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.product h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    margin: 8px 0;
-}
-
-.price {
-    color: #cba56b;
-    font-weight: 600;
-}
-
-.add-cart {
-    width: 100%;
-    margin-top: 16px;
-
-    padding: 12px;
-
-    background: transparent;
-    border: 1px solid #333;
-    color: white;
-
-    cursor: pointer;
-    transition: .3s;
-}
-
-.add-cart:hover {
-    background: #cba56b;
-    color: black;
-    border-color: #cba56b;
-}
-
-/* ================= BANNER ================= */
-
-.banner {
-    min-height: 500px;
-
-    display: flex;
-    align-items: center;
-
-    background:
-    linear-gradient(
-        90deg,
-        rgba(0,0,0,.92),
-        rgba(0,0,0,.35)
-    ),
-    url("https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&w=1800&q=90");
-
-    background-size: cover;
-    background-position: center;
-}
-
-.banner-content {
-    width: 92%;
-    max-width: 1250px;
-    margin: auto;
-}
-
-.banner h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 52px;
-    margin: 10px 0 20px;
-}
-
-.banner p {
-    color: #aaa;
-    max-width: 500px;
-    line-height: 1.8;
-    margin-bottom: 25px;
-}
-
-/* ================= FEATURES ================= */
-
-.features {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 20px;
-}
-
-.feature {
-    text-align: center;
-    border: 1px solid #222;
-    padding: 30px 20px;
-}
-
-.feature-icon {
-    font-size: 25px;
-    margin-bottom: 15px;
-}
-
-.feature h4 {
-    font-size: 13px;
-    margin-bottom: 8px;
-}
-
-.feature p {
-    color: #666;
-    font-size: 11px;
-    line-height: 1.6;
-}
-
-/* ================= FOOTER ================= */
-
-footer {
-    border-top: 1px solid #1d1d1d;
-    background: #060607;
-    padding: 60px 0 25px;
-}
-
-.footer-content {
-    width: 92%;
-    max-width: 1250px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 40px;
-}
-
-.footer-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 25px;
-    margin-bottom: 15px;
-}
-
-.footer-about {
-    color: #666;
-    font-size: 12px;
-    line-height: 1.8;
-    max-width: 350px;
-}
-
-footer h4 {
-    font-size: 12px;
-    margin-bottom: 18px;
-}
-
-footer a {
-    display: block;
-    color: #666;
-    text-decoration: none;
-    font-size: 12px;
-    margin-bottom: 10px;
-}
-
-footer a:hover {
-    color: #cba56b;
-}
-
-.copyright {
-    width: 92%;
-    max-width: 1250px;
-    margin: 40px auto 0;
-    padding-top: 25px;
-    border-top: 1px solid #171717;
-
-    text-align: center;
-    color: #444;
-    font-size: 10px;
-}
-
-/* ================= PANIER ================= */
-
-.cart-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,.75);
-
-    z-index: 2000;
-
-    opacity: 0;
-    visibility: hidden;
-
-    transition: .3s;
-}
-
-.cart-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.cart-panel {
-    position: absolute;
-    right: 0;
-    top: 0;
-
-    width: 430px;
-    max-width: 100%;
-    height: 100%;
-
-    background: #101012;
-
-    padding: 25px;
-
-    transform: translateX(100%);
-    transition: .35s;
-
-    display: flex;
-    flex-direction: column;
-}
-
-.cart-overlay.active .cart-panel {
-    transform: translateX(0);
-}
-
-.cart-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    border-bottom: 1px solid #292929;
-    padding-bottom: 20px;
-}
-
-.cart-header h2 {
-    font-family: 'Playfair Display', serif;
-}
-
-.close-cart {
-    background: none;
-    border: none;
-    color: #aaa;
-    font-size: 25px;
-    cursor: pointer;
-}
-
-.cart-items {
-    flex: 1;
-    overflow-y: auto;
-    padding: 20px 0;
-}
-
-.empty-cart {
-    color: #666;
-    text-align: center;
-    margin-top: 80px;
-    font-size: 13px;
-}
-
-.cart-item {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-
-    padding: 15px 0;
-    border-bottom: 1px solid #222;
-}
-
-.cart-item-info {
-    flex: 1;
-}
-
-.cart-item-name {
-    font-size: 13px;
-    margin-bottom: 7px;
-}
-
-.cart-item-price {
-    color: #cba56b;
-    font-size: 12px;
-}
-
-.quantity {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.quantity button {
-    width: 25px;
-    height: 25px;
-
-    border: 1px solid #333;
-    background: #18181b;
-    color: white;
-    cursor: pointer;
-}
-
-.remove-item {
-    color: #777;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 11px;
-}
-
-.cart-bottom {
-    border-top: 1px solid #292929;
-    padding-top: 20px;
-}
-
-.total-line {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.total-price {
-    color: #cba56b;
-    font-size: 20px;
-    font-weight: 700;
-}
-
-.whatsapp-btn {
-    width: 100%;
-    padding: 15px;
-
-    background: #25D366;
-    color: white;
-
-    border: none;
-    cursor: pointer;
-
-    font-weight: 700;
-    font-family: inherit;
-
-    transition: .3s;
-}
-
-.whatsapp-btn:hover {
-    background: #1ebe5d;
-}
-
-.clear-cart {
-    width: 100%;
-    margin-top: 10px;
-    padding: 10px;
-
-    background: transparent;
-    color: #777;
-    border: none;
-
-    cursor: pointer;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:1000px) {
-
-    .products {
-        grid-template-columns: repeat(2,1fr);
-    }
-
-    .features {
-        grid-template-columns: repeat(2,1fr);
-    }
-
-    .footer-content {
-        grid-template-columns: repeat(2,1fr);
-    }
-
-}
-
-@media(max-width:700px) {
-
-    nav {
-        display: none;
-    }
-
-    .navbar {
-        height: 70px;
-    }
-
-    .logo {
-        font-size: 19px;
-    }
-
-    .cart-button {
-        padding: 9px 12px;
-        font-size: 11px;
-    }
-
-    .hero {
-        min-height: 80vh;
-    }
-
-    .hero h1 {
-        font-size: 48px;
-    }
-
-    .categories {
-        grid-template-columns: 1fr;
-    }
-
-    .category {
-        height: 380px;
-    }
-
-    .section-header {
-        display: block;
-    }
-
-    .section-header p {
-        margin-top: 15px;
-    }
-
-    .products {
-        grid-template-columns: repeat(2,1fr);
-        gap: 10px;
-    }
-
-    .product-image {
-        height: 220px;
-    }
-
-    .product-info {
-        padding: 13px;
-    }
-
-    .product h3 {
-        font-size: 15px;
-    }
-
-    .features {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-    }
-
-    .banner h2 {
-        font-size: 38px;
-    }
-
-}
-
-/* MOBILE TRES PETIT */
-
-@media(max-width:430px) {
-
-    .products {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .product-image {
-        height: 190px;
-    }
-
-    .hero h1 {
-        font-size: 40px;
-    }
-
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OZARO STYLE | Montres Homme & Femme</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: #fff;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10,10,10,0.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #222;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            height: 75px;
+            padding: 0 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        .cart-btn {
+            position: relative;
+            background: transparent;
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            padding: 10px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: #d4af37;
+            color: #000;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            background:
+                linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.88)),
+                url("https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 750px;
+            padding: 30px;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            letter-spacing: 8px;
+            color: #d4af37;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #ddd;
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background: #d4af37;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* ================= SECTION ================= */
+
+        section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #d4af37;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: #999;
+        }
+
+        /* ================= CATEGORIES ================= */
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .category {
+            height: 350px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 1px solid #222;
+        }
+
+        .category img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .category:hover img {
+            transform: scale(1.08);
+        }
+
+        .category-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                transparent,
+                rgba(0,0,0,0.85)
+            );
+
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+        }
+
+        .category-overlay h3 {
+            font-size: 30px;
+            color: #fff;
+        }
+
+        /* ================= PRODUCTS ================= */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .product {
+            background: #111;
+            border: 1px solid #222;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+        }
+
+        .product-image {
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .product:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #d4af37;
+            color: #000;
+            padding: 6px 10px;
+            font-size: 11px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .category-name {
+            color: #888;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .price {
+            color: #d4af37;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .product-info .btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* ================= BANNER ================= */
+
+        .banner {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 70px 30px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.8)),
+                url("https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            border-radius: 8px;
+        }
+
+        .banner h2 {
+            font-size: 38px;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+
+        .banner p {
+            color: #ddd;
+        }
+
+        /* ================= FEATURES ================= */
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature {
+            background: #111;
+            border: 1px solid #222;
+            padding: 35px 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .feature-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #999;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #050505;
+            border-top: 1px solid #222;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer h3 {
+            color: #d4af37;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* ================= CART ================= */
+
+        .cart-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.75);
+            z-index: 2000;
+            display: none;
+        }
+
+        .cart-overlay.active {
+            display: block;
+        }
+
+        .cart {
+            position: absolute;
+            right: 0;
+            top: 0;
+
+            width: 420px;
+            max-width: 100%;
+            height: 100%;
+
+            background: #111;
+            border-left: 1px solid #333;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-header {
+            padding: 20px;
+            border-bottom: 1px solid #333;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-header h2 {
+            color: #d4af37;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 12px;
+            padding: 15px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .cart-item img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-info h4 {
+            font-size: 14px;
+            margin-bottom: 7px;
+        }
+
+        .cart-item-price {
+            color: #d4af37;
+            font-size: 14px;
+        }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .quantity button {
+            width: 25px;
+            height: 25px;
+            border: 1px solid #444;
+            background: #222;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .remove {
+            background: none;
+            border: none;
+            color: #777;
+            cursor: pointer;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .remove:hover {
+            color: #f00;
+        }
+
+        .cart-footer {
+            padding: 20px;
+            border-top: 1px solid #333;
+        }
+
+        .total {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .total strong {
+            color: #d4af37;
+        }
+
+        .whatsapp {
+            width: 100%;
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .whatsapp:hover {
+            background: #1ebe5d;
+        }
+
+        .empty-cart {
+            text-align: center;
+            color: #777;
+            padding: 50px 20px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width: 900px) {
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 11px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+        }
+
+        @media(max-width: 600px) {
+
+            .navbar {
+                height: auto;
+                padding: 15px;
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+            .logo {
+                height: 40px;
+            }
+
+            nav {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .categories,
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 500px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+                letter-spacing: 4px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            section {
+                padding: 60px 15px;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+
+            .banner {
+                margin: 15px;
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
-
-<!-- ======================================================
-HEADER
-====================================================== -->
+<!-- ================= HEADER ================= -->
 
 <header>
 
-<div class="navbar">
+    <div class="navbar">
 
-<a href="#accueil" class="logo">
-OZARO <span>STYLE</span>
-</a>
+        <a href="#accueil">
+            <img
+                class="logo"
+                src="https://github.com/oussamajouahi88-hash/Ozaro-Style/blob/main/logo.jpg?raw=true"
+                alt="OZARO STYLE">
+        </a>
 
-<nav>
-<a href="#accueil">Accueil</a>
-<a href="#homme">Homme</a>
-<a href="#femme">Femme</a>
-<a href="#collection">Collection</a>
-<a href="#contact">Contact</a>
-</nav>
+        <nav>
 
-<button class="cart-button" onclick="openCart()">
+            <a href="#accueil">Accueil</a>
 
-🛒 Panier
+            <a onclick="showCategory('homme')">
+                Homme
+            </a>
 
-<span class="cart-count" id="cartCount">0</span>
+            <a onclick="showCategory('femme')">
+                Femme
+            </a>
 
-</button>
+            <a onclick="showAllProducts()">
+                Collection
+            </a>
 
-</div>
+            <a href="#contact">
+                Contact
+            </a>
+
+        </nav>
+
+        <button class="cart-btn" onclick="openCart()">
+
+            🛒 Panier
+
+            <span class="cart-count" id="cartCount">
+                0
+            </span>
+
+        </button>
+
+    </div>
 
 </header>
 
 
-
-<!-- ======================================================
-HERO
-====================================================== -->
+<!-- ================= HERO ================= -->
 
 <section class="hero" id="accueil">
 
-<div class="hero-content">
+    <div class="hero-content">
 
-<div class="small-title">
-OZARO STYLE
-</div>
+        <h1>OZARO STYLE</h1>
 
-<h1>
-Le temps devient
-<span>élégance.</span>
-</h1>
+        <p>
+            L'élégance au poignet.
+            Découvrez notre collection de montres
+            Homme & Femme.
+        </p>
 
-<p>
-Découvrez notre sélection de montres élégantes
-pour homme et femme. Des designs modernes
-pour accompagner chaque moment.
-</p>
+        <button
+            class="btn"
+            onclick="showAllProducts()">
 
-<a href="#collection" class="btn">
-Découvrir la collection
-</a>
+            Découvrir la collection
 
-<a href="#homme" class="btn btn-dark">
-Montres Homme
-</a>
+        </button>
 
-</div>
+    </div>
 
 </section>
 
 
+<!-- ================= CATEGORIES ================= -->
 
-<!-- ======================================================
-CATEGORIES
-====================================================== -->
+<section>
 
-<section class="section">
+    <div class="section-title">
 
-<div class="section-header">
+        <h2>Nos Collections</h2>
 
-<div>
+        <p>
+            Trouvez la montre qui correspond à votre style.
+        </p>
 
-<div class="small-title">
-NOS COLLECTIONS
-</div>
-
-<h2>
-Choisissez votre style
-</h2>
-
-</div>
-
-<p>
-Explorez nos collections homme et femme.
-Chaque modèle possède son propre caractère.
-</p>
-
-</div>
+    </div>
 
 
-<div class="categories">
+    <div class="categories">
+
+        <!-- FEMME -->
+
+        <div
+            class="category"
+            onclick="showCategory('femme')">
+
+            <img
+                src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1000&q=80"
+                alt="Montres Femme">
+
+            <div class="category-overlay">
+
+                <h3>
+                    ✨ Montres Femme
+                </h3>
+
+            </div>
+
+        </div>
 
 
-<!-- HOMME -->
+        <!-- HOMME -->
 
-<div class="category"
-onclick="showCategory('homme')">
+        <div
+            class="category"
+            onclick="showCategory('homme')">
 
-<img
-src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=1000&q=85"
-alt="Montres Homme">
+            <img
+                src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1000&q=80"
+                alt="Montres Homme">
 
-<div class="category-text">
+            <div class="category-overlay">
 
-<span>OZARO COLLECTION</span>
+                <h3>
+                    ⌚ Montres Homme
+                </h3>
 
-<h3>Homme</h3>
+            </div>
 
-<p>
-6 modèles disponibles →
-</p>
+        </div>
 
-</div>
-
-</div>
-
-
-<!-- FEMME -->
-
-<div class="category"
-onclick="showCategory('femme')">
-
-<img
-src="https://images.unsplash.com/photo-1548171915-e79a380a2a4b?auto=format&fit=crop&w=1000&q=85"
-alt="Montres Femme">
-
-<div class="category-text">
-
-<span>OZARO COLLECTION</span>
-
-<h3>Femme</h3>
-
-<p>
-6 modèles disponibles →
-</p>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
+<!-- ================= PRODUCTS ================= -->
 
-<!-- ======================================================
-PRODUCTS
-====================================================== -->
+<section id="collection">
 
-<section class="section" id="collection">
+    <div class="section-title">
 
-<div class="section-header">
+        <h2 id="productsTitle">
+            Notre Collection
+        </h2>
 
-<div>
+        <p>
+            Des modèles sélectionnés pour vous.
+        </p>
 
-<div class="small-title">
-OZARO SELECTION
-</div>
-
-<h2 id="productsTitle">
-Nos montres
-</h2>
-
-</div>
-
-<p>
-Une sélection de modèles élégants et modernes
-pour homme et femme.
-</p>
-
-</div>
+    </div>
 
 
-<div class="products" id="productsContainer">
-</div>
+    <div
+        class="products"
+        id="productsContainer">
+
+    </div>
 
 </section>
 
 
+<!-- ================= BANNER ================= -->
 
-<!-- ======================================================
-BANNER
-====================================================== -->
+<div class="banner">
 
-<section class="banner">
+    <h2>
+        Votre style. Votre temps.
+    </h2>
 
-<div class="banner-content">
-
-<div class="small-title">
-OZARO STYLE
-</div>
-
-<h2>
-Votre style.<br>
-Votre moment.
-</h2>
-
-<p>
-Une montre n'est pas seulement un accessoire.
-C'est un détail qui définit votre style.
-</p>
-
-<a href="#collection" class="btn">
-Voir la collection
-</a>
+    <p>
+        OZARO STYLE — L'élégance commence par les détails.
+    </p>
 
 </div>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section>
+
+    <div class="features">
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🚚
+            </div>
+
+            <h3>
+                Livraison
+            </h3>
+
+            <p>
+                Livraison rapide partout au Maroc.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🔒
+            </div>
+
+            <h3>
+                Paiement
+            </h3>
+
+            <p>
+                Commande simple et sécurisée.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ⭐
+            </div>
+
+            <h3>
+                Qualité
+            </h3>
+
+            <p>
+                Des modèles élégants sélectionnés avec soin.
+            </p>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-
-<!-- ======================================================
-FEATURES
-====================================================== -->
-
-<section class="section">
-
-<div class="features">
-
-<div class="feature">
-
-<div class="feature-icon">
-🚚
-</div>
-
-<h4>
-Livraison au Maroc
-</h4>
-
-<p>
-Livraison disponible partout au Maroc.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">
-💵
-</div>
-
-<h4>
-Paiement à la livraison
-</h4>
-
-<p>
-Payez directement à la réception.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">
-✓
-</div>
-
-<h4>
-Qualité sélectionnée
-</h4>
-
-<p>
-Des modèles choisis avec soin.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">
-💬
-</div>
-
-<h4>
-Commande WhatsApp
-</h4>
-
-<p>
-Commandez facilement via WhatsApp.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- ======================================================
-FOOTER
-====================================================== -->
+<!-- ================= FOOTER ================= -->
 
 <footer id="contact">
 
-<div class="footer-content">
+    <h3>
+        OZARO STYLE
+    </h3>
 
-<div>
+    <p>
+        Montres Homme & Femme
+    </p>
 
-<div class="footer-logo">
-OZARO STYLE
-</div>
+    <br>
 
-<p class="footer-about">
-OZARO STYLE propose une sélection de montres
-modernes et élégantes pour homme et femme.
-</p>
-
-</div>
-
-
-<div>
-
-<h4>BOUTIQUE</h4>
-
-<a href="#homme">
-Montres Homme
-</a>
-
-<a href="#femme">
-Montres Femme
-</a>
-
-<a href="#collection">
-Collection
-</a>
-
-</div>
-
-
-<div>
-
-<h4>INFORMATIONS</h4>
-
-<a href="#">
-Livraison
-</a>
-
-<a href="#">
-Paiement
-</a>
-
-<a href="#">
-Retours
-</a>
-
-</div>
-
-
-<div>
-
-<h4>CONTACT</h4>
-
-<a href="#">
-WhatsApp
-</a>
-
-<a href="#">
-Instagram
-</a>
-
-<a href="#">
-TikTok
-</a>
-
-</div>
-
-</div>
-
-
-<div class="copyright">
-
-© 2026 OZARO STYLE — Tous droits réservés.
-
-</div>
+    <p>
+        © 2026 OZARO STYLE — Tous droits réservés.
+    </p>
 
 </footer>
 
 
-
-<!-- ======================================================
-PANIER
-====================================================== -->
-
-<div class="cart-overlay" id="cartOverlay">
-
-<div class="cart-panel">
-
-<div class="cart-header">
-
-<h2>
-Mon panier
-</h2>
-
-<button
-class="close-cart"
-onclick="closeCart()">
-
-×
-</button>
-
-</div>
-
+<!-- ================= CART ================= -->
 
 <div
-class="cart-items"
-id="cartItems">
+    class="cart-overlay"
+    id="cartOverlay"
+    onclick="closeCartOutside(event)">
+
+    <div
+        class="cart"
+        onclick="event.stopPropagation()">
+
+        <div class="cart-header">
+
+            <h2>
+                Votre panier
+            </h2>
+
+            <button
+                class="close-cart"
+                onclick="closeCart()">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <div
+            class="cart-items"
+            id="cartItems">
+
+        </div>
+
+
+        <div class="cart-footer">
+
+            <div class="total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="cartTotal">
+                    0 DH
+                </strong>
+
+            </div>
+
+
+            <button
+                class="whatsapp"
+                onclick="orderWhatsApp()">
+
+                📱 Commander sur WhatsApp
+
+            </button>
+
+        </div>
+
+    </div>
 
 </div>
 
 
-<div class="cart-bottom">
-
-<div class="total-line">
-
-<span>
-Total
-</span>
-
-<span
-class="total-price"
-id="cartTotal">
-
-0 DH
-
-</span>
-
-</div>
-
-
-<button
-class="whatsapp-btn"
-onclick="orderWhatsApp()">
-
-📱 Commander sur WhatsApp
-
-</button>
-
-
-<button
-class="clear-cart"
-onclick="clearCart()">
-
-Vider le panier
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<!-- ======================================================
-JAVASCRIPT
-====================================================== -->
+<!-- ================= JAVASCRIPT ================= -->
 
 <script>
 
+    /* ==========================================
+       NUMÉRO WHATSAPP
+       ========================================== */
+
+    /*
+       REMPLACE CE NUMÉRO PAR TON VRAI NUMÉRO.
+
+       Exemple :
+
+       Ton numéro :
+       0612345678
+
+       Tu mets :
+       212612345678
+
+       Sans +
+       Sans espace
+       Sans 0 au début
+    */
+
+    const whatsappNumber = "212600000000";
+
+
+    /* ==========================================
+       PRODUITS
+       ========================================== */
+
+    const products = [
+
+        /* ===== HOMME ===== */
+
+        {
+            id: 1,
+            name: "Ozaro Midnight",
+            price: 399,
+            category: "Homme",
+            badge: "BEST SELLER",
+            image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80"
+        },
+
+        {
+            id: 2,
+            name: "Ozaro Classic",
+            price: 449,
+            category: "Homme",
+            badge: "NOUVEAU",
+            image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80"
+        },
+
+        {
+            id: 3,
+            name: "Ozaro Black",
+            price: 499,
+            category: "Homme",
+            badge: "TENDANCE",
+            image: "https://images.unsplash.com/photo-1539874754764-5a96559165b0?auto=format&fit=crop&w=800&q=80"
+        },
+
+        {
+            id: 4,
+            name: "Ozaro Steel",
+            price: 529,
+            category: "Homme",
+            badge: "",
+            image: "https://images.unsplash.com/photo-1594534475808-b18fc33b045e?auto=format&fit=crop&w=800&q=80"
+        },
+
+        {
+            id: 5,
+            name: "Ozaro Silver",
+            price: 479,
+            category: "Homme",
+            badge: "",
+            image: "https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=800&q=80"
+        },
+
+        {
+            id: 6,
+            name: "Ozaro Executive",
+            price: 599,
+            category: "Homme",
+            badge: "PREMIUM",
+            image: "https://images.unsplash.com/photo-1551816230-ef5deaed4a26?auto=format&fit=crop&w=800&q=80"
+        },
+
+
+        /* ===== FEMME ===== */
+
+        {
+            id: 7,
+            name: "Ozaro Gold",
+            price: 499,
+            category: "Femme",
+            badge: "BEST SELLER",
+            image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80"
+        },
 
-/* ======================================================
-NUMERO WHATSAPP
-======================================================
-
-IMPORTANT :
-
-Remplace 212600000000 par TON numéro WhatsApp.
-
-Exemple :
-
-+212 6 12 34 56 78
-
-devient :
-
-212612345678
-
-====================================================== */
-
-const whatsappNumber = "212600000000";
-
-
-
-/* ======================================================
-PRODUITS
-====================================================== */
-
-const products = [
-
-/* ================= HOMME ================= */
-
-{
-id: 1,
-name: "Ozaro Midnight",
-category: "Homme",
-price: 399,
-image: "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=800&q=85",
-badge: "NOUVEAU"
-},
-
-{
-id: 2,
-name: "Ozaro Classic",
-category: "Homme",
-price: 449,
-image: "https://images.unsplash.com/photo-1539874754764-5a96559165b0?auto=format&fit=crop&w=800&q=85",
-badge: ""
-},
-
-{
-id: 3,
-name: "Ozaro Black",
-category: "Homme",
-price: 499,
-image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=85",
-badge: "BEST SELLER"
-},
-
-{
-id: 4,
-name: "Ozaro Steel",
-category: "Homme",
-price: 529,
-image: "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=800&q=85",
-badge: ""
-},
-
-{
-id: 5,
-name: "Ozaro Silver",
-category: "Homme",
-price: 479,
-image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=85",
-badge: ""
-},
-
-{
-id: 6,
-name: "Ozaro Executive",
-category: "Homme",
-price: 599,
-image: "https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&w=800&q=85",
-badge: "PREMIUM"
-},
+        {
+            id: 8,
+            name: "Ozaro Rose",
+            price: 429,
+            category: "Femme",
+            badge: "NOUVEAU",
+            image: "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=800&q=80"
+        },
 
+        {
+            id: 9,
+            name: "Ozaro Pearl",
+            price: 459,
+            category: "Femme",
+            badge: "",
+            image: "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=800&q=80"
+        },
 
-/* ================= FEMME ================= */
+        {
+            id: 10,
+            name: "Ozaro Elegant",
+            price: 499,
+            category: "Femme",
+            badge: "TENDANCE",
+            image: "https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&w=800&q=80"
+        },
 
-{
-id: 7,
-name: "Ozaro Gold",
-category: "Femme",
-price: 499,
-image: "https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?auto=format&fit=crop&w=800&q=85",
-badge: "BEST SELLER"
-},
+        {
+            id: 11,
+            name: "Ozaro Lady",
+            price: 549,
+            category: "Femme",
+            badge: "",
+            image: "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?auto=format&fit=crop&w=800&q=80"
+        },
 
-{
-id: 8,
-name: "Ozaro Rose",
-category: "Femme",
-price: 429,
-image: "https://images.unsplash.com/photo-1548171915-e79a380a2a4b?auto=format&fit=crop&w=800&q=85",
-badge: "NOUVEAU"
-},
+        {
+            id: 12,
+            name: "Ozaro Prestige",
+            price: 599,
+            category: "Femme",
+            badge: "PREMIUM",
+            image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80"
+        }
 
-{
-id: 9,
-name: "Ozaro Pearl",
-category: "Femme",
-price: 459,
-image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=85",
-badge: ""
-},
+    ];
 
-{
-id: 10,
-name: "Ozaro Elegant",
-category: "Femme",
-price: 499,
-image: "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=800&q=85",
-badge: ""
-},
 
-{
-id: 11,
-name: "Ozaro Lady",
-category: "Femme",
-price: 549,
-image: "https://images.unsplash.com/photo-1539874754764-5a96559165b0?auto=format&fit=crop&w=800&q=85",
-badge: ""
-},
+    /* ==========================================
+       PANIER
+       ========================================== */
 
-{
-id: 12,
-name: "Ozaro Prestige",
-category: "Femme",
-price: 599,
-image: "https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&w=800&q=85",
-badge: "PREMIUM"
-}
+    let cart = [];
 
-];
 
+    /* ==========================================
+       AFFICHER LES PRODUITS
+       ========================================== */
 
+    function displayProducts(category = "all") {
 
-/* ======================================================
-PANIER
-====================================================== */
+        const container =
+            document.getElementById("productsContainer");
 
-let cart = [];
+        container.innerHTML = "";
 
 
+        let filteredProducts;
 
-/* ======================================================
-AFFICHER PRODUITS
-====================================================== */
 
-function displayProducts(category = "all") {
+        /*
+           IMPORTANT :
 
-const container =
-document.getElementById("productsContainer");
+           Ici on compare en minuscules.
 
-container.innerHTML = "";
+           "Femme" devient "femme"
+           "Homme" devient "homme"
 
-let filteredProducts = products;
+           Donc le filtre fonctionne correctement.
+        */
 
-if(category !== "all") {
+        if (category.toLowerCase() === "all") {
 
-filteredProducts =
-products.filter(
-product => product.category === category
-);
+            filteredProducts = products;
 
-}
+        } else {
 
+            filteredProducts = products.filter(
 
-filteredProducts.forEach(product => {
+                product =>
+                    product.category.toLowerCase()
+                    === category.toLowerCase()
 
-container.innerHTML += `
+            );
 
-<div class="product">
+        }
 
-<div class="product-image">
 
-${product.badge ?
-`<span class="badge">${product.badge}</span>`
-: ""}
+        /* ======================================
+           CRÉATION DES CARTES PRODUITS
+           ====================================== */
 
-<img
-src="${product.image}"
-alt="${product.name}">
+        filteredProducts.forEach(product => {
 
-</div>
+            const card =
+                document.createElement("div");
 
-<div class="product-info">
+            card.className = "product";
 
-<div class="product-category">
-${product.category}
-</div>
 
-<h3>
-${product.name}
-</h3>
+            card.innerHTML = `
 
-<div class="price">
-${product.price} DH
-</div>
+                <div class="product-image">
 
-<button
-class="add-cart"
-onclick="addToCart(${product.id})">
+                    <img
+                        src="${product.image}"
+                        alt="${product.name}">
 
-Ajouter au panier
+                    ${
+                        product.badge
+                        ?
+                        `<span class="badge">
+                            ${product.badge}
+                         </span>`
+                        :
+                        ""
+                    }
 
-</button>
+                </div>
 
-</div>
 
-</div>
+                <div class="product-info">
 
-`;
+                    <div class="category-name">
+                        Montre ${product.category}
+                    </div>
 
-});
+                    <h3>
+                        ${product.name}
+                    </h3>
 
-}
+                    <div class="price">
+                        ${product.price} DH
+                    </div>
 
+                    <button
+                        class="btn"
+                        onclick="addToCart(${product.id})">
 
+                        Ajouter au panier
 
-/* ======================================================
-CLIQUER HOMME / FEMME
-====================================================== */
+                    </button>
 
-function showCategory(category) {
+                </div>
 
-displayProducts(category);
+            `;
 
-const title =
-document.getElementById("productsTitle");
 
-if(category === "homme") {
+            container.appendChild(card);
 
-title.innerHTML = "Montres Homme";
+        });
 
-}
+    }
 
-if(category === "femme") {
 
-title.innerHTML = "Montres Femme";
+    /* ==========================================
+       FILTRE HOMME / FEMME
+       ========================================== */
 
-}
+    function showCategory(category) {
 
-document
-.getElementById("collection")
-.scrollIntoView({
-behavior: "smooth"
-});
+        displayProducts(category);
 
-}
 
+        const title =
+            document.getElementById("productsTitle");
 
 
-/* ======================================================
-AJOUTER AU PANIER
-====================================================== */
+        if (category.toLowerCase() === "homme") {
 
-function addToCart(productId) {
+            title.innerHTML =
+                "⌚ Montres Homme";
 
-const product =
-products.find(
-p => p.id === productId
-);
+        }
 
-const existing =
-cart.find(
-item => item.id === productId
-);
 
-if(existing) {
+        if (category.toLowerCase() === "femme") {
 
-existing.quantity++;
+            title.innerHTML =
+                "✨ Montres Femme";
 
-} else {
+        }
 
-cart.push({
 
-...product,
-quantity: 1
+        document
+            .getElementById("collection")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
 
-});
+    }
 
-}
 
-updateCart();
+    /* ==========================================
+       AFFICHER TOUTES LES MONTRES
+       ========================================== */
 
-openCart();
+    function showAllProducts() {
 
-}
+        displayProducts("all");
 
 
+        document
+            .getElementById("productsTitle")
+            .innerHTML =
+            "Notre Collection";
 
-/* ======================================================
-AFFICHER PANIER
-====================================================== */
 
-function updateCart() {
+        document
+            .getElementById("collection")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
 
-const cartItems =
-document.getElementById("cartItems");
+    }
 
-const cartCount =
-document.getElementById("cartCount");
 
-const cartTotal =
-document.getElementById("cartTotal");
+    /* ==========================================
+       AJOUTER AU PANIER
+       ========================================== */
 
+    function addToCart(productId) {
 
-let totalQuantity = 0;
-let totalPrice = 0;
+        const product =
+            products.find(
+                p => p.id === productId
+            );
 
 
-cart.forEach(item => {
+        const existing =
+            cart.find(
+                item => item.id === productId
+            );
 
-totalQuantity += item.quantity;
 
-totalPrice +=
-item.price * item.quantity;
+        if (existing) {
 
-});
+            existing.quantity++;
 
+        } else {
 
-cartCount.innerText =
-totalQuantity;
+            cart.push({
 
+                ...product,
 
-cartTotal.innerText =
-totalPrice + " DH";
+                quantity: 1
 
+            });
 
-if(cart.length === 0) {
+        }
 
-cartItems.innerHTML = `
 
-<div class="empty-cart">
+        updateCart();
 
-🛒<br><br>
 
-Votre panier est vide.
+        openCart();
 
-</div>
+    }
 
-`;
 
-return;
+    /* ==========================================
+       METTRE À JOUR LE PANIER
+       ========================================== */
 
-}
+    function updateCart() {
 
+        const cartItems =
+            document.getElementById("cartItems");
 
-cartItems.innerHTML = "";
+        const cartCount =
+            document.getElementById("cartCount");
 
+        const cartTotal =
+            document.getElementById("cartTotal");
 
-cart.forEach(item => {
 
-cartItems.innerHTML += `
+        cartItems.innerHTML = "";
 
-<div class="cart-item">
 
-<div class="cart-item-info">
+        let total = 0;
 
-<div class="cart-item-name">
+        let count = 0;
 
-${item.name}
 
-</div>
+        if (cart.length === 0) {
 
-<div class="cart-item-price">
+            cartItems.innerHTML = `
 
-${item.price} DH
+                <div class="empty-cart">
 
-</div>
+                    🛒
 
+                    <br><br>
 
-<div class="quantity">
+                    Votre panier est vide.
 
-<button
-onclick="changeQuantity(${item.id}, -1)">
+                </div>
 
-−
+            `;
 
-</button>
+        }
 
-<span>
-${item.quantity}
-</span>
 
-<button
-onclick="changeQuantity(${item.id}, 1)">
+        cart.forEach(item => {
 
-+
+            const subtotal =
+                item.price * item.quantity;
 
-</button>
 
-</div>
+            total += subtotal;
 
-</div>
+            count += item.quantity;
 
 
-<button
-class="remove-item"
-onclick="removeFromCart(${item.id})">
+            const div =
+                document.createElement("div");
 
-Supprimer
 
-</button>
+            div.className =
+                "cart-item";
 
-</div>
 
-`;
+            div.innerHTML = `
 
-});
+                <img
+                    src="${item.image}"
+                    alt="${item.name}">
 
-}
 
+                <div class="cart-item-info">
 
+                    <h4>
+                        ${item.name}
+                    </h4>
 
-/* ======================================================
-MODIFIER QUANTITE
-====================================================== */
+                    <div class="cart-item-price">
+                        ${item.price} DH
+                    </div>
 
-function changeQuantity(productId, amount) {
 
-const item =
-cart.find(
-product => product.id === productId
-);
+                    <div class="quantity">
 
-if(!item) return;
+                        <button
+                            onclick="changeQuantity(${item.id}, -1)">
+                            −
+                        </button>
 
-item.quantity += amount;
+                        <span>
+                            ${item.quantity}
+                        </span>
 
-if(item.quantity <= 0) {
+                        <button
+                            onclick="changeQuantity(${item.id}, 1)">
+                            +
+                        </button>
 
-cart =
-cart.filter(
-product => product.id !== productId
-);
+                    </div>
 
-}
 
-updateCart();
+                    <button
+                        class="remove"
+                        onclick="removeFromCart(${item.id})">
 
-}
+                        Supprimer
 
+                    </button>
 
+                </div>
 
-/* ======================================================
-SUPPRIMER
-====================================================== */
+            `;
 
-function removeFromCart(productId) {
 
-cart =
-cart.filter(
-product => product.id !== productId
-);
+            cartItems.appendChild(div);
 
-updateCart();
+        });
 
-}
 
+        cartCount.innerText = count;
 
+        cartTotal.innerText =
+            total + " DH";
 
-/* ======================================================
-VIDER PANIER
-====================================================== */
+    }
 
-function clearCart() {
 
-cart = [];
+    /* ==========================================
+       MODIFIER QUANTITÉ
+       ========================================== */
 
-updateCart();
+    function changeQuantity(productId, amount) {
 
-}
+        const item =
+            cart.find(
+                item => item.id === productId
+            );
 
 
+        if (!item) return;
 
-/* ======================================================
-OUVRIR PANIER
-====================================================== */
 
-function openCart() {
+        item.quantity += amount;
 
-document
-.getElementById("cartOverlay")
-.classList.add("active");
 
-}
+        if (item.quantity <= 0) {
 
+            cart =
+                cart.filter(
+                    item => item.id !== productId
+                );
 
+        }
 
-/* ======================================================
-FERMER PANIER
-====================================================== */
 
-function closeCart() {
+        updateCart();
 
-document
-.getElementById("cartOverlay")
-.classList.remove("active");
+    }
 
-}
 
+    /* ==========================================
+       SUPPRIMER PRODUIT
+       ========================================== */
 
+    function removeFromCart(productId) {
 
-/* ======================================================
-COMMANDER WHATSAPP
-====================================================== */
+        cart =
+            cart.filter(
+                item => item.id !== productId
+            );
 
-function orderWhatsApp() {
 
-if(cart.length === 0) {
+        updateCart();
 
-alert("Votre panier est vide.");
+    }
 
-return;
 
-}
+    /* ==========================================
+       OUVRIR PANIER
+       ========================================== */
 
+    function openCart() {
 
-let message =
-"Bonjour OZARO STYLE 👋%0A%0A";
+        document
+            .getElementById("cartOverlay")
+            .classList.add("active");
 
-message +=
-"Je souhaite commander :%0A%0A";
+    }
 
 
-let total = 0;
+    /* ==========================================
+       FERMER PANIER
+       ========================================== */
 
+    function closeCart() {
 
-cart.forEach(item => {
+        document
+            .getElementById("cartOverlay")
+            .classList.remove("active");
 
-const subtotal =
-item.price * item.quantity;
+    }
 
-total += subtotal;
 
+    /* ==========================================
+       FERMER EN CLIQUANT À L'EXTÉRIEUR
+       ========================================== */
 
-message +=
-"• " +
-item.name +
-" × " +
-item.quantity +
-" = " +
-subtotal +
-" DH%0A";
+    function closeCartOutside(event) {
 
-});
+        if (
+            event.target.id ===
+            "cartOverlay"
+        ) {
 
+            closeCart();
 
-message +=
-"%0A💰 Total : " +
-total +
-" DH%0A%0A";
+        }
 
-message +=
-"Merci de me confirmer ma commande.";
+    }
 
 
-const url =
-"https://wa.me/" +
-whatsappNumber +
-"?text=" +
-message;
+    /* ==========================================
+       COMMANDE WHATSAPP
+       ========================================== */
 
+    function orderWhatsApp() {
 
-window.open(
-url,
-"_blank"
-);
+        if (cart.length === 0) {
 
-}
+            alert(
+                "Votre panier est vide."
+            );
 
+            return;
 
+        }
 
-/* ======================================================
-INITIALISATION
-====================================================== */
 
-displayProducts();
+        let message =
+            "Bonjour OZARO STYLE 👋\n\n";
 
-updateCart();
 
+        message +=
+            "Je souhaite commander :\n\n";
 
 
-/* ======================================================
-FERMER EN CLIQUANT À CÔTÉ
-====================================================== */
+        let total = 0;
 
-document
-.getElementById("cartOverlay")
-.addEventListener(
-"click",
-function(event) {
 
-if(event.target === this) {
+        cart.forEach(item => {
 
-closeCart();
+            const subtotal =
+                item.price * item.quantity;
 
-}
 
-});
+            total += subtotal;
+
+
+            message +=
+                "• " +
+                item.name +
+                " × " +
+                item.quantity +
+                " = " +
+                subtotal +
+                " DH\n";
+
+        });
+
+
+        message +=
+            "\n💰 Total : " +
+            total +
+            " DH\n\n";
+
+
+        message +=
+            "Merci de me confirmer ma commande.";
+
+
+        const whatsappURL =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            encodeURIComponent(message);
+
+
+        window.open(
+            whatsappURL,
+            "_blank"
+        );
+
+    }
+
+
+    /* ==========================================
+       INITIALISATION
+       ========================================== */
+
+    displayProducts();
+
+    updateCart();
 
 </script>
 
 </body>
 </html>
-```
