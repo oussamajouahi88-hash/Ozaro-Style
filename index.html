@@ -1,1399 +1,1261 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>OZARO STYLE | Montres, Bracelets & Bijoux</title>
+    <title>OZARO STYLE | Montres Homme & Femme</title>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: "Segoe UI", Arial, sans-serif;
-}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-html{
-    scroll-behavior:smooth;
-}
+    <style>
 
-body{
-    background:#0b0b0b;
-    color:#fff;
-}
-
-/* ================= HEADER ================= */
-
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:rgba(10,10,10,.96);
-    border-bottom:1px solid #292929;
-    backdrop-filter:blur(12px);
-}
-
-.navbar{
-    max-width:1250px;
-    margin:auto;
-    height:80px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 25px;
-}
-
-/* LOGO */
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    text-decoration:none;
-    color:white;
-}
-
-.logo img {
-            width: 55px;
-            height: 55px;
-            object-fit: contain;
-            display: block;
-            border-radius: 8px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .logo-icon{
-    width:43px;
-    height:43px;
-    border:2px solid #d4af37;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#d4af37;
-    font-size:19px;
-    font-weight:bold;
-    position:relative;
-}
-
-.logo-icon:after{
-    content:"";
-    position:absolute;
-    width:8px;
-    height:8px;
-    background:#d4af37;
-    border-radius:50%;
-    top:5px;
-    right:5px;
-}
-
-.logo-text{
-    font-family:Georgia, serif;
-    font-size:23px;
-    letter-spacing:3px;
-}
-
-.logo-text span{
-    color:#d4af37;
-}
-
-nav{
-    display:flex;
-    gap:30px;
-}
-
-nav a{
-    color:#ddd;
-    text-decoration:none;
-    font-size:14px;
-    transition:.3s;
-}
-
-nav a:hover{
-    color:#d4af37;
-}
-
-.header-actions{
-    display:flex;
-    align-items:center;
-    gap:20px;
-}
-
-.search-btn,
-.cart-btn{
-    background:none;
-    border:none;
-    color:white;
-    font-size:20px;
-    cursor:pointer;
-}
-
-.cart-btn{
-    position:relative;
-}
-
-.cart-count{
-    position:absolute;
-    top:-8px;
-    right:-9px;
-    width:18px;
-    height:18px;
-    background:#d4af37;
-    color:#000;
-    border-radius:50%;
-    font-size:11px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-weight:bold;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-    min-height:680px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    position:relative;
-    overflow:hidden;
-    background:
-        linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.88)),
-        radial-gradient(circle at center,#443711 0%,#111 35%,#050505 80%);
-}
-
-.hero:before{
-    content:"";
-    position:absolute;
-    width:600px;
-    height:600px;
-    border:1px solid rgba(212,175,55,.25);
-    border-radius:50%;
-    animation:rotate 20s linear infinite;
-}
-
-@keyframes rotate{
-    from{transform:rotate(0deg)}
-    to{transform:rotate(360deg)}
-}
-
-.hero-content{
-    position:relative;
-    max-width:800px;
-    padding:30px;
-}
-
-.hero-small{
-    color:#d4af37;
-    letter-spacing:5px;
-    font-size:13px;
-    margin-bottom:20px;
-}
-
-.hero h1{
-    font-family:Georgia,serif;
-    font-size:70px;
-    letter-spacing:8px;
-    margin-bottom:20px;
-}
-
-.hero h1 span{
-    color:#d4af37;
-}
-
-.hero p{
-    color:#ccc;
-    font-size:18px;
-    line-height:1.7;
-    margin-bottom:35px;
-}
-
-.btn{
-    display:inline-block;
-    padding:15px 32px;
-    background:#d4af37;
-    color:#080808;
-    text-decoration:none;
-    font-weight:bold;
-    letter-spacing:1px;
-    transition:.3s;
-    border:1px solid #d4af37;
-}
-
-.btn:hover{
-    background:transparent;
-    color:#d4af37;
-}
-
-/* ================= CATEGORIES ================= */
-
-.section{
-    max-width:1250px;
-    margin:auto;
-    padding:90px 25px;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:55px;
-}
-
-.section-title small{
-    color:#d4af37;
-    letter-spacing:4px;
-}
-
-.section-title h2{
-    font-family:Georgia,serif;
-    font-size:42px;
-    margin-top:12px;
-}
-
-.categories{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
-}
-
-.category{
-    height:210px;
-    border:1px solid #292929;
-    background:linear-gradient(145deg,#191919,#0c0c0c);
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-decoration:none;
-    color:white;
-    transition:.4s;
-}
-
-.category:hover{
-    transform:translateY(-8px);
-    border-color:#d4af37;
-}
-
-.category-icon{
-    font-size:45px;
-    margin-bottom:18px;
-}
-
-.category h3{
-    font-family:Georgia,serif;
-    font-size:22px;
-}
-
-/* ================= PRODUCTS ================= */
-
-.products{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:22px;
-}
-
-.product{
-    background:#111;
-    border:1px solid #242424;
-    overflow:hidden;
-    transition:.4s;
-}
-
-.product:hover{
-    transform:translateY(-7px);
-    border-color:#8e7525;
-}
-
-.product-image{
-    height:280px;
-    background:linear-gradient(145deg,#222,#0b0b0b);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    position:relative;
-}
-
-.product-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.product-placeholder{
-    font-size:85px;
-    filter:drop-shadow(0 10px 20px #000);
-}
-
-.badge{
-    position:absolute;
-    top:15px;
-    left:15px;
-    background:#d4af37;
-    color:#000;
-    padding:6px 11px;
-    font-size:11px;
-    font-weight:bold;
-}
-
-.product-info{
-    padding:20px;
-}
-
-.product-info h3{
-    font-family:Georgia,serif;
-    font-size:19px;
-    margin-bottom:8px;
-}
-
-.product-info p{
-    color:#888;
-    font-size:13px;
-    margin-bottom:15px;
-}
-
-.price{
-    color:#d4af37;
-    font-size:20px;
-    font-weight:bold;
-}
-
-.old-price{
-    color:#666;
-    text-decoration:line-through;
-    font-size:13px;
-    margin-left:7px;
-}
-
-.add-cart{
-    margin-top:16px;
-    width:100%;
-    padding:11px;
-    background:transparent;
-    border:1px solid #444;
-    color:white;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.add-cart:hover{
-    background:#d4af37;
-    color:#000;
-    border-color:#d4af37;
-}
-
-/* ================= PROMO ================= */
-
-.promo{
-    margin:30px auto 80px;
-    max-width:1200px;
-    min-height:300px;
-    padding:60px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    background:
-        linear-gradient(90deg,rgba(0,0,0,.95),rgba(20,16,5,.65)),
-        radial-gradient(circle,#806b25,#111);
-    border:1px solid #594c24;
-}
-
-.promo h2{
-    font-family:Georgia,serif;
-    font-size:45px;
-    margin:12px 0;
-}
-
-.promo p{
-    color:#bbb;
-    max-width:500px;
-    line-height:1.7;
-}
-
-.discount{
-    font-size:75px;
-    font-weight:bold;
-    color:#d4af37;
-}
-
-/* ================= ABOUT ================= */
-
-.about{
-    background:#101010;
-}
-
-.about-content{
-    max-width:850px;
-    margin:auto;
-    text-align:center;
-}
-
-.about-content h2{
-    font-family:Georgia,serif;
-    font-size:40px;
-    margin:15px 0 25px;
-}
-
-.about-content p{
-    color:#aaa;
-    line-height:1.9;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-    background:#050505;
-    border-top:1px solid #222;
-    padding:60px 25px 25px;
-}
-
-.footer-grid{
-    max-width:1200px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr 1fr;
-    gap:50px;
-}
-
-.footer-logo{
-    font-family:Georgia,serif;
-    font-size:25px;
-    letter-spacing:3px;
-}
-
-.footer-logo span{
-    color:#d4af37;
-}
-
-footer h4{
-    margin-bottom:20px;
-    color:#d4af37;
-}
-
-footer p,
-footer a{
-    color:#888;
-    text-decoration:none;
-    display:block;
-    margin-bottom:10px;
-    font-size:14px;
-}
-
-footer a:hover{
-    color:#d4af37;
-}
-
-.copyright{
-    text-align:center;
-    border-top:1px solid #1e1e1e;
-    margin-top:45px;
-    padding-top:25px;
-    color:#555;
-    font-size:13px;
-}
-
-/* ================= CART ================= */
-
-.cart-panel{
-    position:fixed;
-    top:0;
-    right:-420px;
-    width:400px;
-    height:100vh;
-    background:#111;
-    z-index:2000;
-    box-shadow:-10px 0 30px #000;
-    transition:.4s;
-    padding:30px;
-}
-
-.cart-panel.active{
-    right:0;
-}
-
-.cart-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    border-bottom:1px solid #333;
-    padding-bottom:20px;
-}
-
-.cart-header h2{
-    font-family:Georgia,serif;
-}
-
-.close-cart{
-    background:none;
-    border:none;
-    color:white;
-    font-size:25px;
-    cursor:pointer;
-}
-
-.cart-items{
-    margin-top:25px;
-}
-
-.cart-item{
-    display:flex;
-    justify-content:space-between;
-    padding:15px 0;
-    border-bottom:1px solid #252525;
-}
-
-.cart-item span{
-    color:#d4af37;
-}
-
-.cart-total{
-    margin-top:30px;
-    display:flex;
-    justify-content:space-between;
-    font-size:20px;
-}
-
-.cart-total strong{
-    color:#d4af37;
-}
-
-.checkout{
-    width:100%;
-    margin-top:25px;
-    padding:15px;
-    background:#d4af37;
-    border:none;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-/* ================= SEARCH ================= */
-
-.search-box{
-    position:fixed;
-    top:-100px;
-    left:0;
-    width:100%;
-    background:#111;
-    z-index:1500;
-    padding:20px;
-    border-bottom:1px solid #333;
-    transition:.4s;
-}
-
-.search-box.active{
-    top:80px;
-}
-
-.search-box input{
-    width:100%;
-    max-width:800px;
-    display:block;
-    margin:auto;
-    padding:15px;
-    background:#050505;
-    border:1px solid #444;
-    color:white;
-    outline:none;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:900px){
-
-    nav{
-        display:none;
-    }
-
-    .categories,
-    .products{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .hero h1{
-        font-size:45px;
-    }
-
-    .promo{
-        margin:20px;
-        flex-direction:column;
-        text-align:center;
-        gap:30px;
-        padding:40px 25px;
-    }
-
-    .discount{
-        font-size:55px;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr 1fr;
-    }
-}
-
-@media(max-width:600px){
-
-    .navbar{
-        padding:0 15px;
-    }
-
-    .logo-text{
-        font-size:18px;
-        letter-spacing:2px;
-    }
-
-    .logo-icon{
-        width:37px;
-        height:37px;
-    }
-
-    .header-actions{
-        gap:12px;
-    }
-
-    .hero{
-        min-height:580px;
-    }
-
-    .hero h1{
-        font-size:36px;
-        letter-spacing:4px;
-    }
-
-    .hero p{
-        font-size:15px;
-    }
-
-    .categories,
-    .products{
-        grid-template-columns:1fr;
-    }
-
-    .section{
-        padding:65px 18px;
-    }
-
-    .section-title h2{
-        font-size:32px;
-    }
-
-    .cart-panel{
-        width:100%;
-        right:-100%;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr;
-    }
-}
-</style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #0b0b0d;
+            color: #ffffff;
+        }
+
+        /* ---------------- HEADER ---------------- */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 11, 13, 0.95);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid #222;
+        }
+
+        .navbar {
+            width: 92%;
+            max-width: 1250px;
+            margin: auto;
+            min-height: 80px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            letter-spacing: 3px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .logo span {
+            color: #cba56b;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #aaa;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #cba56b;
+        }
+
+        .cart {
+            border: 1px solid #333;
+            border-radius: 30px;
+            padding: 10px 18px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .cart:hover {
+            border-color: #cba56b;
+            color: #cba56b;
+        }
+
+        /* ---------------- HERO ---------------- */
+
+        .hero {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+
+            background:
+            linear-gradient(
+                90deg,
+                rgba(0,0,0,0.92) 0%,
+                rgba(0,0,0,0.75) 45%,
+                rgba(0,0,0,0.30) 100%
+            ),
+            url("https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1800&q=90");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            width: 92%;
+            max-width: 1250px;
+            margin: auto;
+        }
+
+        .small-title {
+            color: #cba56b;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 12px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(45px, 7vw, 85px);
+            line-height: 1.05;
+            max-width: 750px;
+        }
+
+        .hero h1 span {
+            color: #cba56b;
+        }
+
+        .hero p {
+            max-width: 570px;
+            color: #aaa;
+            line-height: 1.8;
+            margin: 25px 0 35px;
+            font-size: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 27px;
+            background: #cba56b;
+            color: #080808;
+            text-decoration: none;
+            border-radius: 3px;
+            font-weight: 600;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #e1bd83;
+            transform: translateY(-2px);
+        }
+
+        .btn-dark {
+            margin-left: 10px;
+            background: transparent;
+            border: 1px solid #444;
+            color: white;
+        }
+
+        .btn-dark:hover {
+            background: white;
+            color: black;
+        }
+
+        /* ---------------- SECTIONS ---------------- */
+
+        .section {
+            width: 92%;
+            max-width: 1250px;
+            margin: auto;
+            padding: 100px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 45px;
+        }
+
+        .section-title-small {
+            color: #cba56b;
+            font-size: 11px;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+        }
+
+        .section-header p {
+            max-width: 430px;
+            color: #777;
+            line-height: 1.7;
+            font-size: 13px;
+        }
+
+        /* ---------------- CATEGORIES ---------------- */
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .category {
+            position: relative;
+            height: 470px;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+
+        .category img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.7s;
+        }
+
+        .category:hover img {
+            transform: scale(1.06);
+        }
+
+        .category::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                transparent,
+                rgba(0,0,0,0.85)
+            );
+        }
+
+        .category-text {
+            position: absolute;
+            left: 35px;
+            bottom: 35px;
+            z-index: 2;
+        }
+
+        .category-text span {
+            color: #cba56b;
+            font-size: 11px;
+            letter-spacing: 3px;
+        }
+
+        .category-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 33px;
+            margin: 7px 0 14px;
+        }
+
+        .category-text a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        /* ---------------- PRODUCTS ---------------- */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product {
+            background: #111114;
+            border: 1px solid #1b1b1e;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: 0.4s;
+        }
+
+        .product:hover {
+            transform: translateY(-7px);
+            border-color: #3d3325;
+        }
+
+        .product-image {
+            height: 320px;
+            background: #161619;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .product:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .badge {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+
+            background: #cba56b;
+            color: #070707;
+
+            padding: 6px 10px;
+            border-radius: 2px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-category {
+            font-size: 10px;
+            color: #666;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .product h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 19px;
+            margin: 9px 0;
+        }
+
+        .price {
+            color: #cba56b;
+            font-weight: 600;
+        }
+
+        .old-price {
+            color: #555;
+            text-decoration: line-through;
+            margin-left: 7px;
+            font-size: 12px;
+        }
+
+        .add-cart {
+            width: 100%;
+            margin-top: 17px;
+            padding: 12px;
+
+            border: 1px solid #333;
+            background: transparent;
+            color: white;
+
+            cursor: pointer;
+            font-family: inherit;
+            transition: 0.3s;
+        }
+
+        .add-cart:hover {
+            background: #cba56b;
+            border-color: #cba56b;
+            color: black;
+        }
+
+        /* ---------------- BANNER ---------------- */
+
+        .banner {
+            min-height: 500px;
+
+            display: flex;
+            align-items: center;
+
+            background:
+            linear-gradient(
+                90deg,
+                rgba(0,0,0,.9),
+                rgba(0,0,0,.4)
+            ),
+            url("https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&w=1800&q=90");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .banner-content {
+            width: 92%;
+            max-width: 1250px;
+            margin: auto;
+        }
+
+        .banner-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 50px;
+            max-width: 600px;
+            margin: 10px 0 20px;
+        }
+
+        .banner-content p {
+            color: #aaa;
+            line-height: 1.8;
+            max-width: 500px;
+            margin-bottom: 25px;
+        }
+
+        /* ---------------- FEATURES ---------------- */
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .feature {
+            border: 1px solid #222;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 27px;
+            margin-bottom: 17px;
+        }
+
+        .feature h4 {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .feature p {
+            color: #666;
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+        /* ---------------- NEWSLETTER ---------------- */
+
+        .newsletter {
+            text-align: center;
+            padding: 90px 20px;
+            background: #111114;
+        }
+
+        .newsletter h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .newsletter p {
+            color: #777;
+            font-size: 13px;
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: 30px auto 0;
+            display: flex;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 16px;
+            background: #09090b;
+            border: 1px solid #333;
+            color: white;
+            outline: none;
+        }
+
+        .newsletter-form button {
+            padding: 0 25px;
+            background: #cba56b;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* ---------------- FOOTER ---------------- */
+
+        footer {
+            background: #080809;
+            border-top: 1px solid #1b1b1b;
+            padding: 60px 0 25px;
+        }
+
+        .footer-content {
+            width: 92%;
+            max-width: 1250px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .footer-about {
+            color: #666;
+            max-width: 350px;
+            line-height: 1.8;
+            font-size: 12px;
+        }
+
+        footer h4 {
+            margin-bottom: 18px;
+            font-size: 13px;
+        }
+
+        footer a {
+            display: block;
+            color: #666;
+            text-decoration: none;
+            margin-bottom: 11px;
+            font-size: 12px;
+            transition: .3s;
+        }
+
+        footer a:hover {
+            color: #cba56b;
+        }
+
+        .copyright {
+            width: 92%;
+            max-width: 1250px;
+            margin: 45px auto 0;
+            padding-top: 25px;
+
+            border-top: 1px solid #181818;
+
+            text-align: center;
+            font-size: 11px;
+            color: #444;
+        }
+
+        /* ---------------- MOBILE ---------------- */
+
+        @media (max-width: 1000px) {
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 700px) {
+
+            nav {
+                display: none;
+            }
+
+            .navbar {
+                min-height: 70px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .hero {
+                min-height: 80vh;
+                background-position: 60% center;
+            }
+
+            .hero p {
+                max-width: 90%;
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+
+            .section-header {
+                display: block;
+            }
+
+            .section-header p {
+                margin-top: 15px;
+            }
+
+            .categories {
+                grid-template-columns: 1fr;
+            }
+
+            .category {
+                height: 390px;
+            }
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .product-image {
+                height: 220px;
+            }
+
+            .product-info {
+                padding: 14px;
+            }
+
+            .product h3 {
+                font-size: 15px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .banner-content h2 {
+                font-size: 38px;
+            }
+
+        }
+
+    </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+
+<!-- ==================== HEADER ==================== -->
 
 <header>
 
-<div class="navbar">
+    <div class="navbar">
 
-<a href="#accueil" class="logo">
-        <img src="https://github.com/oussamajouahi88-hash/Ozaro-Style/blob/main/logo.jpg?raw=true" alt="OZARO STYLE">
-    </a>
+        <a href="#" class="logo">
+            OZARO <span>STYLE</span>
+        </a>
 
-<nav>
-<a href="#accueil">Accueil</a>
-<a href="#categories">Catégories</a>
-<a href="#produits">Produits</a>
-<a href="#about">À propos</a>
-<a href="#contact">Contact</a>
-</nav>
+        <nav>
+            <a href="#accueil">Accueil</a>
+            <a href="#homme">Homme</a>
+            <a href="#femme">Femme</a>
+            <a href="#collection">Collection</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-<div class="header-actions">
+        <div class="cart">
+            Panier 🛒 <span id="cart-count">0</span>
+        </div>
 
-<button class="search-btn" onclick="openSearch()">⌕</button>
-
-<button class="cart-btn" onclick="openCart()">
-🛒
-<span class="cart-count" id="cartCount">0</span>
-</button>
-
-</div>
-
-</div>
+    </div>
 
 </header>
 
-<!-- SEARCH -->
 
-<div class="search-box" id="searchBox">
 
-<input
-type="text"
-placeholder="Rechercher une montre, un bracelet, un bijou..."
-onkeyup="searchProducts(this.value)"
->
-
-</div>
-
-<!-- ================= HERO ================= -->
+<!-- ==================== HERO ==================== -->
 
 <section class="hero" id="accueil">
 
-<div class="hero-content">
+    <div class="hero-content">
 
-<div class="hero-small">
-L'ÉLÉGANCE À VOTRE POIGNET
-</div>
+        <div class="small-title">
+            Nouvelle Collection
+        </div>
 
-<h1>
-OZARO <span>STYLE</span>
-</h1>
+        <h1>
+            Le temps devient
+            <span>élégance.</span>
+        </h1>
 
-<p>
-Découvrez notre collection exclusive de montres,
-bracelets et bijoux soigneusement sélectionnés
-pour révéler votre style.
-</p>
+        <p>
+            Découvrez la collection OZARO STYLE.
+            Des montres modernes et élégantes pensées
+            pour accompagner votre style au quotidien.
+        </p>
 
-<a href="#produits" class="btn">
-DÉCOUVRIR LA COLLECTION
-</a>
+        <a href="#collection" class="btn">
+            Découvrir la collection
+        </a>
 
-</div>
+        <a href="#homme" class="btn btn-dark">
+            Voir les montres
+        </a>
 
-</section>
-
-<!-- ================= CATEGORIES ================= -->
-
-<section class="section" id="categories">
-
-<div class="section-title">
-
-<small>NOS COLLECTIONS</small>
-
-<h2>Choisissez votre style</h2>
-
-</div>
-
-<div class="categories">
-
-<a href="#produits" class="category">
-
-<div class="category-icon">⌚</div>
-
-<h3>Montres</h3>
-
-</a>
-
-<a href="#produits" class="category">
-
-<div class="category-icon">◈</div>
-
-<h3>Bracelets</h3>
-
-</a>
-
-<a href="#produits" class="category">
-
-<div class="category-icon">♢</div>
-
-<h3>Bijoux</h3>
-
-</a>
-
-<a href="#produits" class="category">
-
-<div class="category-icon">♔</div>
-
-<h3>Premium</h3>
-
-</a>
-
-</div>
+    </div>
 
 </section>
 
-<!-- ================= PRODUCTS ================= -->
 
-<section class="section" id="produits">
 
-<div class="section-title">
+<!-- ==================== CATEGORIES ==================== -->
 
-<small>OZARO COLLECTION</small>
+<section class="section">
 
-<h2>Nos produits</h2>
+    <div class="section-header">
 
-</div>
+        <div>
 
-<div class="products" id="productGrid">
-
-<!-- PRODUCT 1 -->
-
-<div class="product">
-
-<div class="product-image">
-
-<div class="badge">BEST SELLER</div>
-
-<div class="product-placeholder">⌚</div>
-
-</div>
-
-<div class="product-info">
-
-<h3>Royal Gold Watch</h3>
-
-<p>Montre élégante pour homme</p>
-
-<span class="price">799 DH</span>
-
-<button class="add-cart"
-onclick="addToCart('Royal Gold Watch',799)">
-Ajouter au panier
-</button>
-
-</div>
-
-</div>
-
-<!-- PRODUCT 2 -->
-
-<div class="product">
-
-<div class="product-image">
-
-<div class="badge">NOUVEAU</div>
-
-<div class="product-placeholder">⌚</div>
-
-</div>
-
-<div class="product-info">
-
-<h3>Black Elite</h3>
-
-<p>Montre noire finition premium</p>
-
-<span class="price">699 DH</span>
-
-<button class="add-cart"
-onclick="addToCart('Black Elite',699)">
-Ajouter au panier
-</button>
-
-</div>
-
-</div>
-
-<!-- PRODUCT 3 -->
-
-<div class="product">
-
-<div class="product-image">
-
-<div class="product-placeholder">◈</div>
-
-</div>
-
-<div class="product-info">
-
-<h3>Bracelet Milano</h3>
-
-<p>Bracelet acier inoxydable</p>
-
-<span class="price">299 DH</span>
-
-<button class="add-cart"
-onclick="addToCart('Bracelet Milano',299)">
-Ajouter au panier
-</button>
-
-</div>
-
-</div>
-
-<!-- PRODUCT 4 -->
-
-<div class="product">
-
-<div class="product-image">
-
-<div class="product-placeholder">♢</div>
-
-</div>
-
-<div class="product-info">
-
-<h3>Golden Chain</h3>
-
-<p>Chaîne élégante finition dorée</p>
-
-<span class="price">399 DH</span>
-
-<button class="add-cart"
-onclick="addToCart('Golden Chain',399)">
-Ajouter au panier
-</button>
-
-</div>
-
-</div>
-
-<!-- PRODUCT 5 -->
-
-<div class="product">
-
-<div class="product-image">
-
-<div class="product-placeholder">◈</div>
-
-</div>
-
-<div class="product-info">
-
-<h3>Black Bracelet</h3>
-
-<p>Bracelet cuir noir</p>
-
-<span class="price">249 DH</span>
-
-<button class="add-cart"
-onclick="addToCart('Black Bracelet',249)">
-Ajouter au panier
-</button>
-
-</div>
-
-</div>
-
-<!-- PRODUCT 6 -->
-
-<div class="product">
-
-<div class="product-image">
-
-<div class="badge">-20%</div>
-
-<div class="product-placeholder">♢</div>
-
-</div>
-
-<div class="product-info">
-
-<h3>Luxury Ring</h3>
-
-<p>Bague minimaliste premium</p>
-
-<span class="price">199 DH</span>
-<span class="old-price">249 DH</span>
-
-<button class="add-cart"
-onclick="addToCart('Luxury Ring',199)">
-Ajouter au panier
-</button>
-
-</div>
-
-</div>
-
-<!-- PRODUCT 7 -->
-
-<div class="product">
-
-<div class="product-image">
-
-<div class="product-placeholder">⌚</div>
-
-</div>
-
-<div class="product-info">
-
-<h3>Silver Classic</h3>
-
-<p>Montre classique argentée</p>
-
-<span class="price">599 DH</span>
-
-<button class="add-cart"
-onclick="addToCart('Silver Classic',599)">
-Ajouter au panier
-</button>
-
-</div>
-
-</div>
-
-<!-- PRODUCT 8 -->
-
-<div class="product">
-
-<div class="product-image">
-
-<div class="badge">PREMIUM</div>
-
-<div class="product-placeholder">♔</div>
-
-</div>
-
-<div class="product-info">
-
-<h3>OZARO Royal</h3>
-
-<p>Collection exclusive</p>
-
-<span class="price">999 DH</span>
-
-<button class="add-cart"
-onclick="addToCart('OZARO Royal',999)">
-Ajouter au panier
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= PROMO ================= -->
-
-<section class="promo">
-
-<div>
-
-<small style="color:#d4af37;letter-spacing:3px;">
-OFFRE SPÉCIALE
-</small>
-
-<h2>Votre style mérite mieux.</h2>
-
-<p>
-Profitez de notre sélection exclusive OZARO STYLE
-et bénéficiez de réductions sur une sélection de produits.
-</p>
-
-<br>
-
-<a href="#produits" class="btn">
-VOIR LES OFFRES
-</a>
-
-</div>
-
-<div class="discount">
--20%
-</div>
-
-</section>
-
-<!-- ================= ABOUT ================= -->
-
-<section class="about" id="about">
-
-<div class="section">
-
-<div class="about-content">
-
-<small style="color:#d4af37;letter-spacing:4px;">
-NOTRE HISTOIRE
-</small>
-
-<h2>
-L'élégance est un choix.
-</h2>
-
-<p>
-OZARO STYLE est une marque dédiée aux personnes qui
-cherchent des accessoires élégants, modernes et raffinés.
-Notre collection rassemble des montres, bracelets et bijoux
-choisis pour compléter chaque style avec une touche de
-caractère et de sophistication.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
-
-<footer id="contact">
-
-<div class="footer-grid">
-
-<div>
-
-<div class="footer-logo">
-OZARO <span>STYLE</span>
-</div>
-
-<br>
-
-<p>
-Montres • Bracelets • Bijoux • Accessoires
-</p>
-
-<p>
-L'élégance au quotidien.
-</p>
-
-</div>
-
-<div>
-
-<h4>BOUTIQUE</h4>
-
-<a href="#produits">Montres</a>
-<a href="#produits">Bracelets</a>
-<a href="#produits">Bijoux</a>
-<a href="#produits">Nouveautés</a>
-
-</div>
-
-<div>
-
-<h4>INFORMATIONS</h4>
-
-<a href="#">Livraison</a>
-<a href="#">Retours</a>
-<a href="#">Conditions</a>
-<a href="#">FAQ</a>
-
-</div>
-
-<div>
-
-<h4>CONTACT</h4>
-
-<p>📍 Maroc</p>
-<p>📞 +212 6 XX XX XX XX</p>
-<p>✉️ contact@ozarostyle.com</p>
-
-</div>
-
-</div>
-
-<div class="copyright">
-
-© 2026 OZARO STYLE — Tous droits réservés.
-
-</div>
-
-</footer>
-
-<!-- ================= CART ================= -->
-
-<div class="cart-panel" id="cartPanel">
-
-<div class="cart-header">
-
-<h2>Mon panier</h2>
-
-<button class="close-cart" onclick="closeCart()">×</button>
-
-</div>
-
-<div class="cart-items" id="cartItems">
-
-<p style="color:#777;margin-top:20px;">
-Votre panier est vide.
-</p>
-
-</div>
-
-<div class="cart-total">
-
-<strong>Total</strong>
-
-<strong id="cartTotal">
-0 DH
-</strong>
-
-</div>
-
-<button class="checkout" onclick="checkout()">
-COMMANDER
-</button>
-
-</div>
-
-<script>
-
-/* ================= CART ================= */
-
-let cart = [];
-
-function addToCart(name, price){
-
-    cart.push({
-        name:name,
-        price:price
-    });
-
-    updateCart();
-
-    document.getElementById("cartPanel")
-        .classList.add("active");
-}
-
-function updateCart(){
-
-    const cartItems =
-        document.getElementById("cartItems");
-
-    const cartCount =
-        document.getElementById("cartCount");
-
-    const cartTotal =
-        document.getElementById("cartTotal");
-
-    cartCount.innerText = cart.length;
-
-    if(cart.length === 0){
-
-        cartItems.innerHTML =
-        `<p style="color:#777;margin-top:20px;">
-        Votre panier est vide.
-        </p>`;
-
-        cartTotal.innerText = "0 DH";
-
-        return;
-    }
-
-    let total = 0;
-
-    cartItems.innerHTML = "";
-
-    cart.forEach((item,index)=>{
-
-        total += item.price;
-
-        cartItems.innerHTML += `
-
-        <div class="cart-item">
-
-            <div>
-                <strong>${item.name}</strong>
-                <br>
-                <small style="color:#777;">
-                Article ${index+1}
-                </small>
+            <div class="section-title-small">
+                NOS UNIVERS
             </div>
 
-            <span>${item.price} DH</span>
+            <h2>
+                Choisissez votre style
+            </h2>
 
         </div>
 
-        `;
+        <p>
+            Une sélection de montres au design moderne,
+            minimaliste et élégant pour homme et femme.
+        </p>
 
-    });
+    </div>
 
-    cartTotal.innerText = total + " DH";
-}
 
-function openCart(){
+    <div class="categories">
 
-    document
-    .getElementById("cartPanel")
-    .classList.add("active");
+        <div class="category" id="homme">
 
-}
+            <img
+            src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=1000&q=85"
+            alt="Montres Homme">
 
-function closeCart(){
+            <div class="category-text">
 
-    document
-    .getElementById("cartPanel")
-    .classList.remove("active");
+                <span>COLLECTION</span>
 
-}
+                <h3>Homme</h3>
 
-/* ================= SEARCH ================= */
+                <a href="#collection">
+                    Découvrir →
+                </a>
 
-function openSearch(){
+            </div>
 
-    document
-    .getElementById("searchBox")
-    .classList.toggle("active");
+        </div>
 
-}
 
-function searchProducts(value){
+        <div class="category" id="femme">
 
-    value = value.toLowerCase();
+            <img
+            src="https://images.unsplash.com/photo-1548171915-e79a380a2a4b?auto=format&fit=crop&w=1000&q=85"
+            alt="Montres Femme">
 
-    const products =
-        document.querySelectorAll(".product");
+            <div class="category-text">
 
-    products.forEach(product=>{
+                <span>COLLECTION</span>
 
-        const text =
-            product.innerText.toLowerCase();
+                <h3>Femme</h3>
 
-        if(text.includes(value)){
+                <a href="#collection">
+                    Découvrir →
+                </a>
 
-            product.style.display = "";
+            </div>
 
-        }else{
+        </div>
 
-            product.style.display = "none";
+    </div>
 
-        }
+</section>
 
-    });
 
-}
 
-/* ================= CHECKOUT ================= */
+<!-- ==================== PRODUCTS ==================== -->
 
-function checkout(){
+<section class="section" id="collection">
 
-    if(cart.length === 0){
+    <div class="section-header">
 
-        alert("Votre panier est vide.");
+        <div>
 
-        return;
+            <div class="section-title-small">
+                OZARO SELECTION
+            </div>
+
+            <h2>
+                Nos montres
+            </h2>
+
+        </div>
+
+        <p>
+            Découvrez les modèles sélectionnés par OZARO STYLE
+            pour leur élégance et leur design.
+        </p>
+
+    </div>
+
+
+
+    <div class="products">
+
+
+        <!-- PRODUIT 1 -->
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <span class="badge">NOUVEAU</span>
+
+                <img
+                src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=800&q=85"
+                alt="Ozaro Noir">
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    Homme
+                </div>
+
+                <h3>
+                    Ozaro Midnight
+                </h3>
+
+                <span class="price">
+                    399 DH
+                </span>
+
+                <button
+                class="add-cart"
+                onclick="addToCart('Ozaro Midnight')">
+
+                    Ajouter au panier
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUIT 2 -->
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1539874754764-5a96559165b0?auto=format&fit=crop&w=800&q=85"
+                alt="Montre Homme">
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    Homme
+                </div>
+
+                <h3>
+                    Ozaro Classic
+                </h3>
+
+                <span class="price">
+                    449 DH
+                </span>
+
+                <span class="old-price">
+                    499 DH
+                </span>
+
+                <button
+                class="add-cart"
+                onclick="addToCart('Ozaro Classic')">
+
+                    Ajouter au panier
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUIT 3 -->
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <span class="badge">BEST SELLER</span>
+
+                <img
+                src="https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?auto=format&fit=crop&w=800&q=85"
+                alt="Montre élégante">
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    Femme
+                </div>
+
+                <h3>
+                    Ozaro Gold
+                </h3>
+
+                <span class="price">
+                    499 DH
+                </span>
+
+                <button
+                class="add-cart"
+                onclick="addToCart('Ozaro Gold')">
+
+                    Ajouter au panier
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUIT 4 -->
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&w=800&q=85"
+                alt="Montre femme">
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    Femme
+                </div>
+
+                <h3>
+                    Ozaro Rose
+                </h3>
+
+                <span class="price">
+                    429 DH
+                </span>
+
+                <button
+                class="add-cart"
+                onclick="addToCart('Ozaro Rose')">
+
+                    Ajouter au panier
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================== BANNER ==================== -->
+
+<section class="banner">
+
+    <div class="banner-content">
+
+        <div class="small-title">
+            OZARO STYLE
+        </div>
+
+        <h2>
+            Votre style.<br>
+            Votre moment.
+        </h2>
+
+        <p>
+            Plus qu'une montre, un détail qui définit votre style.
+            Découvrez les créations OZARO STYLE.
+        </p>
+
+        <a href="#collection" class="btn">
+            Acheter maintenant
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================== FEATURES ==================== -->
+
+<section class="section">
+
+    <div class="features">
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🚚
+            </div>
+
+            <h4>
+                Livraison au Maroc
+            </h4>
+
+            <p>
+                Livraison disponible partout au Maroc.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                💵
+            </div>
+
+            <h4>
+                Paiement à la livraison
+            </h4>
+
+            <p>
+                Payez votre commande à la réception.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ✓
+            </div>
+
+            <h4>
+                Qualité sélectionnée
+            </h4>
+
+            <p>
+                Des modèles choisis pour leur design.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                💬
+            </div>
+
+            <h4>
+                Service client
+            </h4>
+
+            <p>
+                Assistance pour vos commandes.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================== NEWSLETTER ==================== -->
+
+<section class="newsletter">
+
+    <div class="small-title">
+        OZARO CLUB
+    </div>
+
+    <h2>
+        Restez à l'heure.
+    </h2>
+
+    <p>
+        Recevez nos nouveautés et offres exclusives.
+    </p>
+
+    <form
+    class="newsletter-form"
+    onsubmit="newsletter(event)">
+
+        <input
+        type="email"
+        placeholder="Votre adresse email"
+        required>
+
+        <button type="submit">
+            S'inscrire
+        </button>
+
+    </form>
+
+</section>
+
+
+
+<!-- ==================== FOOTER ==================== -->
+
+<footer id="contact">
+
+    <div class="footer-content">
+
+        <div>
+
+            <div class="footer-logo">
+                OZARO STYLE
+            </div>
+
+            <p class="footer-about">
+                OZARO STYLE propose une sélection de montres
+                modernes pour homme et femme.
+                Élégance, style et simplicité.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>BOUTIQUE</h4>
+
+            <a href="#homme">
+                Montres Homme
+            </a>
+
+            <a href="#femme">
+                Montres Femme
+            </a>
+
+            <a href="#collection">
+                Nouveautés
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>INFORMATIONS</h4>
+
+            <a href="#">
+                Livraison
+            </a>
+
+            <a href="#">
+                Paiement
+            </a>
+
+            <a href="#">
+                Retours
+            </a>
+
+            <a href="#">
+                Conditions générales
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>SUIVEZ-NOUS</h4>
+
+            <a href="#">
+                Instagram
+            </a>
+
+            <a href="#">
+                TikTok
+            </a>
+
+            <a href="#">
+                Facebook
+            </a>
+
+            <a href="#">
+                WhatsApp
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 OZARO STYLE — Tous droits réservés.
+
+    </div>
+
+</footer>
+
+
+
+<!-- ==================== JAVASCRIPT ==================== -->
+
+<script>
+
+    let cartCount = 0;
+
+    function addToCart(productName) {
+
+        cartCount++;
+
+        document.getElementById("cart-count").textContent = cartCount;
+
+        alert(productName + " ajouté au panier.");
 
     }
 
-    let message =
-    "Bonjour OZARO STYLE,%0A%0A";
 
-    message +=
-    "Je souhaite commander :%0A";
+    function newsletter(event) {
 
-    cart.forEach(item=>{
+        event.preventDefault();
 
-        message +=
-        "- " + item.name +
-        " : " + item.price + " DH%0A";
+        alert("Merci ! Vous êtes maintenant inscrit à OZARO CLUB.");
 
-    });
+        event.target.reset();
 
-    let total =
-        cart.reduce(
-            (sum,item)=>sum + item.price,
-            0
-        );
-
-    message +=
-    "%0ATotal : " + total + " DH";
-
-    /*
-    REMPLACE LE NUMÉRO CI-DESSOUS
-    PAR TON NUMÉRO WHATSAPP
-    */
-
-    window.open(
-        "https://wa.me/212780091070?text=" + message,
-        "_blank"
-    );
-
-}
+    }
 
 </script>
+
 
 </body>
 </html>
