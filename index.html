@@ -258,6 +258,49 @@
             transform: scale(1.05);
         }
 
+        /* ================= PRODUCT PHOTO GALLERY ================= */
+
+        .product-gallery {
+            background: #0b0b0b;
+        }
+
+        .product-thumbnails {
+            display: flex;
+            gap: 8px;
+            padding: 10px;
+            background: #0d0d0d;
+            border-top: 1px solid #222;
+        }
+
+        .product-thumbnail {
+            width: 58px;
+            height: 58px;
+            padding: 0;
+            border: 1px solid #333;
+            border-radius: 5px;
+            overflow: hidden;
+            background: #111;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .product-thumbnail:hover,
+        .product-thumbnail.active {
+            border-color: #d4af37;
+            transform: translateY(-2px);
+        }
+
+        .product-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-image img {
+            cursor: zoom-in;
+        }
+
         .badge {
             position: absolute;
             top: 15px;
@@ -979,7 +1022,12 @@
             price: 399,
             category: "Homme",
             badge: "BEST SELLER",
-            image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80"
+            image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80",
+            images: [
+                "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&w=800&q=80"
+            ]
         },
 
         {
@@ -988,7 +1036,12 @@
             price: 449,
             category: "Homme",
             badge: "NOUVEAU",
-            image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80"
+            image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80",
+            images: [
+                "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1594534475808-b18fc33b045e?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=800&q=80"
+            ]
         },
 
         {
@@ -997,7 +1050,12 @@
             price: 499,
             category: "Homme",
             badge: "TENDANCE",
-            image: "https://images.unsplash.com/photo-1539874754764-5a96559165b0?auto=format&fit=crop&w=800&q=80"
+            image: "https://images.unsplash.com/photo-1539874754764-5a96559165b0?auto=format&fit=crop&w=800&q=80",
+            images: [
+                "https://images.unsplash.com/photo-1539874754764-5a96559165b0?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1551816230-ef5deaed4a26?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80"
+            ]
         },
 
         {
@@ -1006,7 +1064,12 @@
             price: 529,
             category: "Homme",
             badge: "",
-            image: "https://images.unsplash.com/photo-1594534475808-b18fc33b045e?auto=format&fit=crop&w=800&q=80"
+            image: "https://images.unsplash.com/photo-1594534475808-b18fc33b045e?auto=format&fit=crop&w=800&q=80",
+            images: [
+                "https://images.unsplash.com/photo-1594534475808-b18fc33b045e?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1539874754764-5a96559165b0?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=800&q=80"
+            ]
         },
 
         {
@@ -1015,7 +1078,12 @@
             price: 479,
             category: "Homme",
             badge: "",
-            image: "https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=800&q=80"
+            image: "https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=800&q=80",
+            images: [
+                "https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1594534475808-b18fc33b045e?auto=format&fit=crop&w=800&q=80"
+            ]
         },
 
         {
@@ -1024,9 +1092,13 @@
             price: 599,
             category: "Homme",
             badge: "PREMIUM",
-            image: "https://images.unsplash.com/photo-1551816230-ef5deaed4a26?auto=format&fit=crop&w=800&q=80"
+            image: "https://images.unsplash.com/photo-1551816230-ef5deaed4a26?auto=format&fit=crop&w=800&q=80",
+            images: [
+                "https://images.unsplash.com/photo-1551816230-ef5deaed4a26?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1539874754764-5a96559165b0?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80"
+            ]
         },
-
 
         /* ===== FEMME ===== */
 
@@ -1036,7 +1108,12 @@
             price: 499,
             category: "Femme",
             badge: "BEST SELLER",
-            image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80"
+            image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80",
+            images: [
+                "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?auto=format&fit=crop&w=800&q=80"
+            ]
         },
 
         {
@@ -1045,7 +1122,12 @@
             price: 429,
             category: "Femme",
             badge: "NOUVEAU",
-            image: "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=800&q=80"
+            image: "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=800&q=80",
+            images: [
+                "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80"
+            ]
         },
 
         {
@@ -1054,7 +1136,12 @@
             price: 459,
             category: "Femme",
             badge: "",
-            image: "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=800&q=80"
+            image: "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=800&q=80",
+            images: [
+                "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?auto=format&fit=crop&w=800&q=80"
+            ]
         },
 
         {
@@ -1063,7 +1150,12 @@
             price: 499,
             category: "Femme",
             badge: "TENDANCE",
-            image: "https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&w=800&q=80"
+            image: "https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&w=800&q=80",
+            images: [
+                "https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=800&q=80"
+            ]
         },
 
         {
@@ -1072,7 +1164,12 @@
             price: 549,
             category: "Femme",
             badge: "",
-            image: "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?auto=format&fit=crop&w=800&q=80"
+            image: "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?auto=format&fit=crop&w=800&q=80",
+            images: [
+                "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80"
+            ]
         },
 
         {
@@ -1081,7 +1178,12 @@
             price: 599,
             category: "Femme",
             badge: "PREMIUM",
-            image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80"
+            image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80",
+            images: [
+                "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&w=800&q=80",
+                "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?auto=format&fit=crop&w=800&q=80"
+            ]
         }
 
     ];
@@ -1151,21 +1253,44 @@
 
             card.innerHTML = `
 
-                <div class="product-image">
+                <div class="product-gallery">
 
-                    <img
-                        src="${product.image}"
-                        alt="${product.name}">
+                    <div class="product-image">
 
-                    ${
-                        product.badge
-                        ?
-                        `<span class="badge">
-                            ${product.badge}
-                         </span>`
-                        :
-                        ""
-                    }
+                        <img
+                            id="main-image-${product.id}"
+                            src="${product.images[0]}"
+                            alt="${product.name}">
+
+                        ${
+                            product.badge
+                            ?
+                            `<span class="badge">
+                                ${product.badge}
+                             </span>`
+                            :
+                            ""
+                        }
+
+                    </div>
+
+                    <div class="product-thumbnails">
+
+                        ${product.images.map((image, index) => `
+                            <button
+                                type="button"
+                                class="product-thumbnail ${index === 0 ? "active" : ""}"
+                                onclick="changeProductImage(${product.id}, ${index})"
+                                aria-label="Photo ${index + 1} de ${product.name}">
+
+                                <img
+                                    src="${image}"
+                                    alt="${product.name} - photo ${index + 1}">
+
+                            </button>
+                        `).join("")}
+
+                    </div>
 
                 </div>
 
@@ -1200,6 +1325,47 @@
             container.appendChild(card);
 
         });
+
+    }
+
+
+    /* ==========================================
+       CHANGER LA PHOTO DU PRODUIT
+       ========================================== */
+
+    function changeProductImage(productId, imageIndex) {
+
+        const product = products.find(
+            p => p.id === productId
+        );
+
+        if (!product || !product.images[imageIndex]) return;
+
+        const mainImage =
+            document.getElementById("main-image-" + productId);
+
+        if (mainImage) {
+            mainImage.src = product.images[imageIndex];
+        }
+
+        const card =
+            mainImage ? mainImage.closest(".product") : null;
+
+        if (card) {
+
+            const thumbnails =
+                card.querySelectorAll(".product-thumbnail");
+
+            thumbnails.forEach((thumbnail, index) => {
+
+                thumbnail.classList.toggle(
+                    "active",
+                    index === imageIndex
+                );
+
+            });
+
+        }
 
     }
 
