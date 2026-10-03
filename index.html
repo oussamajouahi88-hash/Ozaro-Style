@@ -1,1983 +1,388 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>OZARO STYLE | Montres Homme & Femme</title>
+    <title>OZARO STYLE | Montres de Luxe - Urban & Unique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#d4af37',
+                            goldLight: '#f3e0aa',
+                            goldDark: '#aa820a',
+                            bronze: '#aa7a44',
+                            bronzeDark: '#543b1a',
+                            dark: '#080808',
+                            card: '#121212',
+                            cardHover: '#181818',
+                            slate: '#1a1d24'
+                        }
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            background: #0a0a0a;
-            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #080808;
+            color: #e5e5e5;
+            overflow-x: hidden;
         }
 
-        /* ================= HEADER ================= */
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(10,10,10,0.96);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid #222;
+        .text-gold-metallic {
+            background: linear-gradient(135deg, #fff3d1 0%, #d4af37 30%, #aa820a 60%, #f3e0aa 80%, #8c6a11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(212, 175, 55, 0.25);
         }
 
-        .navbar {
-            max-width: 1200px;
-            margin: auto;
-            height: 75px;
-            padding: 0 20px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        .gold-glow:hover {
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.25);
         }
 
-        .logo {
-            height: 48px;
-            width: auto;
-            object-fit: contain;
+        .gold-button {
+            background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
+            color: #080808;
+            font-weight: 800;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        nav {
-            display: flex;
-            gap: 30px;
+        .gold-button:hover {
+            background: linear-gradient(135deg, #f3e0aa 0%, #d4af37 100%);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
         }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        nav a:hover {
-            color: #d4af37;
-        }
-
-        .cart-btn {
+        .color-swatch {
             position: relative;
-            background: transparent;
-            border: 1px solid #d4af37;
-            color: #d4af37;
-            padding: 10px 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-
-        .cart-count {
+        .color-swatch:hover {
+            transform: scale(1.25);
+        }
+        .color-swatch.active::after {
+            content: '';
             position: absolute;
-            top: -10px;
-            right: -10px;
-            background: #d4af37;
-            color: #000;
-            width: 22px;
-            height: 22px;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border: 2px solid #d4af37;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: bold;
         }
 
-        /* ================= HERO ================= */
-
-        .hero {
-            min-height: 600px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-
-            background:
-                linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.88)),
-                url("https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=1600&q=80");
-
-            background-size: cover;
-            background-position: center;
+        .logo-container {
+            filter: drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.85));
+            transition: transform 0.3s ease;
+        }
+        .logo-container:hover {
+            transform: scale(1.02);
         }
 
-        .hero-content {
-            max-width: 750px;
-            padding: 30px;
+        /* Banner ticker keyframe animation */
+        @keyframes tickerAnimation {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
         }
 
-        .hero h1 {
-            font-size: 65px;
-            letter-spacing: 8px;
-            color: #d4af37;
-            margin-bottom: 20px;
+        .ticker-wrap {
+            width: 100%;
+            overflow: hidden;
+            background: linear-gradient(90deg, #121212 0%, #21190a 50%, #121212 100%);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            white-space: nowrap;
         }
 
-        .hero p {
-            color: #ddd;
-            font-size: 18px;
-            line-height: 1.7;
-            margin-bottom: 30px;
-        }
-
-        .btn {
+        .ticker-move {
             display: inline-block;
-            padding: 14px 30px;
-            background: #d4af37;
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            transition: 0.3s;
-            border: none;
-            cursor: pointer;
+            white-space: nowrap;
+            animation: tickerAnimation 25s linear infinite;
         }
 
-        .btn:hover {
-            background: #fff;
-            transform: translateY(-2px);
+        .ticker-move:hover {
+            animation-play-state: paused;
         }
 
-        /* ================= SECTION ================= */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #080808; }
+        ::-webkit-scrollbar-thumb { background: #262626; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #d4af37; }
 
-        section {
-            max-width: 1200px;
-            margin: auto;
-            padding: 80px 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 36px;
-            color: #d4af37;
-            margin-bottom: 12px;
-        }
-
-        .section-title p {
-            color: #999;
-        }
-
-        /* ================= CATEGORIES ================= */
-
-        .categories {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .category {
-            height: 350px;
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            cursor: pointer;
-            border: 1px solid #222;
-        }
-
-        .category img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: 0.5s;
-        }
-
-        .category:hover img {
-            transform: scale(1.08);
-        }
-
-        .category-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                transparent,
-                rgba(0,0,0,0.85)
-            );
-
-            display: flex;
-            align-items: flex-end;
-            padding: 30px;
-        }
-
-        .category-overlay h3 {
-            font-size: 30px;
-            color: #fff;
-        }
-
-        /* ================= PRODUCTS ================= */
-
-        .products {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .product {
-            background: #111;
-            border: 1px solid #222;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: 0.3s;
-        }
-
-        .product:hover {
-            transform: translateY(-5px);
-            border-color: #d4af37;
-        }
-
-        .product-image {
-            height: 300px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: 0.5s;
-        }
-
-        .product:hover .product-image img {
-            transform: scale(1.05);
-        }
-
-        /* ================= PRODUCT PHOTO GALLERY ================= */
-
-        .product-gallery {
-            background: #0b0b0b;
-        }
-
-        .product-thumbnails {
-            display: flex;
-            gap: 8px;
-            padding: 10px;
-            background: #0d0d0d;
-            border-top: 1px solid #222;
-        }
-
-        .product-thumbnail {
-            width: 58px;
-            height: 58px;
-            padding: 0;
-            border: 1px solid #333;
-            border-radius: 5px;
-            overflow: hidden;
-            background: #111;
-            cursor: pointer;
-            transition: 0.25s;
-        }
-
-        .product-thumbnail:hover,
-        .product-thumbnail.active {
-            border-color: #d4af37;
-            transform: translateY(-2px);
-        }
-
-        .product-thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .product-image img {
-            cursor: zoom-in;
-        }
-
-        .badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: #d4af37;
-            color: #000;
-            padding: 6px 10px;
-            font-size: 11px;
-            font-weight: bold;
-            border-radius: 3px;
-        }
-
-        .product-info {
-            padding: 20px;
-        }
-
-        .product-info h3 {
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
-
-        .category-name {
-            color: #888;
-            font-size: 12px;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-
-        .price {
-            color: #d4af37;
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .product-info .btn {
-            width: 100%;
-            text-align: center;
-        }
-
-
-        /* ================= PRODUCT MODAL ================= */
-        .product-modal {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,.88);
-            z-index: 3000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            backdrop-filter: blur(8px);
-        }
-
-        .product-modal.active { display: flex; }
-
-        .product-modal-content {
-            position: relative;
-            width: min(950px, 100%);
-            max-height: 92vh;
-            overflow-y: auto;
-            background: #111;
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 20px 70px rgba(0,0,0,.7);
-        }
-
-        .product-modal-close {
-            position: absolute;
-            top: 12px;
-            right: 15px;
-            z-index: 2;
-            width: 40px;
-            height: 40px;
-            border: 1px solid #444;
-            border-radius: 50%;
-            background: rgba(0,0,0,.75);
-            color: #fff;
-            font-size: 25px;
-            cursor: pointer;
-        }
-
-        .modal-main-image {
-            width: 100%;
-            height: min(58vh, 520px);
-            object-fit: contain;
-            background: #080808;
-            border-radius: 8px;
-            cursor: zoom-in;
-        }
-
-        .modal-thumbnails {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin: 12px 0 22px;
-        }
-
-        .modal-thumbnail {
-            width: 75px; height: 75px; padding: 0;
-            border: 2px solid #333; border-radius: 7px;
-            overflow: hidden; background: #111; cursor: pointer;
-        }
-        .modal-thumbnail.active { border-color: #d4af37; }
-        .modal-thumbnail img { width:100%; height:100%; object-fit:cover; }
-
-        .modal-product-name { color:#fff; font-size:26px; margin-bottom:8px; }
-        .modal-product-price { color:#d4af37; font-size:23px; font-weight:bold; margin-bottom:18px; }
-
-        .color-title { color:#bbb; font-size:14px; margin-bottom:10px; text-transform:uppercase; letter-spacing:1px; }
-        .color-buttons { display:flex; gap:12px; margin-bottom:20px; flex-wrap:wrap; }
-        .color-btn {
-            display:flex; align-items:center; gap:8px;
-            padding:10px 16px; border-radius:6px;
-            border:1px solid #444; background:#181818; color:#fff;
-            cursor:pointer; font-weight:bold; transition:.2s;
-        }
-        .color-btn:hover, .color-btn.active { border-color:#d4af37; transform:translateY(-2px); }
-        .color-dot { width:18px; height:18px; border-radius:50%; display:inline-block; border:1px solid #777; }
-        .color-dot.gold { background:linear-gradient(135deg,#fff0a0,#d4af37,#8f6d16); }
-        .color-dot.black { background:#050505; }
-        .color-dot.silver { background:linear-gradient(135deg,#fff,#aaa,#eee); }
-
-        .modal-nav {
-            position:absolute; top:50%; transform:translateY(-50%);
-            width:44px; height:44px; border-radius:50%; border:1px solid #555;
-            background:rgba(0,0,0,.75); color:#fff; font-size:25px; cursor:pointer; z-index:1;
-        }
-        .modal-prev { left:35px; } .modal-next { right:35px; }
-
-        @media(max-width:600px) {
-            .product-modal { padding:10px; }
-            .product-modal-content { padding:15px; max-height:95vh; }
-            .modal-main-image { height:48vh; }
-            .modal-product-name { font-size:21px; }
-            .modal-prev { left:22px; } .modal-next { right:22px; }
-        }
-
-        /* ================= BANNER ================= */
-
-        .banner {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 70px 30px;
-
-            text-align: center;
-
-            background:
-                linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.8)),
-                url("https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&w=1600&q=80");
-
-            background-size: cover;
-            background-position: center;
-
-            border-radius: 8px;
-        }
-
-        .banner h2 {
-            font-size: 38px;
-            color: #d4af37;
-            margin-bottom: 15px;
-        }
-
-        .banner p {
-            color: #ddd;
-        }
-
-        /* ================= FEATURES ================= */
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .feature {
-            background: #111;
-            border: 1px solid #222;
-            padding: 35px 20px;
-            text-align: center;
-            border-radius: 8px;
-        }
-
-        .feature-icon {
-            font-size: 35px;
-            margin-bottom: 15px;
-        }
-
-        .feature h3 {
-            color: #d4af37;
-            margin-bottom: 10px;
-        }
-
-        .feature p {
-            color: #999;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        /* ================= FOOTER ================= */
-
-        footer {
-            background: #050505;
-            border-top: 1px solid #222;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        footer h3 {
-            color: #d4af37;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-        }
-
-        footer p {
-            color: #777;
-            font-size: 14px;
-        }
-
-        /* ================= CART ================= */
-
-        .cart-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,.75);
-            z-index: 2000;
-            display: none;
-        }
-
-        .cart-overlay.active {
-            display: block;
-        }
-
-        .cart {
-            position: absolute;
-            right: 0;
-            top: 0;
-
-            width: 420px;
-            max-width: 100%;
-            height: 100%;
-
-            background: #111;
-            border-left: 1px solid #333;
-
-            display: flex;
-            flex-direction: column;
-        }
-
-        .cart-header {
-            padding: 20px;
-            border-bottom: 1px solid #333;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .cart-header h2 {
-            color: #d4af37;
-        }
-
-        .close-cart {
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 25px;
-            cursor: pointer;
-        }
-
-        .cart-items {
-            flex: 1;
-            overflow-y: auto;
-            padding: 20px;
-        }
-
-        .cart-item {
-            display: flex;
-            gap: 12px;
-            padding: 15px 0;
-            border-bottom: 1px solid #222;
-        }
-
-        .cart-item img {
-            width: 70px;
-            height: 70px;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-
-        .cart-item-info {
-            flex: 1;
-        }
-
-        .cart-item-info h4 {
-            font-size: 14px;
-            margin-bottom: 7px;
-        }
-
-        .cart-item-price {
-            color: #d4af37;
-            font-size: 14px;
-        }
-
-        .quantity {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .quantity button {
-            width: 25px;
-            height: 25px;
-            border: 1px solid #444;
-            background: #222;
-            color: #fff;
-            cursor: pointer;
-        }
-
-        .remove {
-            background: none;
-            border: none;
-            color: #777;
-            cursor: pointer;
-            font-size: 12px;
-            margin-top: 5px;
-        }
-
-        .remove:hover {
-            color: #f00;
-        }
-
-        .cart-footer {
-            padding: 20px;
-            border-top: 1px solid #333;
-        }
-
-        .total {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            font-size: 20px;
-        }
-
-        .total strong {
-            color: #d4af37;
-        }
-
-        .whatsapp {
-            width: 100%;
-            background: #25D366;
-            color: white;
-            border: none;
-            padding: 15px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .whatsapp:hover {
-            background: #1ebe5d;
-        }
-
-        .empty-cart {
-            text-align: center;
-            color: #777;
-            padding: 50px 20px;
-        }
-
-        /* ================= RESPONSIVE ================= */
-
-        @media(max-width: 900px) {
-
-            .products {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .features {
-                grid-template-columns: 1fr;
-            }
-
-            nav {
-                gap: 12px;
-            }
-
-            nav a {
-                font-size: 11px;
-            }
-
-            .hero h1 {
-                font-size: 45px;
-            }
-        }
-
-        @media(max-width: 600px) {
-
-            .navbar {
-                height: auto;
-                padding: 15px;
-                gap: 15px;
-                flex-wrap: wrap;
-            }
-
-            .logo {
-                height: 40px;
-            }
-
-            nav {
-                order: 3;
-                width: 100%;
-                justify-content: center;
-            }
-
-            .categories,
-            .products {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                min-height: 500px;
-            }
-
-            .hero h1 {
-                font-size: 36px;
-                letter-spacing: 4px;
-            }
-
-            .hero p {
-                font-size: 15px;
-            }
-
-            section {
-                padding: 60px 15px;
-            }
-
-            .section-title h2 {
-                font-size: 28px;
-            }
-
-            .banner {
-                margin: 15px;
-            }
-        }
+        .modal-backdrop { backdrop-filter: blur(12px); }
     </style>
 </head>
+<body class="bg-brand-dark text-gray-200 min-h-screen flex flex-col justify-between">
 
-<body>
-
-<!-- ================= HEADER ================= -->
-
-<header>
-
-    <div class="navbar">
-
-        <a href="#accueil">
-            <img
-                class="logo"
-                src="https://github.com/oussamajouahi88-hash/Ozaro-Style/blob/main/logo.jpg?raw=true"
-                alt="OZARO STYLE">
-        </a>
-
-        <nav>
-
-            <a href="#accueil">Accueil</a>
-
-            <a onclick="showCategory('homme')">
-                Homme
-            </a>
-
-            <a onclick="showCategory('femme')">
-                Femme
-            </a>
-
-            <a onclick="showAllProducts()">
-                Collection
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
-
-        </nav>
-
-        <button class="cart-btn" onclick="openCart()">
-
-            🛒 Panier
-
-            <span class="cart-count" id="cartCount">
-                0
-            </span>
-
-        </button>
-
+    <div class="ticker-wrap py-2 text-xs font-semibold text-brand-gold">
+        <div class="ticker-move">
+            <span class="mx-8 inline-flex items-center"><i class="fa-solid fa-truck-shield mr-2"></i> LIVRAISON BLINDÉE &amp; EXPRESS OFFERTE SUR TOUS LES PACKS ET MONTRES</span>
+            <span class="mx-8 inline-flex items-center"><i class="fa-solid fa-shield-halved mr-2"></i> GARANTIE OFFICIELLE DE 1 AN INCLUSE SUR TOUTE LA COLLECTION</span>
+            <span class="mx-8 inline-flex items-center"><i class="fa-solid fa-certificate mr-2"></i> CHAQUE PRODUIT EST LIVRÉ AVEC SON CERTIFICAT NUMÉROTÉ D'AUTHENTICITÉ</span>
+            <span class="mx-8 inline-flex items-center"><i class="fa-solid fa-gem mr-2"></i> OZARO STYLE - HAUTE HORLOGERIE URBAINE &amp; UNIQUE</span>
+            <!-- Duplicate content for smooth seamless scroll -->
+            <span class="mx-8 inline-flex items-center"><i class="fa-solid fa-truck-shield mr-2"></i> LIVRAISON BLINDÉE &amp; EXPRESS OFFERTE SUR TOUS LES PACKS ET MONTRES</span>
+            <span class="mx-8 inline-flex items-center"><i class="fa-solid fa-shield-halved mr-2"></i> GARANTIE OFFICIELLE DE 1 AN INCLUSE SUR TOUTE LA COLLECTION</span>
+            <span class="mx-8 inline-flex items-center"><i class="fa-solid fa-certificate mr-2"></i> CHAQUE PRODUIT EST LIVRÉ AVEC SON CERTIFICAT NUMÉROTÉ D'AUTHENTICITÉ</span>
+            <span class="mx-8 inline-flex items-center"><i class="fa-solid fa-gem mr-2"></i> OZARO STYLE - HAUTE HORLOGERIE URBAINE &amp; UNIQUE</span>
+        </div>
     </div>
 
-</header>
+    <header class="sticky top-0 z-40 bg-brand-dark/95 backdrop-blur-md border-b border-brand-gold/20 shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between py-3">
+                
+                <!-- BRAND LOGO 3D INTEGRATION -->
+                <a href="#" class="logo-container flex items-center py-1">
+                    <svg class="h-16 sm:h-20 w-auto" viewBox="0 0 460 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="goldMetallic" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#fff5db"/>
+                                <stop offset="25%" stop-color="#d4af37"/>
+                                <stop offset="50%" stop-color="#8c6a11"/>
+                                <stop offset="75%" stop-color="#f3e0aa"/>
+                                <stop offset="100%" stop-color="#aa820a"/>
+                            </linearGradient>
+                            
+                            <linearGradient id="bronze3D" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#e0b27b"/>
+                                <stop offset="50%" stop-color="#a67744"/>
+                                <stop offset="100%" stop-color="#4a3318"/>
+                            </linearGradient>
 
+                            <linearGradient id="silver3D" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#ffffff"/>
+                                <stop offset="40%" stop-color="#b3b3b3"/>
+                                <stop offset="100%" stop-color="#4a4a4a"/>
+                            </linearGradient>
 
-<!-- ================= HERO ================= -->
+                            <filter id="glow3d" x="-20%" y="-20%" width="140%" height="140%">
+                                <feDropShadow dx="3" dy="6" stdDeviation="4" flood-color="#000000" flood-opacity="0.95"/>
+                            </filter>
+                        </defs>
 
-<section class="hero" id="accueil">
-    <div class="hero-content">
-        <img
-            class="hero-logo"
-            src="https://github.com/oussamajouahi88-hash/Ozaro-Style/blob/main/LOGO%20OARO%203D.jpeg?raw=true"
-            alt="OZARO STYLE Logo 3D">
+                        <!-- Top Emblem (Monogram in Hexagon Badge) -->
+                        <g filter="url(#glow3d)">
+                            <ellipse cx="230" cy="38" rx="28" ry="28" fill="url(#bronze3D)" stroke="url(#goldMetallic)" stroke-width="2"/>
+                            <path d="M218 22 L230 14 L242 22 L242 50 L230 58 L218 50 Z" fill="none" stroke="url(#silver3D)" stroke-width="4" stroke-linejoin="round"/>
+                            <path d="M224 26 L236 34 L224 48 L236 50" fill="none" stroke="url(#goldMetallic)" stroke-width="3.5" stroke-linecap="round"/>
+                        </g>
 
-        <p>
-            L'élégance au poignet.
-            Découvrez notre collection de montres Homme & Femme.
-        </p>
+                        <!-- Left Outer Frame Line -->
+                        <path d="M 50 48 L 140 48" stroke="url(#silver3D)" stroke-width="5" stroke-linecap="square" filter="url(#glow3d)"/>
+                        <path d="M 50 48 L 50 115" stroke="url(#silver3D)" stroke-width="5" stroke-linecap="square" filter="url(#glow3d)"/>
+                        
+                        <!-- Right Outer Frame Line -->
+                        <path d="M 410 120 L 320 120" stroke="url(#silver3D)" stroke-width="5" stroke-linecap="square" filter="url(#glow3d)"/>
+                        <path d="M 410 120 L 410 75" stroke="url(#silver3D)" stroke-width="5" stroke-linecap="square" filter="url(#glow3d)"/>
 
-        <button class="btn" onclick="showAllProducts()">
-            Découvrir la collection
-        </button>
-    </div>
+                        <!-- Center Text "OZARO STYLE" with 3D Double Quotes -->
+                        <g filter="url(#glow3d)">
+                            <text x="68" y="96" font-family="'Cinzel', serif" font-weight="900" font-size="38" fill="url(#goldMetallic)">“</text>
+                            
+                            <text x="100" y="94" font-family="'Cinzel', serif" font-weight="900" font-size="30" letter-spacing="3" fill="url(#silver3D)">OZARO</text>
+                            <text x="248" y="94" font-family="'Cinzel', serif" font-weight="900" font-size="30" letter-spacing="3" fill="url(#silver3D)">STYLE</text>
+                            
+                            <text x="370" y="96" font-family="'Cinzel', serif" font-weight="900" font-size="38" fill="url(#goldMetallic)">”</text>
+                        </g>
 
+                        <!-- Bottom Plate for Tagline -->
+                        <g filter="url(#glow3d)">
+                            <rect x="145" y="105" width="170" height="22" rx="3" fill="url(#bronze3D)" stroke="url(#goldMetallic)" stroke-width="1.5"/>
+                            <text x="230" y="120" font-family="'Montserrat', sans-serif" font-weight="800" font-size="10" letter-spacing="3" fill="#ffffff" text-anchor="middle">URBAN &amp; UNIQUE</text>
+                        </g>
+                    </svg>
+                </a>
 
-<!-- ================= CATEGORIES ================= -->
+                <nav class="hidden lg:flex space-x-8 font-medium text-xs tracking-widest uppercase">
+                    <a href="#hero" class="text-brand-gold hover:text-white transition">Accueil</a>
+                    <a href="#catalogue" onclick="filterCategory('all')" class="text-gray-300 hover:text-brand-gold transition">Collection</a>
+                    <a href="#catalogue" onclick="filterCategory('homme')" class="text-gray-300 hover:text-brand-gold transition">Homme</a>
+                    <a href="#catalogue" onclick="filterCategory('femme')" class="text-gray-300 hover:text-brand-gold transition">Femme</a>
+                    <a href="#catalogue" onclick="filterCategory('packs')" class="text-brand-gold font-bold hover:text-white transition flex items-center space-x-1.5"><i class="fa-solid fa-box-open"></i><span>Packs Promos &amp; Coffrets</span></a>
+                    <a href="#trust" class="text-gray-300 hover:text-brand-gold transition">Engagements</a>
+                    <a href="#contact" class="text-gray-300 hover:text-brand-gold transition">Contact</a>
+                </nav>
 
-<section>
-
-    <div class="section-title">
-
-        <h2>Nos Collections</h2>
-
-        <p>
-            Trouvez la montre qui correspond à votre style.
-        </p>
-
-    </div>
-
-
-    <div class="categories">
-
-        <!-- FEMME -->
-
-        <div
-            class="category"
-            onclick="showCategory('femme')">
-
-            <img
-                src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1000&q=80"
-                alt="Montres Femme">
-
-            <div class="category-overlay">
-
-                <h3>
-                    ✨ Montres Femme
-                </h3>
-
+                <div class="flex items-center space-x-4">
+                    <button id="cart-btn" class="relative p-2.5 bg-black/60 border border-brand-gold/30 rounded-full text-gray-200 hover:text-brand-gold transition">
+                        <i class="fa-solid fa-bag-shopping text-xl"></i>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-brand-gold text-black text-[10px] font-extrabold rounded-full h-5 w-5 flex items-center justify-center border border-black">0</span>
+                    </button>
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-300 hover:text-white">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
-
         </div>
 
-
-        <!-- HOMME -->
-
-        <div
-            class="category"
-            onclick="showCategory('homme')">
-
-            <img
-                src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1000&q=80"
-                alt="Montres Homme">
-
-            <div class="category-overlay">
-
-                <h3>
-                    ⌚ Montres Homme
-                </h3>
-
-            </div>
-
+        <div id="mobile-menu" class="hidden lg:hidden bg-brand-card border-b border-brand-gold/20 px-6 py-4 space-y-3">
+            <a href="#hero" class="block text-brand-gold font-semibold py-2">ACCUEIL</a>
+            <a href="#catalogue" onclick="filterCategory('all'); closeMobileMenu();" class="block text-gray-300 py-2">TOUTES LES MONTRES</a>
+            <a href="#catalogue" onclick="filterCategory('homme'); closeMobileMenu();" class="block text-gray-300 py-2">MONTRES HOMME</a>
+            <a href="#catalogue" onclick="filterCategory('femme'); closeMobileMenu();" class="block text-gray-300 py-2">MONTRES FEMME</a>
+            <a href="#catalogue" onclick="filterCategory('packs'); closeMobileMenu();" class="block text-brand-gold font-bold py-2"><i class="fa-solid fa-box-open mr-2"></i>PACKS PROMOS &amp; COFFRETS</a>
+            <a href="#trust" onclick="closeMobileMenu();" class="block text-gray-300 py-2">NOS GARANTIES</a>
+            <a href="#contact" onclick="closeMobileMenu();" class="block text-gray-300 py-2">NOUS CONTACTER</a>
         </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= PRODUCTS ================= -->
-
-<section id="collection">
-
-    <div class="section-title">
-
-        <h2 id="productsTitle">
-            Notre Collection
-        </h2>
-
-        <p>
-            Des modèles sélectionnés pour vous.
-        </p>
-
-    </div>
-
-
-    <div
-        class="products"
-        id="productsContainer">
-
-    </div>
-
-</section>
-
-
-<!-- ================= BANNER ================= -->
-
-<div class="banner">
-
-    <h2>
-        Votre style. Votre temps.
-    </h2>
-
-    <p>
-        OZARO STYLE — L'élégance commence par les détails.
-    </p>
-
-</div>
-
-
-<!-- ================= FEATURES ================= -->
-
-<section>
-
-    <div class="features">
-
-        <div class="feature">
-
-            <div class="feature-icon">
-                🚚
-            </div>
-
-            <h3>
-                Livraison
-            </h3>
-
-            <p>
-                Livraison rapide partout au Maroc.
-            </p>
-
-        </div>
-
-
-        <div class="feature">
-
-            <div class="feature-icon">
-                🔒
-            </div>
-
-            <h3>
-                Paiement
-            </h3>
-
-            <p>
-                Commande simple et sécurisée.
-            </p>
-
-        </div>
-
-
-        <div class="feature">
-
-            <div class="feature-icon">
-                ⭐
-            </div>
-
-            <h3>
-                Qualité
-            </h3>
-
-            <p>
-                Des modèles élégants sélectionnés avec soin.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer id="contact">
-
-    <h3>
-        OZARO STYLE
-    </h3>
-
-    <p>
-        Montres Homme & Femme
-    </p>
-
-    <br>
-
-    <p>
-        © 2026 OZARO STYLE — Tous droits réservés.
-    </p>
-
-</footer>
-
-
-<!-- ================= CART ================= -->
-
-<div
-    class="cart-overlay"
-    id="cartOverlay"
-    onclick="closeCartOutside(event)">
-
-    <div
-        class="cart"
-        onclick="event.stopPropagation()">
-
-        <div class="cart-header">
-
-            <h2>
-                Votre panier
-            </h2>
-
-            <button
-                class="close-cart"
-                onclick="closeCart()">
-
-                ×
-
-            </button>
-
-        </div>
-
-
-        <div
-            class="cart-items"
-            id="cartItems">
-
-        </div>
-
-
-        <div class="cart-footer">
-
-            <div class="total">
-
-                <span>
-                    Total
-                </span>
-
-                <strong id="cartTotal">
-                    0 DH
-                </strong>
-
-            </div>
-
-
-            <button
-                class="whatsapp"
-                onclick="orderWhatsApp()">
-
-                📱 Commander sur WhatsApp
-
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-<!-- ================= PRODUCT MODAL ================= -->
-<div class="product-modal" id="productModal" onclick="closeProductModalOutside(event)">
-    <div class="product-modal-content" onclick="event.stopPropagation()">
-        <button class="product-modal-close" onclick="closeProductModal()">×</button>
-        <button class="modal-nav modal-prev" onclick="previousModalImage()">‹</button>
-        <button class="modal-nav modal-next" onclick="nextModalImage()">›</button>
-        <img id="modalMainImage" class="modal-main-image" src="" alt="Produit">
-        <div class="modal-thumbnails" id="modalThumbnails"></div>
-        <h2 class="modal-product-name" id="modalProductName"></h2>
-        <div class="modal-product-price" id="modalProductPrice"></div>
-        <div class="color-title">Choisir la couleur</div>
-        <div class="color-buttons">
-            <button class="color-btn active" data-color="OR" onclick="selectProductColor('OR')"><span class="color-dot gold"></span> OR</button>
-            <button class="color-btn" data-color="BLACK" onclick="selectProductColor('BLACK')"><span class="color-dot black"></span> BLACK</button>
-            <button class="color-btn" data-color="ARGENT" onclick="selectProductColor('ARGENT')"><span class="color-dot silver"></span> ARGENT</button>
-        </div>
-        <button class="btn" style="width:100%" onclick="addModalProductToCart()">🛒 Ajouter au panier</button>
-    </div>
-</div>
-
-<!-- ================= JAVASCRIPT ================= -->
-
-<script>
-
-    /* ==========================================
-       NUMÉRO WHATSAPP
-       ========================================== */
-
-    /*
-       REMPLACE CE NUMÉRO PAR TON VRAI NUMÉRO.
-
-       Exemple :
-
-       Ton numéro :
-       0612345678
-
-       Tu mets :
-       212612345678
-
-       Sans +
-       Sans espace
-       Sans 0 au début
-    */
-
-    const whatsappNumber = "212675280829";
-
-
-    /* ==========================================
-       PRODUITS
-       ========================================== */
-
-    const products = [
-
-        /* ===== HOMME ===== */
-
-        {
-            id: 1,
-            name: "Montre Octagon Gold – Cadran Gradient Pink",
-            price: 199,
-            category: "Femme",
-            badge: "BEST SELLER",
-            image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80",
-            images: [
-                "https://raw.githubusercontent.com/oussamajouahi88-hash/Ozaro-Style/refs/heads/main/Montre%20Octagon%20Gold%20%E2%80%93%20Cadran%20Gradient%20Pink%20photos%201.jfif",
-                "https://raw.githubusercontent.com/oussamajouahi88-hash/Ozaro-Style/refs/heads/main/Montre%20Octagon%20Gold%20%E2%80%93%20Cadran%20Gradient%20Pink%20photos%202.jfif",
-                "https://raw.githubusercontent.com/oussamajouahi88-hash/Ozaro-Style/refs/heads/main/Montre%20Octagon%20Gold%20%E2%80%93%20Cadran%20Gradient%20Pink%20photos%203.jfif"
-            ]
-        },
-
-        {
-            id: 2,
-            name: "Ozaro Classic",
-            price: 199,
-            category: "Homme",
-            badge: "NOUVEAU",
-            image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80",
-            images: [
-                "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1594534475808-b18fc33b045e?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=800&q=80"
-            ]
-        },
-
-        {
-            id: 3,
-            name: "Ozaro Black",
-            price: 499,
-            category: "Homme",
-            badge: "TENDANCE",
-            image: "https://images.unsplash.com/photo-1539874754764-5a96559165b0?auto=format&fit=crop&w=800&q=80",
-            images: [
-                "https://images.unsplash.com/photo-1539874754764-5a96559165b0?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1551816230-ef5deaed4a26?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80"
-            ]
-        },
-
-        {
-            id: 4,
-            name: "Ozaro Steel",
-            price: 529,
-            category: "Homme",
-            badge: "",
-            image: "https://images.unsplash.com/photo-1594534475808-b18fc33b045e?auto=format&fit=crop&w=800&q=80",
-            images: [
-                "https://images.unsplash.com/photo-1594534475808-b18fc33b045e?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1539874754764-5a96559165b0?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=800&q=80"
-            ]
-        },
-
-        {
-            id: 5,
-            name: "Ozaro Silver",
-            price: 479,
-            category: "Homme",
-            badge: "",
-            image: "https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=800&q=80",
-            images: [
-                "https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1594534475808-b18fc33b045e?auto=format&fit=crop&w=800&q=80"
-            ]
-        },
-
-        {
-            id: 6,
-            name: "Ozaro Executive",
-            price: 599,
-            category: "Homme",
-            badge: "PREMIUM",
-            image: "https://images.unsplash.com/photo-1551816230-ef5deaed4a26?auto=format&fit=crop&w=800&q=80",
-            images: [
-                "https://images.unsplash.com/photo-1551816230-ef5deaed4a26?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1539874754764-5a96559165b0?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80"
-            ]
-        },
-
-        /* ===== FEMME ===== */
-
-        {
-            id: 7,
-            name: "Ozaro Gold",
-            price: 499,
-            category: "Femme",
-            badge: "BEST SELLER",
-            image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80",
-            images: [
-                "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?auto=format&fit=crop&w=800&q=80"
-            ]
-        },
-
-        {
-            id: 8,
-            name: "Ozaro Rose",
-            price: 429,
-            category: "Femme",
-            badge: "NOUVEAU",
-            image: "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=800&q=80",
-            images: [
-                "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80"
-            ]
-        },
-
-        {
-            id: 9,
-            name: "Ozaro Pearl",
-            price: 459,
-            category: "Femme",
-            badge: "",
-            image: "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=800&q=80",
-            images: [
-                "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?auto=format&fit=crop&w=800&q=80"
-            ]
-        },
-
-        {
-            id: 10,
-            name: "Ozaro Elegant",
-            price: 499,
-            category: "Femme",
-            badge: "TENDANCE",
-            image: "https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&w=800&q=80",
-            images: [
-                "https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=800&q=80"
-            ]
-        },
-
-        {
-            id: 11,
-            name: "Ozaro Lady",
-            price: 549,
-            category: "Femme",
-            badge: "",
-            image: "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?auto=format&fit=crop&w=800&q=80",
-            images: [
-                "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80"
-            ]
-        },
-
-        {
-            id: 12,
-            name: "Ozaro Prestige",
-            price: 599,
-            category: "Femme",
-            badge: "PREMIUM",
-            image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80",
-            images: [
-                "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?auto=format&fit=crop&w=800&q=80"
-            ]
-        }
-
-    ];
-
-
-    /* ==========================================
-       PANIER
-       ========================================== */
-
-    let cart = [];
-
-
-    /* ==========================================
-       AFFICHER LES PRODUITS
-       ========================================== */
-
-    function displayProducts(category = "all") {
-
-        const container =
-            document.getElementById("productsContainer");
-
-        container.innerHTML = "";
-
-
-        let filteredProducts;
-
-
-        /*
-           IMPORTANT :
-
-           Ici on compare en minuscules.
-
-           "Femme" devient "femme"
-           "Homme" devient "homme"
-
-           Donc le filtre fonctionne correctement.
-        */
-
-        if (category.toLowerCase() === "all") {
-
-            filteredProducts = products;
-
-        } else {
-
-            filteredProducts = products.filter(
-
-                product =>
-                    product.category.toLowerCase()
-                    === category.toLowerCase()
-
-            );
-
-        }
-
-
-        /* ======================================
-           CRÉATION DES CARTES PRODUITS
-           ====================================== */
-
-        filteredProducts.forEach(product => {
-
-            const card =
-                document.createElement("div");
-
-            card.className = "product";
-
-
-            card.innerHTML = `
-
-                <div class="product-gallery">
-
-                    <div class="product-image">
-
-                        <img
-                            id="main-image-${product.id}"
-                            src="${product.images[0]}"
-                            alt="${product.name}" onclick="openProductModal(${product.id})">
-
-                        ${
-                            product.badge
-                            ?
-                            `<span class="badge">
-                                ${product.badge}
-                             </span>`
-                            :
-                            ""
-                        }
-
+    </header>
+
+    <section id="hero" class="relative bg-gradient-to-b from-brand-dark via-brand-slate to-brand-dark py-16 lg:py-24 overflow-hidden border-b border-brand-gold/10">
+        <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <div class="space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-brand-gold/40 bg-brand-gold/10 text-brand-gold text-xs font-semibold tracking-widest uppercase">
+                        <i class="fa-solid fa-certificate text-xs"></i>
+                        <span>Haute Horlogerie &amp; Garantie Officielles 1 An</span>
+                    </div>
+                    
+                    <h1 class="font-cinzel text-4xl sm:text-6xl font-black text-white leading-tight">
+                        L'Excellence Urbaine <br><span class="text-gold-metallic">Au Poignet</span>
+                    </h1>
+                    
+                    <p class="text-gray-300 text-sm sm:text-base max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        Chaque garde-temps <strong class="text-brand-gold font-bold">OZARO STYLE</strong> est façonné selon les standards horlogers les plus stricts. Mouvement mécanique haute précision, verre saphir inrayable et finitions nobles pour affirmer votre présence.
+                    </p>
+
+                    <div class="pt-2 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <a href="#catalogue" onclick="filterCategory('packs')" class="gold-button px-8 py-4 rounded-xl text-center text-xs tracking-widest uppercase shadow-xl flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-box-open"></i>
+                            <span>Découvrir les Packs Promos</span>
+                        </a>
+                        <a href="#catalogue" onclick="filterCategory('all')" class="px-8 py-4 rounded-xl text-center text-xs font-bold tracking-widest uppercase border border-brand-gold/40 text-gray-200 hover:bg-brand-gold/10 hover:text-brand-gold transition">
+                            Explorer la Collection
+                        </a>
                     </div>
 
-                    <div class="product-thumbnails">
+                    <div class="pt-6 grid grid-cols-3 gap-2 border-t border-gray-800 text-center lg:text-left">
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-shield text-brand-gold text-sm"></i>
+                            <span class="text-[11px] text-gray-400">Acier Chirurgique 316L</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-gem text-brand-gold text-sm"></i>
+                            <span class="text-[11px] text-gray-400">Verre Saphir Inrayable</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-truck-fast text-brand-gold text-sm"></i>
+                            <span class="text-[11px] text-gray-400">Expédition Sécurisée</span>
+                        </div>
+                    </div>
+                </div>
 
-                        ${product.images.map((image, index) => `
-                            <button
-                                type="button"
-                                class="product-thumbnail ${index === 0 ? "active" : ""}"
-                                onclick="changeProductImage(${product.id}, ${index})"
-                                aria-label="Photo ${index + 1} de ${product.name}">
+                <div class="relative flex justify-center items-center">
+                    <div class="absolute w-80 h-80 bg-brand-gold/10 rounded-full filter blur-3xl"></div>
+                    <div class="relative bg-brand-card p-6 sm:p-8 rounded-2xl border border-brand-gold/30 shadow-2xl gold-glow w-full max-w-md">
+                        <div class="absolute -top-3 right-6 bg-gradient-to-r from-red-600 to-amber-600 text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
+                            Pack Offre Spéciale -25%
+                        </div>
+                        
+                        <div class="aspect-square relative mb-4 flex items-center justify-center bg-black/40 rounded-xl p-4">
+                            <svg class="w-full h-full max-w-[260px]" viewBox="0 0 200 200">
+                                <rect x="30" y="30" width="140" height="140" rx="12" fill="#141414" stroke="#d4af37" stroke-width="2"/>
+                                <circle cx="75" cy="100" r="35" fill="#1f1f1f" stroke="#d4af37" stroke-width="2"/>
+                                <circle cx="75" cy="100" r="28" fill="#0a0a0a"/>
+                                <line x1="75" y1="100" x2="65" y2="85" stroke="#f3e0aa" stroke-width="2"/>
+                                <line x1="75" y1="100" x2="90" y2="100" stroke="#f3e0aa" stroke-width="1.5"/>
+                                <circle cx="125" cy="100" r="35" fill="#1f1f1f" stroke="#aa7a44" stroke-width="2"/>
+                                <circle cx="125" cy="100" r="28" fill="#0f172a"/>
+                                <line x1="125" y1="100" x2="125" y2="82" stroke="#f3e0aa" stroke-width="2"/>
+                                <line x1="125" y1="100" x2="138" y2="108" stroke="#f3e0aa" stroke-width="1.5"/>
+                                <text x="100" y="155" font-family="'Cinzel', serif" font-size="8" fill="#d4af37" text-anchor="middle" font-weight="bold">COFFRET DUO PRESTIGE</text>
+                            </svg>
+                        </div>
 
-                                <img
-                                    src="${image}"
-                                    alt="${product.name} - photo ${index + 1}">
-
+                        <div class="text-center">
+                            <h3 class="font-cinzel text-xl font-black text-white mb-1">Coffret Duo Prestige OZARO</h3>
+                            <p class="text-xs text-gray-400 mb-2">2 Montres Automatiques + Écrin Bois Noble + Garanties 1 An</p>
+                            <div class="flex items-center justify-center space-x-3 mb-4">
+                                <span class="text-sm text-gray-500 line-through">3 200,00 €</span>
+                                <span class="text-xl font-black text-brand-gold">2 390,00 €</span>
+                            </div>
+                            <button onclick="openProductModal(100)" class="w-full py-3 bg-brand-gold/10 hover:bg-brand-gold text-brand-gold hover:text-black border border-brand-gold rounded-xl font-extrabold text-xs tracking-widest uppercase transition-all duration-300">
+                                Examiner ce Pack Exclusif
                             </button>
-                        `).join("")}
-
+                        </div>
                     </div>
-
                 </div>
 
-
-                <div class="product-info">
-
-                    <div class="category-name">
-                        Montre ${product.category}
-                    </div>
-
-                    <h3>
-                        ${product.name}
-                    </h3>
-
-                    <div class="price">
-                        ${product.price} DH
-                    </div>
-
-                    <button
-                        class="btn"
-                        onclick="addToCart(${product.id})">
-
-                        Ajouter au panier
-
-                    </button>
-
-                </div>
-
-            `;
-
-
-            container.appendChild(card);
-
-        });
-
-    }
-
-
-    /* ==========================================
-       CHANGER LA PHOTO DU PRODUIT
-       ========================================== */
-
-    function changeProductImage(productId, imageIndex) {
-
-        const product = products.find(
-            p => p.id === productId
-        );
-
-        if (!product || !product.images[imageIndex]) return;
-
-        const mainImage =
-            document.getElementById("main-image-" + productId);
-
-        if (mainImage) {
-            mainImage.src = product.images[imageIndex];
-        }
-
-        const card =
-            mainImage ? mainImage.closest(".product") : null;
-
-        if (card) {
-
-            const thumbnails =
-                card.querySelectorAll(".product-thumbnail");
-
-            thumbnails.forEach((thumbnail, index) => {
-
-                thumbnail.classList.toggle(
-                    "active",
-                    index === imageIndex
-                );
-
-            });
-
-        }
-
-    }
-
-
-    /* ==========================================
-       FENÊTRE PRODUIT + COULEURS
-       ========================================== */
-    let modalProduct = null;
-    let modalImageIndex = 0;
-    let modalColor = "OR";
-
-    function openProductModal(productId) {
-        modalProduct = products.find(p => p.id === productId);
-        if (!modalProduct) return;
-        modalImageIndex = 0;
-        modalColor = "OR";
-        document.getElementById("modalProductName").innerText = modalProduct.name;
-        document.getElementById("modalProductPrice").innerText = modalProduct.price + " DH";
-        renderModalImages();
-        updateColorButtons();
-        document.getElementById("productModal").classList.add("active");
-        document.body.style.overflow = "hidden";
-    }
-
-    function renderModalImages() {
-        if (!modalProduct) return;
-        const main = document.getElementById("modalMainImage");
-        main.src = modalProduct.images[modalImageIndex];
-        main.alt = modalProduct.name;
-        document.getElementById("modalThumbnails").innerHTML = modalProduct.images.map((image, index) => `
-            <button class="modal-thumbnail ${index === modalImageIndex ? "active" : ""}"
-                onclick="setModalImage(${index})">
-                <img src="${image}" alt="Photo ${index + 1}">
-            </button>
-        `).join("");
-    }
-
-    function setModalImage(index) {
-        if (!modalProduct || !modalProduct.images[index]) return;
-        modalImageIndex = index;
-        renderModalImages();
-    }
-
-    function previousModalImage() {
-        if (!modalProduct) return;
-        modalImageIndex = (modalImageIndex - 1 + modalProduct.images.length) % modalProduct.images.length;
-        renderModalImages();
-    }
-
-    function nextModalImage() {
-        if (!modalProduct) return;
-        modalImageIndex = (modalImageIndex + 1) % modalProduct.images.length;
-        renderModalImages();
-    }
-
-    function selectProductColor(color) {
-        modalColor = color;
-        updateColorButtons();
-        // Les 3 photos existantes restent disponibles pour la couleur sélectionnée.
-        // L'ordre est conservé : OR = photo 1, BLACK = photo 2, ARGENT = photo 3.
-        const colorIndex = { OR: 0, BLACK: 1, ARGENT: 2 }[color];
-        if (modalProduct && modalProduct.images[colorIndex]) setModalImage(colorIndex);
-    }
-
-    function updateColorButtons() {
-        document.querySelectorAll(".color-btn").forEach(btn => {
-            btn.classList.toggle("active", btn.dataset.color === modalColor);
-        });
-    }
-
-    function addModalProductToCart() {
-        if (!modalProduct) return;
-        addToCart(modalProduct.id);
-        closeProductModal();
-    }
-
-    function closeProductModal() {
-        document.getElementById("productModal").classList.remove("active");
-        document.body.style.overflow = "";
-    }
-
-    function closeProductModalOutside(event) {
-        if (event.target.id === "productModal") closeProductModal();
-    }
-
-    document.addEventListener("keydown", function(event) {
-        if (!document.getElementById("productModal").classList.contains("active")) return;
-        if (event.key === "Escape") closeProductModal();
-        if (event.key === "ArrowLeft") previousModalImage();
-        if (event.key === "ArrowRight") nextModalImage();
-    });
-
-    /* ==========================================
-       FILTRE HOMME / FEMME
-       ========================================== */
-
-    function showCategory(category) {
-
-        displayProducts(category);
-
-
-        const title =
-            document.getElementById("productsTitle");
-
-
-        if (category.toLowerCase() === "homme") {
-
-            title.innerHTML =
-                "⌚ Montres Homme";
-
-        }
-
-
-        if (category.toLowerCase() === "femme") {
-
-            title.innerHTML =
-                "✨ Montres Femme";
-
-        }
-
-
-        document
-            .getElementById("collection")
-            .scrollIntoView({
-                behavior: "smooth"
-            });
-
-    }
-
-
-    /* ==========================================
-       AFFICHER TOUTES LES MONTRES
-       ========================================== */
-
-    function showAllProducts() {
-
-        displayProducts("all");
-
-
-        document
-            .getElementById("productsTitle")
-            .innerHTML =
-            "Notre Collection";
-
-
-        document
-            .getElementById("collection")
-            .scrollIntoView({
-                behavior: "smooth"
-            });
-
-    }
-
-
-    /* ==========================================
-       AJOUTER AU PANIER
-       ========================================== */
-
-    function addToCart(productId) {
-
-        const product =
-            products.find(
-                p => p.id === productId
-            );
-
-
-        const existing =
-            cart.find(
-                item => item.id === productId
-            );
-
-
-        if (existing) {
-
-            existing.quantity++;
-
-        } else {
-
-            cart.push({
-
-                ...product,
-
-                quantity: 1
-
-            });
-
-        }
-
-
-        updateCart();
-
-
-        openCart();
-
-    }
-
-
-    /* ==========================================
-       METTRE À JOUR LE PANIER
-       ========================================== */
-
-    function updateCart() {
-
-        const cartItems =
-            document.getElementById("cartItems");
-
-        const cartCount =
-            document.getElementById("cartCount");
-
-        const cartTotal =
-            document.getElementById("cartTotal");
-
-
-        cartItems.innerHTML = "";
-
-
-        let total = 0;
-
-        let count = 0;
-
-
-        if (cart.length === 0) {
-
-            cartItems.innerHTML = `
-
-                <div class="empty-cart">
-
-                    🛒
-
-                    <br><br>
-
-                    Votre panier est vide.
-
-                </div>
-
-            `;
-
-        }
-
-
-        cart.forEach(item => {
-
-            const subtotal =
-                item.price * item.quantity;
-
-
-            total += subtotal;
-
-            count += item.quantity;
-
-
-            const div =
-                document.createElement("div");
-
-
-            div.className =
-                "cart-item";
-
-
-            div.innerHTML = `
-
-                <img
-                    src="${item.image}"
-                    alt="${item.name}">
-
-
-                <div class="cart-item-info">
-
-                    <h4>
-                        ${item.name}
-                    </h4>
-
-                    <div class="cart-item-price">
-                        ${item.price} DH
-                    </div>
-
-
-                    <div class="quantity">
-
-                        <button
-                            onclick="changeQuantity(${item.id}, -1)">
-                            −
-                        </button>
-
-                        <span>
-                            ${item.quantity}
-                        </span>
-
-                        <button
-                            onclick="changeQuantity(${item.id}, 1)">
-                            +
-                        </button>
-
-                    </div>
-
-
-                    <button
-                        class="remove"
-                        onclick="removeFromCart(${item.id})">
-
-                        Supprimer
-
-                    </button>
-
-                </div>
-
-            `;
-
-
-            cartItems.appendChild(div);
-
-        });
-
-
-        cartCount.innerText = count;
-
-        cartTotal.innerText =
-            total + " DH";
-
-    }
-
-
-    /* ==========================================
-       MODIFIER QUANTITÉ
-       ========================================== */
-
-    function changeQuantity(productId, amount) {
-
-        const item =
-            cart.find(
-                item => item.id === productId
-            );
-
-
-        if (!item) return;
-
-
-        item.quantity += amount;
-
-
-        if (item.quantity <= 0) {
-
-            cart =
-                cart.filter(
-                    item => item.id !== productId
-                );
-
-        }
-
-
-        updateCart();
-
-    }
-
-
-    /* ==========================================
-       SUPPRIMER PRODUIT
-       ========================================== */
-
-    function removeFromCart(productId) {
-
-        cart =
-            cart.filter(
-                item => item.id !== productId
-            );
-
-
-        updateCart();
-
-    }
-
-
-    /* ==========================================
-       OUVRIR PANIER
-       ========================================== */
-
-    function openCart() {
-
-        document
-            .getElementById("cartOverlay")
-            .classList.add("active");
-
-    }
-
-
-    /* ==========================================
-       FERMER PANIER
-       ========================================== */
-
-    function closeCart() {
-
-        document
-            .getElementById("cartOverlay")
-            .classList.remove("active");
-
-    }
-
-
-    /* ==========================================
-       FERMER EN CLIQUANT À L'EXTÉRIEUR
-       ========================================== */
-
-    function closeCartOutside(event) {
-
-        if (
-            event.target.id ===
-            "cartOverlay"
-        ) {
-
-            closeCart();
-
-        }
-
-    }
-
-
-    /* ==========================================
-       COMMANDE WHATSAPP
-       ========================================== */
-
-    function orderWhatsApp() {
-
-        if (cart.length === 0) {
-
-            alert(
-                "Votre panier est vide."
-            );
-
-            return;
-
-        }
-
-
-        let message =
-            "Bonjour OZARO STYLE 👋\n\n";
-
-
-        message +=
-            "Je souhaite commander :\n\n";
-
-
-        let total = 0;
-
-
-        cart.forEach(item => {
-
-            const subtotal =
-                item.price * item.quantity;
-
-
-            total += subtotal;
-
-
-            message +=
-                "• " +
-                item.name +
-                " × " +
-                item.quantity +
-                " = " +
-                subtotal +
-                " DH\n";
-
-        });
-
-
-        message +=
-            "\n💰 Total : " +
-            total +
-            " DH\n\n";
-
-
-        message +=
-            "Merci de me confirmer ma commande.";
-
-
-        const whatsappURL =
-            "https://wa.me/" +
-            whatsappNumber +
-            "?text=" +
-            encodeURIComponent(message);
-
-
-        window.open(
-            whatsappURL,
-            "_blank"
-        );
-
-    }
-
-
-    /* ==========================================
-       INITIALISATION
-       ========================================== */
-
-    displayProducts();
-
-    updateCart();
-
-</script>
-
-</body>
-</html>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalogue" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-10">
+            <h2 class="font-cinzel text-3xl sm:text-4xl font-extrabold text-white tracking-wider mb-2">Catalogue Garde-Temps &amp; Coffrets</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent mx-auto mb-4"></div>
+            <p class="text-gray-400 text-xs sm:text-sm max-w-xl mx-auto">
+                Cliquez sur le <strong class="text-brand-gold font-bold">NOM DU PRODUIT EN GRAS</strong> pour ouvrir sa fiche complète et personnalisez la finition du cadran grâce aux pastilles interactives.
+            </p>
+        </div>
+
+        <div class="bg-brand-card p-4 rounded-2xl border border-brand-gold/20 mb-10 flex flex-wrap items-center justify-between gap-4 shadow-xl">
+            
+            <div class="flex flex-wrap items-center gap-2" id="category-filters">
+                <button onclick="filterCategory('all')" class="cat-btn active px-4 py-2.5 rounded-xl text-xs font-extrabold tracking-wider uppercase transition bg-brand-gold text-black shadow-md">
+                    Toutes
+                </button>
+                <button onclick="filterCategory('homme')" class="cat-btn px-4 py-2.5 rounded-xl text-xs font-extrabold tracking-wider uppercase transition bg-black/60 text-gray-300 hover:text-brand-gold hover:bg-black border border-gray-800">
+                    Hommes
+                </button>
+                <button onclick="filterCategory('femme')" class="cat-btn px-4 py-2.5 rounded-xl text-xs font-extrabold tracking-wider uppercase transition bg-black/60 text-gray-300 hover:text-brand-gold hover:bg-black border border-gray-800">
+                    Femmes
+                </button>
+                <button onclick="filterCategory('edition-limitee')" class="cat-btn px-4 py-2.5 rounded-xl text-xs font-extrabold tracking-wider uppercase transition bg-black/60 text-gray-300 hover:text-brand-gold hover:bg-black border border-gray-800">
+                    Éditions Limitées
+                </button>
+                <button onclick="filterCategory('packs')" class="cat-btn px-4 py-2.5 rounded-xl text-xs font-extrabold tracking-wider uppercase transition bg-gradient-to-r from-brand-gold/20 to-brand-bronze/30 text-brand-gold hover:bg-brand-gold hover:text-black border border-brand-gold/50 flex items-center space-x-1.5">
+                    <i class="fa-solid fa-box-open text-xs"></i>
+                    <span>Packs Promos &amp; Coffrets</span>
+                </button>
+            </div>
+
+            <div class="relative w-full sm:w-64">
+                <input type="text" id="search-input" onkeyup="handleSearch()" placeholder="Rechercher modèle, finition..." class="w-full bg-black/70 border border-gray-800 rounded-xl pl-9 pr-4 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold transition">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-gray-500 text-xs"></i>
+            </div>
+        </div>
+
+        <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Dynamic JS render -->
+        </div>
+    </section>
+
+    <section id="trust" class="bg-brand-card border-y border-brand-gold/20 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-brand-gold text-xs font-extrabold uppercase tracking-widest">Confiance &amp; Sérénité Client</span>
+                <h2 class="font-cinzel text-3xl sm:text-4xl font-extrabold text-white mt-2">Nos Engagements d'Excellence</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Card 1: Livraison Blindée -->
+                <div class="bg-black/60 p-6 rounded-2xl border border-brand-gold/30 hover:border-brand-gold transition duration-300 flex flex-col justify-between group shadow-xl">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xl mb-4">
+                            <i class="fa-solid fa-truck-shield"></i>
+                        </div>
+                        <h3 class="font-cinzel font-black text-white text-lg mb-2 group-hover:text-brand-gold transition">Livraison Blindée Premium</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Acheminement ultra-sécurisé en coffret blindé anti-chocs scellé. Remise en main propre sous pli confidentiel avec assurance intégrée contre la perte ou le vol.
