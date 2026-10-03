@@ -3,386 +3,1029 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OZARO STYLE | Montres de Luxe - Urban & Unique</title>
+    <title>OZARO STYLE | Urban & Unique - Montres de Luxe</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            gold: '#d4af37',
-                            goldLight: '#f3e0aa',
-                            goldDark: '#aa820a',
-                            bronze: '#aa7a44',
-                            bronzeDark: '#543b1a',
-                            dark: '#080808',
-                            card: '#121212',
-                            cardHover: '#181818',
-                            slate: '#1a1d24'
-                        }
+                        gold: {
+                            100: '#FDF8E2',
+                            300: '#E6CA65',
+                            400: '#D4AF37',
+                            500: '#C59B27',
+                            600: '#AA7C11',
+                            700: '#8A5F00',
+                            800: '#5C3E00'
+                        },
+                        darkBg: '#090a0f',
+                        cardBg: '#12141c',
+                        cardHover: '#1a1d29'
                     },
                     fontFamily: {
-                        cinzel: ['Cinzel', 'serif'],
-                        montserrat: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #080808;
-            color: #e5e5e5;
+            background-color: #090a0f;
+            color: #e5e7eb;
             overflow-x: hidden;
         }
 
-        .text-gold-metallic {
-            background: linear-gradient(135deg, #fff3d1 0%, #d4af37 30%, #aa820a 60%, #f3e0aa 80%, #8c6a11 100%);
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #FFF1B0 0%, #D4AF37 50%, #9A7B1C 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 2px 10px rgba(212, 175, 55, 0.25);
         }
 
-        .gold-glow:hover {
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.25);
+        .bg-gold-gradient {
+            background: linear-gradient(135deg, #E6CA65 0%, #D4AF37 50%, #B8860B 100%);
         }
 
-        .gold-button {
-            background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
-            color: #080808;
-            font-weight: 800;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        .logo-3d-text {
+            background: linear-gradient(180deg, #FFFFFF 0%, #E6CA65 25%, #D4AF37 50%, #AA7C11 75%, #5C3E00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.8));
         }
 
-        .gold-button:hover {
-            background: linear-gradient(135deg, #f3e0aa 0%, #d4af37 100%);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
-            transform: translateY(-2px);
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #090a0f;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a2d3d;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
         }
 
-        .color-swatch {
+        .glass-panel {
+            background: rgba(18, 20, 28, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .card-shine {
             position: relative;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            overflow: hidden;
         }
-        .color-swatch:hover {
-            transform: scale(1.25);
-        }
-        .color-swatch.active::after {
+        .card-shine::after {
             content: '';
             position: absolute;
-            top: -4px;
-            left: -4px;
-            right: -4px;
-            bottom: -4px;
-            border: 2px solid #d4af37;
-            border-radius: 50%;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(60deg, transparent 30%, rgba(212, 175, 55, 0.08) 50%, transparent 70%);
+            transform: rotate(30deg);
+            transition: all 0.75s ease;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .card-shine:hover::after {
+            opacity: 1;
+            transform: rotate(30deg) translate(20%, 20%);
         }
 
-        .logo-container {
-            filter: drop-shadow(0px 6px 12px rgba(0, 0, 0, 0.85));
-            transition: transform 0.3s ease;
-        }
-        .logo-container:hover {
-            transform: scale(1.02);
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
         }
 
-        /* Banner ticker keyframe animation */
-        @keyframes tickerAnimation {
-            0% { transform: translate3d(0, 0, 0); }
-            100% { transform: translate3d(-50%, 0, 0); }
+        .animate-marquee {
+            display: inline-flex;
+            animation: marquee 25s linear infinite;
         }
-
-        .ticker-wrap {
-            width: 100%;
-            overflow: hidden;
-            background: linear-gradient(90deg, #121212 0%, #21190a 50%, #121212 100%);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            white-space: nowrap;
-        }
-
-        .ticker-move {
-            display: inline-block;
-            white-space: nowrap;
-            animation: tickerAnimation 25s linear infinite;
-        }
-
-        .ticker-move:hover {
+        .animate-marquee:hover {
             animation-play-state: paused;
         }
-
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #080808; }
-        ::-webkit-scrollbar-thumb { background: #262626; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #d4af37; }
-
-        .modal-backdrop { backdrop-filter: blur(12px); }
     </style>
 </head>
-<body class="bg-brand-dark text-gray-200 min-h-screen flex flex-col justify-between">
+<body class="bg-darkBg text-gray-200 antialiased selection:bg-gold-500 selection:text-black">
 
-    <div class="ticker-wrap py-2 text-xs font-semibold text-brand-gold">
-        <div class="ticker-move">
-            <span class="mx-8 inline-flex items-center"><i class="fa-solid fa-truck-shield mr-2"></i> LIVRAISON BLINDÉE &amp; EXPRESS OFFERTE SUR TOUS LES PACKS ET MONTRES</span>
-            <span class="mx-8 inline-flex items-center"><i class="fa-solid fa-shield-halved mr-2"></i> GARANTIE OFFICIELLE DE 1 AN INCLUSE SUR TOUTE LA COLLECTION</span>
-            <span class="mx-8 inline-flex items-center"><i class="fa-solid fa-certificate mr-2"></i> CHAQUE PRODUIT EST LIVRÉ AVEC SON CERTIFICAT NUMÉROTÉ D'AUTHENTICITÉ</span>
-            <span class="mx-8 inline-flex items-center"><i class="fa-solid fa-gem mr-2"></i> OZARO STYLE - HAUTE HORLOGERIE URBAINE &amp; UNIQUE</span>
-            <!-- Duplicate content for smooth seamless scroll -->
-            <span class="mx-8 inline-flex items-center"><i class="fa-solid fa-truck-shield mr-2"></i> LIVRAISON BLINDÉE &amp; EXPRESS OFFERTE SUR TOUS LES PACKS ET MONTRES</span>
-            <span class="mx-8 inline-flex items-center"><i class="fa-solid fa-shield-halved mr-2"></i> GARANTIE OFFICIELLE DE 1 AN INCLUSE SUR TOUTE LA COLLECTION</span>
-            <span class="mx-8 inline-flex items-center"><i class="fa-solid fa-certificate mr-2"></i> CHAQUE PRODUIT EST LIVRÉ AVEC SON CERTIFICAT NUMÉROTÉ D'AUTHENTICITÉ</span>
-            <span class="mx-8 inline-flex items-center"><i class="fa-solid fa-gem mr-2"></i> OZARO STYLE - HAUTE HORLOGERIE URBAINE &amp; UNIQUE</span>
+    <!-- TOP BAR DEFILANTE AUTOMATIQUE EN GRIS ELEGANT ET TEXTE PLUS PETIT -->
+    <div class="bg-neutral-800 text-gray-200 border-b border-gold-400/40 py-2 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider overflow-hidden relative z-50 shadow-md">
+        <div class="whitespace-nowrap animate-marquee flex items-center gap-10">
+            <span class="flex items-center gap-2"><i class="fa-solid fa-truck-fast text-gold-400"></i> LIVRAISON GRATUITE SUR TOUTES LES COMMANDES</span>
+            <span class="text-gold-400/60">&bull;</span>
+            <span class="flex items-center gap-2"><i class="fa-solid fa-hand-holding-dollar text-emerald-400"></i> PAIEMENT À LA LIVRAISON PARTOUT AU MAROC</span>
+            <span class="text-gold-400/60">&bull;</span>
+            <span class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-gold-400"></i> 1 AN DE GARANTIE OFFICIELLE SUR TOUS NOS GARDE-TEMPS</span>
+            <span class="text-gold-400/60">&bull;</span>
+            <span class="flex items-center gap-2"><i class="fa-solid fa-box-open text-gold-400"></i> PACKS VIP & COFFRETS EXCLUSIFS ÉDITION LIMITÉE</span>
+            <span class="text-gold-400/60">&bull;</span>
+            <span class="flex items-center gap-2"><i class="fa-brands fa-whatsapp text-emerald-400 text-xs"></i> COMMANDE RAPIDE SUR WHATSAPP EN 1-CLIC</span>
+            <span class="text-gold-400/60">&bull;</span>
+
+            <!-- Loop Duplication -->
+            <span class="flex items-center gap-2"><i class="fa-solid fa-truck-fast text-gold-400"></i> LIVRAISON GRATUITE SUR TOUTES LES COMMANDES</span>
+            <span class="text-gold-400/60">&bull;</span>
+            <span class="flex items-center gap-2"><i class="fa-solid fa-hand-holding-dollar text-emerald-400"></i> PAIEMENT À LA LIVRAISON PARTOUT AU MAROC</span>
+            <span class="text-gold-400/60">&bull;</span>
+            <span class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-gold-400"></i> 1 AN DE GARANTIE OFFICIELLE SUR TOUS NOS GARDE-TEMPS</span>
+            <span class="text-gold-400/60">&bull;</span>
+            <span class="flex items-center gap-2"><i class="fa-solid fa-box-open text-gold-400"></i> PACKS VIP & COFFRETS EXCLUSIFS ÉDITION LIMITÉE</span>
         </div>
     </div>
 
-    <header class="sticky top-0 z-40 bg-brand-dark/95 backdrop-blur-md border-b border-brand-gold/20 shadow-2xl">
+    <!-- HEADER ET LOGO EN NOIR LUXE -->
+    <header class="sticky top-0 z-40 bg-darkBg/95 backdrop-blur-md border-b border-gold-400/30 shadow-2xl transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between py-3">
+            <div class="flex items-center justify-between h-24">
                 
-                <!-- BRAND LOGO 3D INTEGRATION -->
-                <a href="#" class="logo-container flex items-center py-1">
-                    <svg class="h-16 sm:h-20 w-auto" viewBox="0 0 460 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="goldMetallic" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#fff5db"/>
-                                <stop offset="25%" stop-color="#d4af37"/>
-                                <stop offset="50%" stop-color="#8c6a11"/>
-                                <stop offset="75%" stop-color="#f3e0aa"/>
-                                <stop offset="100%" stop-color="#aa820a"/>
-                            </linearGradient>
-                            
-                            <linearGradient id="bronze3D" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#e0b27b"/>
-                                <stop offset="50%" stop-color="#a67744"/>
-                                <stop offset="100%" stop-color="#4a3318"/>
-                            </linearGradient>
-
-                            <linearGradient id="silver3D" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#ffffff"/>
-                                <stop offset="40%" stop-color="#b3b3b3"/>
-                                <stop offset="100%" stop-color="#4a4a4a"/>
-                            </linearGradient>
-
-                            <filter id="glow3d" x="-20%" y="-20%" width="140%" height="140%">
-                                <feDropShadow dx="3" dy="6" stdDeviation="4" flood-color="#000000" flood-opacity="0.95"/>
-                            </filter>
-                        </defs>
-
-                        <!-- Top Emblem (Monogram in Hexagon Badge) -->
-                        <g filter="url(#glow3d)">
-                            <ellipse cx="230" cy="38" rx="28" ry="28" fill="url(#bronze3D)" stroke="url(#goldMetallic)" stroke-width="2"/>
-                            <path d="M218 22 L230 14 L242 22 L242 50 L230 58 L218 50 Z" fill="none" stroke="url(#silver3D)" stroke-width="4" stroke-linejoin="round"/>
-                            <path d="M224 26 L236 34 L224 48 L236 50" fill="none" stroke="url(#goldMetallic)" stroke-width="3.5" stroke-linecap="round"/>
-                        </g>
-
-                        <!-- Left Outer Frame Line -->
-                        <path d="M 50 48 L 140 48" stroke="url(#silver3D)" stroke-width="5" stroke-linecap="square" filter="url(#glow3d)"/>
-                        <path d="M 50 48 L 50 115" stroke="url(#silver3D)" stroke-width="5" stroke-linecap="square" filter="url(#glow3d)"/>
-                        
-                        <!-- Right Outer Frame Line -->
-                        <path d="M 410 120 L 320 120" stroke="url(#silver3D)" stroke-width="5" stroke-linecap="square" filter="url(#glow3d)"/>
-                        <path d="M 410 120 L 410 75" stroke="url(#silver3D)" stroke-width="5" stroke-linecap="square" filter="url(#glow3d)"/>
-
-                        <!-- Center Text "OZARO STYLE" with 3D Double Quotes -->
-                        <g filter="url(#glow3d)">
-                            <text x="68" y="96" font-family="'Cinzel', serif" font-weight="900" font-size="38" fill="url(#goldMetallic)">“</text>
-                            
-                            <text x="100" y="94" font-family="'Cinzel', serif" font-weight="900" font-size="30" letter-spacing="3" fill="url(#silver3D)">OZARO</text>
-                            <text x="248" y="94" font-family="'Cinzel', serif" font-weight="900" font-size="30" letter-spacing="3" fill="url(#silver3D)">STYLE</text>
-                            
-                            <text x="370" y="96" font-family="'Cinzel', serif" font-weight="900" font-size="38" fill="url(#goldMetallic)">”</text>
-                        </g>
-
-                        <!-- Bottom Plate for Tagline -->
-                        <g filter="url(#glow3d)">
-                            <rect x="145" y="105" width="170" height="22" rx="3" fill="url(#bronze3D)" stroke="url(#goldMetallic)" stroke-width="1.5"/>
-                            <text x="230" y="120" font-family="'Montserrat', sans-serif" font-weight="800" font-size="10" letter-spacing="3" fill="#ffffff" text-anchor="middle">URBAN &amp; UNIQUE</text>
-                        </g>
-                    </svg>
-                </a>
-
-                <nav class="hidden lg:flex space-x-8 font-medium text-xs tracking-widest uppercase">
-                    <a href="#hero" class="text-brand-gold hover:text-white transition">Accueil</a>
-                    <a href="#catalogue" onclick="filterCategory('all')" class="text-gray-300 hover:text-brand-gold transition">Collection</a>
-                    <a href="#catalogue" onclick="filterCategory('homme')" class="text-gray-300 hover:text-brand-gold transition">Homme</a>
-                    <a href="#catalogue" onclick="filterCategory('femme')" class="text-gray-300 hover:text-brand-gold transition">Femme</a>
-                    <a href="#catalogue" onclick="filterCategory('packs')" class="text-brand-gold font-bold hover:text-white transition flex items-center space-x-1.5"><i class="fa-solid fa-box-open"></i><span>Packs Promos &amp; Coffrets</span></a>
-                    <a href="#trust" class="text-gray-300 hover:text-brand-gold transition">Engagements</a>
-                    <a href="#contact" class="text-gray-300 hover:text-brand-gold transition">Contact</a>
-                </nav>
-
-                <div class="flex items-center space-x-4">
-                    <button id="cart-btn" class="relative p-2.5 bg-black/60 border border-brand-gold/30 rounded-full text-gray-200 hover:text-brand-gold transition">
-                        <i class="fa-solid fa-bag-shopping text-xl"></i>
-                        <span id="cart-count" class="absolute -top-1 -right-1 bg-brand-gold text-black text-[10px] font-extrabold rounded-full h-5 w-5 flex items-center justify-center border border-black">0</span>
-                    </button>
-                    <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-300 hover:text-white">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div id="mobile-menu" class="hidden lg:hidden bg-brand-card border-b border-brand-gold/20 px-6 py-4 space-y-3">
-            <a href="#hero" class="block text-brand-gold font-semibold py-2">ACCUEIL</a>
-            <a href="#catalogue" onclick="filterCategory('all'); closeMobileMenu();" class="block text-gray-300 py-2">TOUTES LES MONTRES</a>
-            <a href="#catalogue" onclick="filterCategory('homme'); closeMobileMenu();" class="block text-gray-300 py-2">MONTRES HOMME</a>
-            <a href="#catalogue" onclick="filterCategory('femme'); closeMobileMenu();" class="block text-gray-300 py-2">MONTRES FEMME</a>
-            <a href="#catalogue" onclick="filterCategory('packs'); closeMobileMenu();" class="block text-brand-gold font-bold py-2"><i class="fa-solid fa-box-open mr-2"></i>PACKS PROMOS &amp; COFFRETS</a>
-            <a href="#trust" onclick="closeMobileMenu();" class="block text-gray-300 py-2">NOS GARANTIES</a>
-            <a href="#contact" onclick="closeMobileMenu();" class="block text-gray-300 py-2">NOUS CONTACTER</a>
-        </div>
-    </header>
-
-    <section id="hero" class="relative bg-gradient-to-b from-brand-dark via-brand-slate to-brand-dark py-16 lg:py-24 overflow-hidden border-b border-brand-gold/10">
-        <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:20px_20px]"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                
-                <div class="space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-brand-gold/40 bg-brand-gold/10 text-brand-gold text-xs font-semibold tracking-widest uppercase">
-                        <i class="fa-solid fa-certificate text-xs"></i>
-                        <span>Haute Horlogerie &amp; Garantie Officielles 1 An</span>
-                    </div>
-                    
-                    <h1 class="font-cinzel text-4xl sm:text-6xl font-black text-white leading-tight">
-                        L'Excellence Urbaine <br><span class="text-gold-metallic">Au Poignet</span>
-                    </h1>
-                    
-                    <p class="text-gray-300 text-sm sm:text-base max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                        Chaque garde-temps <strong class="text-brand-gold font-bold">OZARO STYLE</strong> est façonné selon les standards horlogers les plus stricts. Mouvement mécanique haute précision, verre saphir inrayable et finitions nobles pour affirmer votre présence.
-                    </p>
-
-                    <div class="pt-2 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-                        <a href="#catalogue" onclick="filterCategory('packs')" class="gold-button px-8 py-4 rounded-xl text-center text-xs tracking-widest uppercase shadow-xl flex items-center justify-center space-x-2">
-                            <i class="fa-solid fa-box-open"></i>
-                            <span>Découvrir les Packs Promos</span>
-                        </a>
-                        <a href="#catalogue" onclick="filterCategory('all')" class="px-8 py-4 rounded-xl text-center text-xs font-bold tracking-widest uppercase border border-brand-gold/40 text-gray-200 hover:bg-brand-gold/10 hover:text-brand-gold transition">
-                            Explorer la Collection
-                        </a>
-                    </div>
-
-                    <div class="pt-6 grid grid-cols-3 gap-2 border-t border-gray-800 text-center lg:text-left">
-                        <div class="flex items-center space-x-2">
-                            <i class="fa-solid fa-shield text-brand-gold text-sm"></i>
-                            <span class="text-[11px] text-gray-400">Acier Chirurgique 316L</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fa-solid fa-gem text-brand-gold text-sm"></i>
-                            <span class="text-[11px] text-gray-400">Verre Saphir Inrayable</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fa-solid fa-truck-fast text-brand-gold text-sm"></i>
-                            <span class="text-[11px] text-gray-400">Expédition Sécurisée</span>
-                        </div>
-                    </div>
+                <!-- Left Navigation Links -->
+                <div class="hidden md:flex items-center space-x-6 text-xs font-extrabold uppercase text-gray-300 tracking-wider">
+                    <a href="#produits" class="hover:text-gold-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-stopwatch text-gold-400"></i> Garde-Temps
+                    </a>
+                    <a href="#trust-section" class="hover:text-gold-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-certificate text-gold-400"></i> Nos Engagements
+                    </a>
                 </div>
 
-                <div class="relative flex justify-center items-center">
-                    <div class="absolute w-80 h-80 bg-brand-gold/10 rounded-full filter blur-3xl"></div>
-                    <div class="relative bg-brand-card p-6 sm:p-8 rounded-2xl border border-brand-gold/30 shadow-2xl gold-glow w-full max-w-md">
-                        <div class="absolute -top-3 right-6 bg-gradient-to-r from-red-600 to-amber-600 text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
-                            Pack Offre Spéciale -25%
-                        </div>
-                        
-                        <div class="aspect-square relative mb-4 flex items-center justify-center bg-black/40 rounded-xl p-4">
-                            <svg class="w-full h-full max-w-[260px]" viewBox="0 0 200 200">
-                                <rect x="30" y="30" width="140" height="140" rx="12" fill="#141414" stroke="#d4af37" stroke-width="2"/>
-                                <circle cx="75" cy="100" r="35" fill="#1f1f1f" stroke="#d4af37" stroke-width="2"/>
-                                <circle cx="75" cy="100" r="28" fill="#0a0a0a"/>
-                                <line x1="75" y1="100" x2="65" y2="85" stroke="#f3e0aa" stroke-width="2"/>
-                                <line x1="75" y1="100" x2="90" y2="100" stroke="#f3e0aa" stroke-width="1.5"/>
-                                <circle cx="125" cy="100" r="35" fill="#1f1f1f" stroke="#aa7a44" stroke-width="2"/>
-                                <circle cx="125" cy="100" r="28" fill="#0f172a"/>
-                                <line x1="125" y1="100" x2="125" y2="82" stroke="#f3e0aa" stroke-width="2"/>
-                                <line x1="125" y1="100" x2="138" y2="108" stroke="#f3e0aa" stroke-width="1.5"/>
-                                <text x="100" y="155" font-family="'Cinzel', serif" font-size="8" fill="#d4af37" text-anchor="middle" font-weight="bold">COFFRET DUO PRESTIGE</text>
+                <!-- CENTER BRAND LOGO & 3D TITLE ON DARK BACKGROUND -->
+                <a href="#" class="flex flex-col items-center justify-center group focus:outline-none mx-auto">
+                    <div class="flex items-center gap-3">
+                        <div class="relative w-12 h-12 flex items-center justify-center bg-black rounded-full border-2 border-gold-400 shadow-[0_0_15px_rgba(212,175,55,0.3)] group-hover:scale-105 transition-transform duration-300">
+                            <svg class="w-8 h-8 text-gold-400" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="42" stroke="currentColor" stroke-width="3" stroke-dasharray="4 2"/>
+                                <path d="M35 30 L50 15 L65 30 L65 70 L50 85 L35 70 Z" stroke="currentColor" stroke-width="3" fill="none"/>
+                                <path d="M42 38 H58 V62 H42 Z" stroke="currentColor" stroke-width="2" fill="rgba(212,175,55,0.3)"/>
+                                <circle cx="50" cy="50" r="6" fill="currentColor"/>
                             </svg>
                         </div>
 
-                        <div class="text-center">
-                            <h3 class="font-cinzel text-xl font-black text-white mb-1">Coffret Duo Prestige OZARO</h3>
-                            <p class="text-xs text-gray-400 mb-2">2 Montres Automatiques + Écrin Bois Noble + Garanties 1 An</p>
-                            <div class="flex items-center justify-center space-x-3 mb-4">
-                                <span class="text-sm text-gray-500 line-through">3 200,00 €</span>
-                                <span class="text-xl font-black text-brand-gold">2 390,00 €</span>
+                        <div class="flex flex-col text-center">
+                            <div class="relative px-3 py-0.5 border-x-2 border-gold-400 bg-neutral-950 rounded-sm">
+                                <span class="logo-3d-text text-2xl sm:text-3xl font-black tracking-widest font-serif uppercase leading-none block">
+                                    OZARO STYLE
+                                </span>
                             </div>
-                            <button onclick="openProductModal(100)" class="w-full py-3 bg-brand-gold/10 hover:bg-brand-gold text-brand-gold hover:text-black border border-brand-gold rounded-xl font-extrabold text-xs tracking-widest uppercase transition-all duration-300">
-                                Examiner ce Pack Exclusif
-                            </button>
                         </div>
                     </div>
+                    <div class="flex items-center justify-center w-full gap-2 mt-1">
+                        <span class="h-[1.5px] w-8 bg-gold-500"></span>
+                        <span class="text-[9px] sm:text-[10px] uppercase font-black tracking-[0.25em] text-gold-400 font-sans">
+                            URBAN & UNIQUE
+                        </span>
+                        <span class="h-[1.5px] w-8 bg-gold-500"></span>
+                    </div>
+                </a>
+
+                <!-- Right Quick Links & Cart -->
+                <div class="flex items-center space-x-3 sm:space-x-4">
+                    <a href="https://wa.me/212600000000?text=Bonjour%20OZARO%20STYLE,%20je%20souhaite%20des%20informations" target="_blank" class="hidden sm:inline-flex items-center gap-2 text-xs font-bold uppercase text-black bg-gold-400 border border-gold-300 px-4 py-2 rounded-full hover:bg-gold-300 transition-all shadow-lg">
+                        <i class="fa-brands fa-whatsapp text-emerald-950 text-sm"></i> WhatsApp Direct
+                    </a>
+                    <button id="cartBtn" class="relative p-2.5 rounded-full bg-neutral-900 border border-gold-400 text-gold-400 hover:bg-gold-400 hover:text-black transition-all duration-300 focus:outline-none shadow-md">
+                        <i class="fa-solid fa-bag-shopping text-base"></i>
+                        <span id="cartCount" class="absolute -top-1 -right-1 bg-emerald-600 text-white font-extrabold text-xs w-5 h-5 rounded-full flex items-center justify-center shadow-lg">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN PRODUCT CATALOG SECTION -->
+    <main id="produits" class="py-12 sm:py-16 bg-darkBg relative min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Centered Header Section -->
+            <div class="text-center max-w-2xl mx-auto mb-10 space-y-3">
+                <p class="text-gold-400 uppercase text-xs tracking-[0.3em] font-extrabold flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-crown text-xs"></i> Haute Horlogerie Urbaine <i class="fa-solid fa-crown text-xs"></i>
+                </p>
+                <h1 class="text-3xl sm:text-5xl font-serif font-bold text-white tracking-tight uppercase">
+                    Nos Garde-Temps
+                </h1>
+                <div class="w-24 h-1 bg-gold-gradient mx-auto rounded-full"></div>
+                <p class="text-gray-300 font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 flex-wrap">
+                    <span class="flex items-center gap-1.5 text-emerald-400"><i class="fa-brands fa-whatsapp text-sm"></i> Commander sur WhatsApp</span>
+                    <span class="text-gold-400">•</span>
+                    <span class="flex items-center gap-1.5 text-gray-300"><i class="fa-solid fa-truck-fast text-gold-400"></i> Livraison partout au Maroc</span>
+                </p>
+            </div>
+
+            <!-- Centered Filter Category Buttons -->
+            <div class="flex flex-wrap justify-center items-center gap-2 sm:gap-3 mb-12 max-w-4xl mx-auto">
+                <button class="filter-btn active px-5 py-2.5 rounded-full text-xs font-extrabold uppercase tracking-wider bg-gold-500 text-black shadow-lg transition-all" data-filter="all">Toutes les montres</button>
+                <button class="filter-btn px-5 py-2.5 rounded-full text-xs font-extrabold uppercase tracking-wider bg-neutral-900 text-gray-400 border border-neutral-800 hover:border-gold-400 hover:text-white transition-all" data-filter="chrono">Chronographes</button>
+                <button class="filter-btn px-5 py-2.5 rounded-full text-xs font-extrabold uppercase tracking-wider bg-neutral-900 text-gray-400 border border-neutral-800 hover:border-gold-400 hover:text-white transition-all" data-filter="automatique">Automatiques</button>
+                <button class="filter-btn px-5 py-2.5 rounded-full text-xs font-extrabold uppercase tracking-wider bg-neutral-900 text-gray-400 border border-neutral-800 hover:border-gold-400 hover:text-white transition-all" data-filter="packs">Packs VIP</button>
+            </div>
+
+            <!-- Centered Dynamic Product Grid -->
+            <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Products rendered via JavaScript -->
+            </div>
+
+        </div>
+    </main>
+
+    <!-- SECTION ENGAGEMENTS ET GARANTIES DEPLACEE EN BAS -->
+    <section id="trust-section" class="py-16 bg-neutral-950 border-t border-b border-gold-400/30 text-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-xl mx-auto mb-10">
+                <h2 class="text-2xl font-serif font-black uppercase text-gold-400 tracking-wider">Pourquoi Choisir OZARO STYLE</h2>
+                <div class="w-16 h-0.5 bg-gold-500 mx-auto mt-2"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                
+                <!-- Trust Card 1 -->
+                <div class="p-8 rounded-2xl bg-cardBg border border-gold-400/30 hover:border-gold-400/70 shadow-2xl transition-all duration-300 flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-black border-2 border-gold-400 flex items-center justify-center mb-5 text-gold-400 text-2xl shadow-lg">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3 class="text-base font-extrabold font-serif text-white uppercase tracking-wide mb-2">Matériaux Nobles</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed max-w-xs">
+                        Verre saphir inrayable, acier chirurgical 316L et dorure fine résistant à l'épreuve du temps.
+                    </p>
+                </div>
+
+                <!-- Trust Card 2 -->
+                <div class="p-8 rounded-2xl bg-cardBg border border-gold-400/30 hover:border-gold-400/70 shadow-2xl transition-all duration-300 flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-emerald-600 border-2 border-emerald-400 flex items-center justify-center mb-5 text-white text-2xl shadow-lg">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h3 class="text-base font-extrabold font-serif text-white uppercase tracking-wide mb-2">Commande WhatsApp Directe</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed max-w-xs">
+                        Commandez en 1 clic sur WhatsApp. Confirmation instantanée et suivi personnalisé de votre colis.
+                    </p>
+                </div>
+
+                <!-- Trust Card 3 -->
+                <div class="p-8 rounded-2xl bg-cardBg border border-gold-400/30 hover:border-gold-400/70 shadow-2xl transition-all duration-300 flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-full bg-black border-2 border-gold-400 flex items-center justify-center mb-5 text-gold-400 text-2xl shadow-lg">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-base font-extrabold font-serif text-white uppercase tracking-wide mb-2">1 An de Garantie</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed max-w-xs">
+                        Garantie officielle de 12 mois incluse avec chaque montre et certificat d'authenticité fourni.
+                    </p>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <section id="catalogue" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="text-center mb-10">
-            <h2 class="font-cinzel text-3xl sm:text-4xl font-extrabold text-white tracking-wider mb-2">Catalogue Garde-Temps &amp; Coffrets</h2>
-            <div class="w-24 h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent mx-auto mb-4"></div>
-            <p class="text-gray-400 text-xs sm:text-sm max-w-xl mx-auto">
-                Cliquez sur le <strong class="text-brand-gold font-bold">NOM DU PRODUIT EN GRAS</strong> pour ouvrir sa fiche complète et personnalisez la finition du cadran grâce aux pastilles interactives.
-            </p>
-        </div>
-
-        <div class="bg-brand-card p-4 rounded-2xl border border-brand-gold/20 mb-10 flex flex-wrap items-center justify-between gap-4 shadow-xl">
+    <!-- FOOTER WITH SOCIAL LINKS -->
+    <footer id="contact" class="bg-black pt-16 pb-12 border-t border-gold-400/40 text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-neutral-800 text-center md:text-left">
             
-            <div class="flex flex-wrap items-center gap-2" id="category-filters">
-                <button onclick="filterCategory('all')" class="cat-btn active px-4 py-2.5 rounded-xl text-xs font-extrabold tracking-wider uppercase transition bg-brand-gold text-black shadow-md">
-                    Toutes
-                </button>
-                <button onclick="filterCategory('homme')" class="cat-btn px-4 py-2.5 rounded-xl text-xs font-extrabold tracking-wider uppercase transition bg-black/60 text-gray-300 hover:text-brand-gold hover:bg-black border border-gray-800">
-                    Hommes
-                </button>
-                <button onclick="filterCategory('femme')" class="cat-btn px-4 py-2.5 rounded-xl text-xs font-extrabold tracking-wider uppercase transition bg-black/60 text-gray-300 hover:text-brand-gold hover:bg-black border border-gray-800">
-                    Femmes
-                </button>
-                <button onclick="filterCategory('edition-limitee')" class="cat-btn px-4 py-2.5 rounded-xl text-xs font-extrabold tracking-wider uppercase transition bg-black/60 text-gray-300 hover:text-brand-gold hover:bg-black border border-gray-800">
-                    Éditions Limitées
-                </button>
-                <button onclick="filterCategory('packs')" class="cat-btn px-4 py-2.5 rounded-xl text-xs font-extrabold tracking-wider uppercase transition bg-gradient-to-r from-brand-gold/20 to-brand-bronze/30 text-brand-gold hover:bg-brand-gold hover:text-black border border-brand-gold/50 flex items-center space-x-1.5">
-                    <i class="fa-solid fa-box-open text-xs"></i>
-                    <span>Packs Promos &amp; Coffrets</span>
-                </button>
+            <!-- Brand Info & Direct Social Media Links -->
+            <div class="space-y-4 flex flex-col items-center md:items-start">
+                <div class="relative inline-block px-3 py-1 border-x-2 border-gold-400 bg-neutral-950">
+                    <span class="logo-3d-text text-2xl font-black tracking-widest font-serif uppercase">
+                        OZARO STYLE
+                    </span>
+                </div>
+                <p class="text-xs leading-relaxed text-gray-400 max-w-xs">
+                    Maison d'horlogerie de luxe urbaine. Des garde-temps d'exception alliant esthétique audacieuse et robustesse.
+                </p>
+
+                <!-- DIRECT CLICKABLE SOCIAL MEDIA LINKS (SANS WHATSAPP) -->
+                <div class="flex space-x-4 text-gold-400 text-xl pt-2">
+                    <a href="https://instagram.com/ozarostyle" target="_blank" class="w-10 h-10 rounded-full bg-neutral-900 border border-gold-400/40 flex items-center justify-center hover:bg-gold-400 hover:text-black transition-all" title="Instagram Officiel">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://facebook.com/ozarostyle" target="_blank" class="w-10 h-10 rounded-full bg-neutral-900 border border-gold-400/40 flex items-center justify-center hover:bg-gold-400 hover:text-black transition-all" title="Facebook Officiel">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://tiktok.com/@ozarostyle" target="_blank" class="w-10 h-10 rounded-full bg-neutral-900 border border-gold-400/40 flex items-center justify-center hover:bg-gold-400 hover:text-black transition-all" title="TikTok Officiel">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                </div>
             </div>
 
-            <div class="relative w-full sm:w-64">
-                <input type="text" id="search-input" onkeyup="handleSearch()" placeholder="Rechercher modèle, finition..." class="w-full bg-black/70 border border-gray-800 rounded-xl pl-9 pr-4 py-2.5 text-xs text-white focus:outline-none focus:border-brand-gold transition">
-                <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-gray-500 text-xs"></i>
+            <div>
+                <h3 class="text-white font-extrabold text-xs uppercase tracking-wider mb-4 border-b md:border-b-0 md:border-l-2 border-gold-400 pb-1 md:pb-0 md:pl-3">Navigation</h3>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#produits" class="hover:text-gold-400 transition-colors">Tous les Garde-Temps</a></li>
+                    <li><a href="#produits" class="hover:text-gold-400 transition-colors">Packs VIP & Coffrets</a></li>
+                    <li><a href="#produits" class="hover:text-gold-400 transition-colors">Chronographes</a></li>
+                    <li><a href="#trust-section" class="hover:text-gold-400 transition-colors">1 An de Garantie</a></li>
+                </ul>
             </div>
+
+            <div>
+                <h3 class="text-white font-extrabold text-xs uppercase tracking-wider mb-4 border-b md:border-b-0 md:border-l-2 border-gold-400 pb-1 md:pb-0 md:pl-3">Garanties & Support</h3>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#trust-section" class="hover:text-gold-400 transition-colors">Garantie Officielle 1 An</a></li>
+                    <li><a href="#" class="hover:text-gold-400 transition-colors">Livraison Gratuite</a></li>
+                    <li><a href="#" class="hover:text-gold-400 transition-colors">Paiement Sécurisé à la Livraison</a></li>
+                    <li><a href="https://wa.me/212600000000" target="_blank" class="hover:text-gold-400 transition-colors">Assistance WhatsApp 7j/7</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-white font-extrabold text-xs uppercase tracking-wider mb-4 border-b md:border-b-0 md:border-l-2 border-gold-400 pb-1 md:pb-0 md:pl-3">Commande WhatsApp Express</h3>
+                <p class="text-xs mb-4 text-gray-400">Passer une commande sur mesure ou demander conseil à notre équipe d'experts :</p>
+                <a href="https://wa.me/212600000000?text=Bonjour%20OZARO%20STYLE,%20je%20souhaite%20commander%20une%20montre" target="_blank" class="inline-flex items-center justify-center gap-2 w-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs py-3.5 uppercase tracking-wider rounded-xl transition-all shadow-lg">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Discuter sur WhatsApp
+                </a>
+            </div>
+
         </div>
 
-        <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Dynamic JS render -->
-        </div>
-    </section>
-
-    <section id="trust" class="bg-brand-card border-y border-brand-gold/20 py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <span class="text-brand-gold text-xs font-extrabold uppercase tracking-widest">Confiance &amp; Sérénité Client</span>
-                <h2 class="font-cinzel text-3xl sm:text-4xl font-extrabold text-white mt-2">Nos Engagements d'Excellence</h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent mx-auto mt-4"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+            <p>&copy; 2026 OZARO STYLE - Urban & Unique. Tous droits réservés.</p>
+            <div class="flex gap-6">
+                <a href="#" class="hover:underline">Mentions Légales</a>
+                <a href="#" class="hover:underline">Garantie 1 An</a>
+                <a href="#" class="hover:underline">Conditions de Livraison</a>
             </div>
+        </div>
+    </footer>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                
-                <!-- Card 1: Livraison Blindée -->
-                <div class="bg-black/60 p-6 rounded-2xl border border-brand-gold/30 hover:border-brand-gold transition duration-300 flex flex-col justify-between group shadow-xl">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-brand-gold/10 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xl mb-4">
-                            <i class="fa-solid fa-truck-shield"></i>
+    <!-- PRODUCT MODAL -->
+    <div id="productModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300">
+        <div class="relative w-full max-w-3xl bg-cardBg border-2 border-gold-400/50 rounded-2xl shadow-2xl overflow-hidden text-gray-200 transform scale-95 transition-transform duration-300 max-h-[90vh] overflow-y-auto">
+            
+            <button id="closeModalBtn" class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-neutral-900 border border-gold-400 text-gray-300 hover:text-white hover:bg-gold-400 hover:text-black flex items-center justify-center transition-all">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <!-- SVG Display Area -->
+                <div class="p-8 bg-neutral-950 flex flex-col items-center justify-center relative border-b md:border-b-0 md:border-r border-neutral-800">
+                    <div class="absolute top-4 left-4">
+                        <span id="modalCategoryBadge" class="px-3 py-1 bg-gold-400/10 border border-gold-400/30 text-gold-400 text-[10px] font-extrabold uppercase tracking-widest rounded-full">
+                            GARDE-TEMPS
+                        </span>
+                    </div>
+
+                    <div id="modalWatchSvg" class="w-64 h-64 my-4">
+                        <!-- Dynamic SVG Watch -->
+                    </div>
+
+                    <div class="mt-2 text-center">
+                        <p class="text-xs uppercase text-gray-400 font-bold mb-2">Variantes de Couleur :</p>
+                        <div id="modalColorSwatches" class="flex flex-wrap justify-center gap-2">
+                            <!-- Swatches rendered via JS -->
                         </div>
-                        <h3 class="font-cinzel font-black text-white text-lg mb-2 group-hover:text-brand-gold transition">Livraison Blindée Premium</h3>
-                        <p class="text-xs text-gray-400 leading-relaxed">
-                            Acheminement ultra-sécurisé en coffret blindé anti-chocs scellé. Remise en main propre sous pli confidentiel avec assurance intégrée contre la perte ou le vol.
+                    </div>
+                </div>
+
+                <!-- Detailed Specs -->
+                <div class="p-8 flex flex-col justify-between space-y-6">
+                    <div>
+                        <div class="flex items-center gap-2 mb-2 text-gold-400 text-xs font-bold uppercase tracking-widest">
+                            <span>OZARO STYLE</span> &bull; <span>GARANTIE 1 AN</span>
+                        </div>
+
+                        <h2 id="modalTitle" class="text-2xl font-serif font-black text-white uppercase tracking-wider mb-2">
+                            <!-- Product Name -->
+                        </h2>
+
+                        <p id="modalPrice" class="text-2xl font-black text-gold-400 mb-4 font-sans">
+                            <!-- Price -->
+                        </p>
+
+                        <p id="modalDescription" class="text-gray-300 text-xs leading-relaxed mb-6">
+                            Garde-temps d'exception usiné avec précision pour un style urbain et raffiné.
+                        </p>
+
+                        <!-- Bold Technical Specifications -->
+                        <div class="space-y-2 text-xs border-t border-b border-neutral-800 py-4">
+                            <div class="flex justify-between">
+                                <span class="text-gray-400">Modèle:</span>
+                                <strong id="specName" class="text-white font-bold">OZARO CHRONO</strong>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-400">Prix TTC:</span>
+                                <strong id="specPrice" class="text-gold-400 font-bold">2 450 DH</strong>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-400">Garantie:</span>
+                                <strong class="text-emerald-400 font-bold">1 An Officielle</strong>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-400">Mouvement:</span>
+                                <strong id="specMovement" class="text-white font-bold">Automatique Suisse Calibre O-3D</strong>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-400">Boîtier & Bracelet:</span>
+                                <strong id="specMaterial" class="text-white font-bold">Acier Inox 316L / Or 18K</strong>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-400">Étanchéité:</span>
+                                <strong id="specWater" class="text-white font-bold">100 Mètres / 10 ATM</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal Order Action -->
+                    <div>
+                        <button id="modalWhatsAppDirectBtn" class="w-full py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold uppercase tracking-wider rounded-xl transition-all shadow-lg text-xs flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Commander sur WhatsApp (1-Clic)
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CART DRAWER -->
+    <div id="cartDrawer" class="fixed inset-0 z-50 pointer-events-none transition-all duration-300">
+        <div id="cartBackdrop" class="absolute inset-0 bg-black/80 opacity-0 transition-opacity duration-300 pointer-events-none"></div>
+
+        <div id="cartPanel" class="absolute top-0 right-0 h-full w-full max-w-md bg-cardBg border-l-2 border-gold-400 shadow-2xl p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300 pointer-events-auto">
+            <div>
+                <div class="flex justify-between items-center pb-4 border-b border-neutral-800">
+                    <h3 class="text-lg font-bold font-serif text-white uppercase tracking-wider flex items-center gap-2">
+                        <i class="fa-solid fa-bag-shopping text-gold-400"></i> Panier <span class="text-xs text-gold-400">(OZARO)</span>
+                    </h3>
+                    <button id="closeCartBtn" class="text-gray-400 hover:text-white p-2">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <div id="cartItemsList" class="mt-6 space-y-4 max-h-[60vh] overflow-y-auto pr-2">
+                    <!-- Cart items rendered via JS -->
+                </div>
+            </div>
+
+            <div class="border-t border-neutral-800 pt-4 space-y-4">
+                <div class="flex justify-between text-sm">
+                    <span class="text-gray-400">Sous-total :</span>
+                    <span id="cartSubtotal" class="font-bold text-white">0 DH</span>
+                </div>
+                <div class="flex justify-between text-sm">
+                    <span class="text-gray-400">Livraison :</span>
+                    <span class="text-emerald-400 font-extrabold uppercase text-xs">Gratuite</span>
+                </div>
+                <div class="flex justify-between text-sm">
+                    <span class="text-gray-400">Garantie :</span>
+                    <span class="text-gold-400 font-extrabold uppercase text-xs">1 An Inclus</span>
+                </div>
+                <div class="flex justify-between text-base font-bold border-t border-neutral-800 pt-3">
+                    <span class="text-white">Total :</span>
+                    <span id="cartTotal" class="text-gold-400 text-xl font-extrabold">0 DH</span>
+                </div>
+
+                <button onclick="checkoutViaWhatsApp()" class="w-full py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold uppercase tracking-wider rounded-xl transition-all text-xs shadow-lg flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Valider et Commander sur WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast Container -->
+    <div id="toastContainer" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2"></div>
+
+    <script>
+        // Official WhatsApp Phone Number (Maroc / International)
+        const WHATSAPP_PHONE_NUMBER = "212600000000"; 
+
+        /* WATCH PRODUCTS DATABASE */
+        const WATCH_PRODUCTS = [
+            {
+                id: 'pack-ozaro-royal-gold',
+                name: 'PACK PRESTIGE ROYAL GOLD',
+                category: 'packs',
+                price: 3890,
+                rating: 5.0,
+                movement: 'Automatique Suisse Calibre O-3D',
+                material: 'Coffret Écrin Bois + Bracelet Cuir & Acier Or 18K',
+                waterResistance: '100m / 10 ATM',
+                description: 'Le Coffret Ultime OZARO STYLE. Inclut le garde-temps Chrono Gold, un bracelet supplémentaire en acier Or 18K et un bracelet en cuir véritable dans un coffret prestige.',
+                selectedColorIndex: 0,
+                colors: [
+                    { name: 'Or Jaune Royal', hex: '#D4AF37', accent: '#FFD700', dial: '#121212', strap: '#D4AF37' },
+                    { name: 'Noir Stealth', hex: '#222222', accent: '#D4AF37', dial: '#0a0a0a', strap: '#1a1a1a' }
+                ]
+            },
+            {
+                id: 'pack-ozaro-executive-box',
+                name: 'PACK EXECUTIVE LIMITED BOX',
+                category: 'packs',
+                price: 4250,
+                rating: 5.0,
+                movement: 'Automatique Réserve 72h',
+                material: 'Coffret Carbone + Montre + Boutons de Manchette Or',
+                waterResistance: '100m / 10 ATM',
+                description: 'Ensemble VIP réservé aux connaisseurs. Contient le modèle Executive Green et des boutons de manchette gravés OZARO STYLE.',
+                selectedColorIndex: 0,
+                colors: [
+                    { name: 'Émeraude & Or', hex: '#047857', accent: '#D4AF37', dial: '#022c22', strap: '#B8860B' },
+                    { name: 'Titanium Rose', hex: '#B76E79', accent: '#E8C39E', dial: '#120c0e', strap: '#804040' }
+                ]
+            },
+            {
+                id: 'ozaro-gold',
+                name: 'OZARO CHRONO GOLD',
+                category: 'chrono',
+                price: 2450,
+                rating: 5.0,
+                movement: 'Automatique Suisse Calibre O-3D',
+                material: 'Acier Inox 316L / Plaqué Or 18K',
+                waterResistance: '100m / 10 ATM',
+                description: 'Boîtier d\'exception en acier enrichi d\'une finition Or 18 carats et cadran guilloché à la main.',
+                selectedColorIndex: 0,
+                colors: [
+                    { name: 'Or Jaune 18K', hex: '#D4AF37', accent: '#FFD700', dial: '#121212', strap: '#D4AF37' },
+                    { name: 'Noir Matte Stealth', hex: '#222222', accent: '#D4AF37', dial: '#0a0a0a', strap: '#1a1a1a' },
+                    { name: 'Argent Polie', hex: '#C0C0C0', accent: '#E0E0E0', dial: '#1a202c', strap: '#C0C0C0' }
+                ]
+            },
+            {
+                id: 'ozaro-stealth',
+                name: 'OZARO STEALTH BLACK',
+                category: 'automatique',
+                price: 2890,
+                rating: 4.9,
+                movement: 'Automatique Chronographe Suisse',
+                material: 'Carbone PVD Noir Mat & Titane',
+                waterResistance: '200m / 20 ATM',
+                description: 'Garde-temps d\'allure furtive avec revêtement PVD noir inrayable et finitions ultra résistantes.',
+                selectedColorIndex: 0,
+                colors: [
+                    { name: 'Noir Matte Stealth', hex: '#1c1c1c', accent: '#D4AF37', dial: '#050505', strap: '#111111' },
+                    { name: 'Rouge Crimson', hex: '#8B0000', accent: '#FF0000', dial: '#120505', strap: '#221111' },
+                    { name: 'Or Rose Royal', hex: '#B76E79', accent: '#E8C39E', dial: '#120c0e', strap: '#B76E79' }
+                ]
+            },
+            {
+                id: 'ozaro-royal-rose',
+                name: 'OZARO AUTOMATIQUE ROSE',
+                category: 'automatique',
+                price: 3100,
+                rating: 5.0,
+                movement: 'Mouvement Automatique Apparent',
+                material: 'Or Rose 18K & Verre Saphir',
+                waterResistance: '50m / 5 ATM',
+                description: 'Cadran squelette révélant la complexité du mécanisme suisse, sublimé par un boîtier Or Rose.',
+                selectedColorIndex: 0,
+                colors: [
+                    { name: 'Or Rose Royal', hex: '#B76E79', accent: '#E8C39E', dial: '#1a1113', strap: '#804040' },
+                    { name: 'Or Jaune 18K', hex: '#D4AF37', accent: '#FFF0A5', dial: '#0e0c08', strap: '#AA7C11' },
+                    { name: 'Bleu Minuit', hex: '#1E3A8A', accent: '#60A5FA', dial: '#0b132b', strap: '#1e293b' }
+                ]
+            },
+            {
+                id: 'ozaro-urban-silver',
+                name: 'OZARO CLASSIC SILVER',
+                category: 'chrono',
+                price: 1980,
+                rating: 4.8,
+                movement: 'Quartz Haute Précision Calibre O-1',
+                material: 'Acier Inoxydable Brossé 316L',
+                waterResistance: '100m / 10 ATM',
+                description: 'Design épuré et contemporain. Bracelet à maillons massifs et lunette avec finition miroir.',
+                selectedColorIndex: 0,
+                colors: [
+                    { name: 'Argent Polie', hex: '#D1D5DB', accent: '#F3F4F6', dial: '#1f2937', strap: '#9CA3AF' },
+                    { name: 'Vert Émeraude', hex: '#065F46', accent: '#34D399', dial: '#022c22', strap: '#064e3b' },
+                    { name: 'Noir Matte', hex: '#262626', accent: '#D4AF37', dial: '#0f0f0f', strap: '#171717' }
+                ]
+            },
+            {
+                id: 'ozaro-emerald-executive',
+                name: 'OZARO CHRONO EMERALD',
+                category: 'chrono',
+                price: 3450,
+                rating: 5.0,
+                movement: 'Automatique Réserve de Marche 72h',
+                material: 'Or Jaune 18K & Lunette Céramique',
+                waterResistance: '100m / 10 ATM',
+                description: 'Édition prestigieuse arborant un cadran vert émeraude encadré d\'une lunette céramique inrayable.',
+                selectedColorIndex: 0,
+                colors: [
+                    { name: 'Vert Émeraude & Or', hex: '#047857', accent: '#D4AF37', dial: '#022c22', strap: '#B8860B' },
+                    { name: 'Or Jaune Pur', hex: '#D4AF37', accent: '#FFD700', dial: '#121212', strap: '#D4AF37' },
+                    { name: 'Bleu Saphir', hex: '#1D4ED8', accent: '#93C5FD', dial: '#1e1b4b', strap: '#1e3a8a' }
+                ]
+            },
+            {
+                id: 'ozaro-phantom-tourbillon',
+                name: 'OZARO SQUELETTE TOURBILLON',
+                category: 'automatique',
+                price: 5200,
+                rating: 5.0,
+                movement: 'Tourbillon Volant Manuel O-9',
+                material: 'Titane Grade 5 & Carbone',
+                waterResistance: '50m / 5 ATM',
+                description: 'L\'apogée de l\'ingénierie horlogère. Tourbillon volant visible assemblé à la main.',
+                selectedColorIndex: 0,
+                colors: [
+                    { name: 'Titane Sombre', hex: '#374151', accent: '#D4AF37', dial: '#111827', strap: '#1f2937' },
+                    { name: 'Or Rose Stealth', hex: '#9F5255', accent: '#FCA5A5', dial: '#18181b', strap: '#451a1a' }
+                ]
+            }
+        ];
+
+        let cart = [];
+
+        function generateWatchSvg(colorObj) {
+            const strapHex = colorObj.strap || '#D4AF37';
+            const hex = colorObj.hex || '#D4AF37';
+            const accent = colorObj.accent || '#FFD700';
+            const dialHex = colorObj.dial || '#121212';
+
+            return `
+            <svg width="100%" height="100%" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="drop-shadow-2xl">
+                <defs>
+                    <linearGradient id="metalGrad-${hex.replace('#','')}" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="${hex}" stop-opacity="0.9"/>
+                        <stop offset="50%" stop-color="#ffffff" stop-opacity="0.4"/>
+                        <stop offset="100%" stop-color="${hex}" stop-opacity="1"/>
+                    </linearGradient>
+                    <radialGradient id="dialGrad-${dialHex.replace('#','')}" cx="50%" cy="50%" r="50%">
+                        <stop offset="60%" stop-color="${dialHex}"/>
+                        <stop offset="100%" stop-color="#000000"/>
+                    </radialGradient>
+                </defs>
+
+                <!-- Straps -->
+                <rect x="75" y="10" width="50" height="45" rx="4" fill="${strapHex}" stroke="#000" stroke-width="1"/>
+                <path d="M75 20 H125 M75 30 H125 M75 40 H125" stroke="rgba(0,0,0,0.3)" stroke-width="1.5"/>
+
+                <rect x="75" y="145" width="50" height="45" rx="4" fill="${strapHex}" stroke="#000" stroke-width="1"/>
+                <path d="M75 155 H125 M75 165 H125 M75 175 H125" stroke="rgba(0,0,0,0.3)" stroke-width="1.5"/>
+
+                <!-- Case & Dial -->
+                <circle cx="100" cy="100" r="55" fill="url(#metalGrad-${hex.replace('#','')})"/>
+                <circle cx="100" cy="100" r="50" fill="#111" stroke="${hex}" stroke-width="2"/>
+
+                <circle cx="100" cy="48" r="2" fill="${accent}"/>
+                <circle cx="152" cy="100" r="2" fill="${accent}"/>
+                <circle cx="100" cy="152" r="2" fill="${accent}"/>
+                <circle cx="48" cy="100" r="2" fill="${accent}"/>
+
+                <circle cx="100" cy="100" r="44" fill="url(#dialGrad-${dialHex.replace('#','')})" stroke="${hex}" stroke-width="1"/>
+
+                <!-- Markers -->
+                <rect x="98" y="60" width="4" height="8" rx="1" fill="${accent}"/>
+                <rect x="98" y="132" width="4" height="8" rx="1" fill="${accent}"/>
+                <rect x="60" y="98" width="8" height="4" rx="1" fill="${accent}"/>
+                <rect x="132" y="98" width="8" height="4" rx="1" fill="${accent}"/>
+
+                <circle cx="100" cy="82" r="9" stroke="${accent}" stroke-width="0.8" fill="rgba(0,0,0,0.4)"/>
+                <circle cx="84" cy="108" r="9" stroke="${accent}" stroke-width="0.8" fill="rgba(0,0,0,0.4)"/>
+                <circle cx="116" cy="108" r="9" stroke="${accent}" stroke-width="0.8" fill="rgba(0,0,0,0.4)"/>
+
+                <text x="100" y="72" font-family="Montserrat" font-size="5" font-weight="900" fill="${accent}" text-anchor="middle" letter-spacing="1">OZARO</text>
+
+                <!-- Hands -->
+                <line x1="100" y1="100" x2="82" y2="88" stroke="${accent}" stroke-width="3.5" stroke-linecap="round"/>
+                <line x1="100" y1="100" x2="122" y2="72" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="100" y1="100" x2="100" y2="62" stroke="#D4AF37" stroke-width="1" stroke-linecap="round"/>
+
+                <circle cx="100" cy="100" r="3.5" fill="${accent}" stroke="#000" stroke-width="1"/>
+                <rect x="155" y="94" width="6" height="12" rx="2" fill="url(#metalGrad-${hex.replace('#','')})"/>
+            </svg>
+            `;
+        }
+
+        function triggerWhatsAppOrder(productName, colorName, price) {
+            const message = `Bonjour OZARO STYLE,\n\nJe souhaite commander le modèle de montre suivant :\n\n📌 *Produit* : ${productName}\n🎨 *Finition* : ${colorName}\n💰 *Prix* : ${price.toLocaleString('fr-FR')} DH\n🛡️ *Garantie* : 1 An Officielle Incluse\n🚚 *Livraison* : Gratuite à Domicile\n\nMerci de confirmer ma commande.`;
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${encodedMessage}`, '_blank');
+        }
+
+        function renderProducts(productsToRender) {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
+
+            productsToRender.forEach(product => {
+                const currentColor = product.colors[product.selectedColorIndex];
+
+                const card = document.createElement('div');
+                card.className = 'card-shine rounded-2xl bg-cardBg border border-gold-400/20 hover:border-gold-400/60 p-5 transition-all duration-300 flex flex-col justify-between group shadow-xl text-center';
+
+                const swatchesHtml = product.colors.map((col, idx) => `
+                    <button 
+                        onclick="event.stopPropagation(); changeProductColor('${product.id}', ${idx})" 
+                        title="${col.name}"
+                        class="w-5 h-5 rounded-full border-2 transition-transform duration-200 ${idx === product.selectedColorIndex ? 'border-white scale-125 shadow-md' : 'border-transparent opacity-70 hover:opacity-100'}"
+                        style="background-color: ${col.hex}">
+                    </button>
+                `).join('');
+
+                card.innerHTML = `
+                    <div>
+                        <!-- SVG Display -->
+                        <div onclick="openProductModal('${product.id}')" class="relative w-full h-56 bg-neutral-950 rounded-xl p-4 flex items-center justify-center cursor-pointer overflow-hidden border border-neutral-800/80 group-hover:border-gold-400/30 transition-colors mx-auto">
+                            <div class="w-48 h-48 transform group-hover:scale-105 transition-transform duration-500">
+                                ${generateWatchSvg(currentColor)}
+                            </div>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 bg-black/80 border border-gold-400/40 rounded-full text-[10px] font-extrabold text-gold-400 uppercase tracking-widest">
+                                ${product.category}
+                            </span>
+                        </div>
+
+                        <!-- Color Selector -->
+                        <div class="mt-4 flex items-center justify-center gap-2">
+                            <span class="text-[11px] text-gray-400 uppercase tracking-wider font-semibold">Couleur :</span>
+                            <div class="flex items-center space-x-2">
+                                ${swatchesHtml}
+                            </div>
+                        </div>
+
+                        <!-- BOLD Title -->
+                        <h3 onclick="openProductModal('${product.id}')" class="mt-3 text-base font-bold font-serif text-white group-hover:text-gold-400 transition-colors cursor-pointer uppercase tracking-wide">
+                            <strong>${product.name}</strong>
+                        </h3>
+
+                        <div class="flex items-center justify-center gap-1 my-1 text-gold-400 text-xs">
+                            <i class="fa-solid fa-star"></i>
+                            <span class="font-bold text-gray-200">${product.rating}</span>
+                            <span class="text-gray-500 text-[10px] font-mono ml-1">(${product.waterResistance})</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 pt-4 border-t border-neutral-800 flex flex-col gap-3">
+                        <div class="text-center">
+                            <span class="text-[10px] text-gray-500 uppercase block font-semibold">Prix Officiel</span>
+                            <strong class="text-xl font-black text-gold-400 font-sans">${product.price.toLocaleString('fr-FR')} DH</strong>
+                        </div>
+
+                        <!-- COMMANDER SUR WHATSAPP BUTTON -->
+                        <button 
+                            onclick="handleDirectWhatsAppOrder('${product.id}')" 
+                            class="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs uppercase tracking-wider rounded-xl transition-all duration-300 shadow-md flex items-center justify-center gap-2 active:scale-95"
+                        >
+                            <i class="fa-brands fa-whatsapp text-lg"></i> <strong>Commander sur WhatsApp</strong>
+                        </button>
+
+                        <button 
+                            onclick="openProductModal('${product.id}')" 
+                            class="w-full py-2 bg-neutral-900 border border-gold-400/30 text-gold-400 hover:border-gold-400 font-bold text-[11px] uppercase tracking-wider rounded-lg transition-all"
+                        >
+                            Voir Produit
+                        </button>
+                    </div>
+                `;
+
+                grid.appendChild(card);
+            });
+        }
+
+        function changeProductColor(productId, colorIndex) {
+            const product = WATCH_PRODUCTS.find(p => p.id === productId);
+            if (product) {
+                product.selectedColorIndex = colorIndex;
+                renderProducts(WATCH_PRODUCTS);
+            }
+        }
+
+        function handleDirectWhatsAppOrder(productId) {
+            const product = WATCH_PRODUCTS.find(p => p.id === productId);
+            if (product) {
+                const currentColor = product.colors[product.selectedColorIndex];
+                addToCart(productId);
+                triggerWhatsAppOrder(product.name, currentColor.name, product.price);
+            }
+        }
+
+        /* Filter Tabs Listener */
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('bg-gold-500', 'text-black');
+                    b.classList.add('bg-neutral-900', 'text-gray-400');
+                });
+                e.target.classList.remove('bg-neutral-900', 'text-gray-400');
+                e.target.classList.add('bg-gold-500', 'text-black');
+
+                const filter = e.target.getAttribute('data-filter');
+                if (filter === 'all') {
+                    renderProducts(WATCH_PRODUCTS);
+                } else {
+                    const filtered = WATCH_PRODUCTS.filter(p => p.category === filter);
+                    renderProducts(filtered);
+                }
+            });
+        });
+
+        /* PRODUCT MODAL SYSTEM */
+        let currentModalProductId = null;
+
+        function openProductModal(productId) {
+            const product = WATCH_PRODUCTS.find(p => p.id === productId);
+            if (!product) return;
+
+            currentModalProductId = productId;
+            const currentColor = product.colors[product.selectedColorIndex];
+
+            document.getElementById('modalTitle').innerHTML = `<strong>${product.name}</strong>`;
+            document.getElementById('modalPrice').innerHTML = `<strong>${product.price.toLocaleString('fr-FR')} DH</strong>`;
+            document.getElementById('modalDescription').innerText = product.description;
+            document.getElementById('modalCategoryBadge').innerText = product.category.toUpperCase();
+
+            document.getElementById('specName').innerHTML = `<strong>${product.name}</strong>`;
+            document.getElementById('specPrice').innerHTML = `<strong>${product.price.toLocaleString('fr-FR')} DH</strong>`;
+            document.getElementById('specMovement').innerHTML = `<strong>${product.movement}</strong>`;
+            document.getElementById('specMaterial').innerHTML = `<strong>${product.material}</strong>`;
+            document.getElementById('specWater').innerHTML = `<strong>${product.waterResistance}</strong>`;
+
+            updateModalWatchVisual(currentColor);
+
+            const swatchesContainer = document.getElementById('modalColorSwatches');
+            swatchesContainer.innerHTML = product.colors.map((col, idx) => `
+                <button 
+                    onclick="updateModalColor(${idx})"
+                    class="px-3 py-1.5 rounded-full border border-gray-700 text-xs font-semibold flex items-center gap-2 transition-all ${idx === product.selectedColorIndex ? 'border-gold-400 bg-gold-400/10 text-gold-400' : 'text-gray-400 hover:text-white'}"
+                >
+                    <span class="w-3.5 h-3.5 rounded-full inline-block" style="background-color: ${col.hex}"></span>
+                    ${col.name}
+                </button>
+            `).join('');
+
+            const modal = document.getElementById('productModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.querySelector('div').classList.remove('scale-95');
+            modal.querySelector('div').classList.add('scale-100');
+        }
+
+        function updateModalWatchVisual(colorObj) {
+            document.getElementById('modalWatchSvg').innerHTML = generateWatchSvg(colorObj);
+        }
+
+        function updateModalColor(colorIndex) {
+            const product = WATCH_PRODUCTS.find(p => p.id === currentModalProductId);
+            if (product) {
+                product.selectedColorIndex = colorIndex;
+                const currentColor = product.colors[colorIndex];
+                updateModalWatchVisual(currentColor);
+                openProductModal(currentModalProductId);
+                renderProducts(WATCH_PRODUCTS);
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('productModal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.querySelector('div').classList.remove('scale-100');
+            modal.querySelector('div').classList.add('scale-95');
+        }
+
+        document.getElementById('closeModalBtn').addEventListener('click', closeModal);
+        document.getElementById('modalWhatsAppDirectBtn').addEventListener('click', () => {
+            if (currentModalProductId) {
+                handleDirectWhatsAppOrder(currentModalProductId);
+                closeModal();
+            }
+        });
+
+        /* CART DRAWER & CHECKOUT */
+        function addToCart(productId) {
+            const product = WATCH_PRODUCTS.find(p => p.id === productId);
+            if (!product) return;
+
+            const selectedColor = product.colors[product.selectedColorIndex];
+            const existingItem = cart.find(item => item.id === productId && item.color.name === selectedColor.name);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    color: selectedColor,
+                    quantity: 1
+                });
+            }
+
+            updateCartUI();
+            showToast(`Garde-temps ajouté au panier !`);
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const totalCount = cart.reduce((sum, item) => sum += item.quantity, 0);
+            document.getElementById('cartCount').innerText = totalCount;
+
+            const cartItemsList = document.getElementById('cartItemsList');
+            cartItemsList.innerHTML = '';
+
+            let total = 0;
+
+            if (cart.length === 0) {
+                cartItemsList.innerHTML = `
+                    <div class="text-center py-12 text-gray-500">
+                        <i class="fa-solid fa-bag-shopping text-4xl mb-3 text-gray-700"></i>
+                        <p class="text-sm">Votre panier est vide.</p>
+                    </div>
+                `;
+            } else {
+                cart.forEach((item, idx) => {
+                    const itemSubtotal = item.price * item.quantity;
+                    total += itemSubtotal;
+
+                    const cartItemEl = document.createElement('div');
+                    cartItemEl.className = 'flex items-center justify-between p-3 rounded-lg bg-neutral-900 border border-neutral-800';
+                    cartItemEl.innerHTML = `
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-black rounded p-1 flex-shrink-0">
+                                ${generateWatchSvg(item.color)}
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-white uppercase">${item.name}</h4>
+                                <p class="text-[10px] text-gold-400">Finition: ${item.color.name}</p>
+                                <p class="text-xs font-semibold text-gray-300 mt-0.5">${item.price.toLocaleString('fr-FR')} DH x ${item.quantity}</p>
+                            </div>
+                        </div>
+                        <button onclick="removeFromCart(${idx})" class="text-gray-500 hover:text-red-400 p-1">
+                            <i class="fa-solid fa-trash-can text-sm"></i>
+                        </button>
+                    `;
+                    cartItemsList.appendChild(cartItemEl);
+                });
+            }
+
+            document.getElementById('cartSubtotal').innerText = `${total.toLocaleString('fr-FR')} DH`;
+            document.getElementById('cartTotal').innerText = `${total.toLocaleString('fr-FR')} DH`;
+        }
+
+        function checkoutViaWhatsApp() {
+            if (cart.length === 0) {
+                showToast("Votre panier est vide !", "error");
+                return;
+            }
+
+            let cartSummary = cart.map(i => `• ${i.name} (${i.color.name}) x${i.quantity} = ${(i.price * i.quantity).toLocaleString('fr-FR')} DH`).join('\n');
+            let total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            const message = `Bonjour OZARO STYLE,\n\nJe souhaite valider mon panier de commande :\n\n${cartSummary}\n\n💰 *Total TTC* : ${total.toLocaleString('fr-FR')} DH\n🚚 *Livraison* : Gratuite\n🛡 *Garantie* : 1 An Officielle Inclus\n\nMerci de traiter ma commande.`;
+
+            window.open(`https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        function toggleCart(show) {
+            const drawer = document.getElementById('cartDrawer');
+            const backdrop = document.getElementById('cartBackdrop');
+            const panel = document.getElementById('cartPanel');
+
+            if (show) {
+                drawer.classList.remove('pointer-events-none');
+                backdrop.classList.remove('opacity-0');
+                backdrop.classList.add('opacity-100');
+                panel.classList.remove('translate-x-full');
+            } else {
+                backdrop.classList.remove('opacity-100');
+                backdrop.classList.add('opacity-0');
+                panel.classList.add('translate-x-full');
+                setTimeout(() => {
+                    drawer.classList.add('pointer-events-none');
+                }, 300);
+            }
+        }
+
+        document.getElementById('cartBtn').addEventListener('click', () => toggleCart(true));
+        document.getElementById('closeCartBtn').addEventListener('click', () => toggleCart(false));
+        document.getElementById('cartBackdrop').addEventListener('click', () => toggleCart(false));
+
+        /* Toast Notifications */
+        function showToast(message) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = 'glass-panel px-5 py-3 rounded-lg border border-gold-400 text-white text-xs font-semibold shadow-2xl flex items-center gap-3 transition-all transform translate-y-2 opacity-0';
+            toast.innerHTML = `<i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i> <span>${message}</span>`;
+
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-2', 'opacity-0');
+            }, 10);
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-2');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        /* Initialize Catalog */
+        window.addEventListener('DOMContentLoaded', () => {
+            renderProducts(WATCH_PRODUCTS);
+        });
+    </script>
+</body>
+</html>
