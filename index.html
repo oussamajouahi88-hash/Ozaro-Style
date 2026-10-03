@@ -3,791 +3,864 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OZARO STYLE | High-End Streetwear Timepieces</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Bebas Neue (Title condensed) & Space Grotesk / Inter -->
+    <title>OZARO STYLE | Limited Timepieces & Sharp Details</title>
+    
+    <!-- Google Fonts: Bebas Neue, Oswald, Inter, Gothic & Display Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&family=Oswald:wght@500;600;700&family=UnifrakturMaguntia&family=Syne:wght@800&display=swap" rel="stylesheet">
     
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brandDark: '#0a0a0a',
-                        brandGray: '#121212',
-                        brandLight: '#f8f8f8',
-                        silverAccent: '#c0c0c0',
+                        brandRed: '#ff2b2b',
+                        brandRedDark: '#cc1111',
+                        darkBg: '#080808',
+                        darkCard: '#121212',
+                        darkBorder: '#222222',
                     },
                     fontFamily: {
-                        bebas: ['"Bebas Neue"', 'sans-serif'],
-                        monoSpace: ['"Space Grotesk"', 'sans-serif'],
-                        sans: ['Inter', 'sans-serif'],
+                        condensed: ['"Bebas Neue"', '"Oswald"', 'sans-serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                        gothic: ['"UnifrakturMaguntia"', 'cursive'],
+                        display: ['"Syne"', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-
+    
     <style>
-        /* High-End Editorial Silver Buttons */
-        .btn-silver-metallic {
-            background: linear-gradient(135deg, #ffffff 0%, #d1d5db 50%, #9ca3af 100%);
-            color: #000000;
-            border: 1px solid #ffffff;
-            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .btn-silver-metallic:hover {
-            background: linear-gradient(135deg, #ffffff 0%, #e5e7eb 100%);
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-            transform: translateY(-1px);
-        }
-
-        .btn-outline-high-end {
-            background: rgba(0, 0, 0, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.8);
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #080808;
             color: #ffffff;
-            backdrop-filter: blur(4px);
-            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .btn-outline-high-end:hover {
-            background: #ffffff;
-            color: #000000;
-            border-color: #ffffff;
+            overflow-x: hidden;
         }
 
-        /* Banner Marquee Animation */
+        /* Marquee / Ticker Animation */
         @keyframes marquee {
             0% { transform: translateX(0%); }
             100% { transform: translateX(-50%); }
         }
-        .animate-marquee-fast {
-            display: inline-flex;
-            white-space: nowrap;
-            animation: marquee 22s linear infinite;
+        .animate-marquee {
+            display: flex;
+            width: 200%;
+            animation: marquee 25s linear infinite;
         }
-        .animate-marquee-fast:hover {
+        .animate-marquee:hover {
             animation-play-state: paused;
         }
 
-        /* Minimalist Scrollbar */
+        /* Custom Scrollbar */
         ::-webkit-scrollbar {
-            width: 6px;
+            width: 5px;
         }
         ::-webkit-scrollbar-track {
-            background: #000000;
+            background: #080808;
         }
         ::-webkit-scrollbar-thumb {
-            background: #333333;
+            background: #222222;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #666666;
+            background: #ff2b2b;
+        }
+
+        /* Stylized Logo Glow effect */
+        .logo-glow {
+            text-shadow: 0 0 15px rgba(255, 43, 43, 0.4);
         }
     </style>
 </head>
-<body class="bg-black text-white font-sans antialiased selection:bg-white selection:text-black">
+<body class="bg-darkBg text-white antialiased selection:bg-brandRed selection:text-black">
 
-    <!-- TOP ANNOUNCEMENT BAR (BIRGAMO STYLE - BLACK BACKGROUND + WHITE CAPS TEXT) -->
-    <div class="bg-black text-white text-[11px] font-monoSpace py-2 border-b border-neutral-800 tracking-widest overflow-hidden z-50 relative uppercase">
-        <div class="animate-marquee-fast flex gap-8 items-center font-semibold">
-            <span class="flex items-center gap-3"><span class="text-red-500 font-bold">+</span> TIME REBORN. MOVE DIFFERENT.</span>
-            <span>+</span>
-            <span class="flex items-center gap-3"><span class="text-red-500 font-bold">+</span> OZARO STYLE / NEW DROP 2026</span>
-            <span>+</span>
-            <span class="flex items-center gap-3"><span class="text-red-500 font-bold">+</span> HIGH-END TIMEPIECES & STREET UNIFORMS</span>
-            <span>+</span>
-            <span class="flex items-center gap-3"><span class="text-red-500 font-bold">+</span> LIMITED PIECES. SHARP DETAILS.</span>
-            <span>+</span>
-            <span class="flex items-center gap-3"><span class="text-red-500 font-bold">+</span> LIVRAISON EXPRESS MAROC & PAIEMENT À LA LIVRAISON</span>
-            <span>+</span>
-            <!-- Marquee Loop Repeat -->
-            <span class="flex items-center gap-3"><span class="text-red-500 font-bold">+</span> TIME REBORN. MOVE DIFFERENT.</span>
-            <span>+</span>
-            <span class="flex items-center gap-3"><span class="text-red-500 font-bold">+</span> OZARO STYLE / NEW DROP 2026</span>
-            <span>+</span>
-            <span class="flex items-center gap-3"><span class="text-red-500 font-bold">+</span> HIGH-END TIMEPIECES & STREET UNIFORMS</span>
-            <span>+</span>
-            <span class="flex items-center gap-3"><span class="text-red-500 font-bold">+</span> LIMITED PIECES. SHARP DETAILS.</span>
-            <span>+</span>
-            <span class="flex items-center gap-3"><span class="text-red-500 font-bold">+</span> LIVRAISON EXPRESS MAROC & PAIEMENT À LA LIVRAISON</span>
+    <!-- 1. TOP TICKER / MARQUEE BANNER -->
+    <div class="bg-black border-b border-darkBorder py-2 overflow-hidden text-[11px] font-bold tracking-widest uppercase text-white select-none">
+        <div class="animate-marquee whitespace-nowrap flex items-center">
+            <span class="mx-4 flex items-center gap-3">
+                <span class="text-brandRed font-bold">+</span> LIMITED PIECES. SHARP DETAILS. 
+                <span class="text-brandRed font-bold">+</span> SEE DIFFERENT. MOVE DIFFERENT. 
+                <span class="text-brandRed font-bold">+</span> OZARO STYLE / NEW DROP 
+                <span class="text-brandRed font-bold">+</span> AUTOMATIC & CHRONOGRAPH 
+                <span class="text-brandRed font-bold">+</span> LIVRAISON PARTOUT AU MAROC 
+                <span class="text-brandRed font-bold">+</span> LIMITED PIECES. SHARP DETAILS.
+            </span>
+            <span class="mx-4 flex items-center gap-3">
+                <span class="text-brandRed font-bold">+</span> LIMITED PIECES. SHARP DETAILS. 
+                <span class="text-brandRed font-bold">+</span> SEE DIFFERENT. MOVE DIFFERENT. 
+                <span class="text-brandRed font-bold">+</span> OZARO STYLE / NEW DROP 
+                <span class="text-brandRed font-bold">+</span> AUTOMATIC & CHRONOGRAPH 
+                <span class="text-brandRed font-bold">+</span> LIVRAISON PARTOUT AU MAROC 
+                <span class="text-brandRed font-bold">+</span> LIMITED PIECES. SHARP DETAILS.
+            </span>
         </div>
     </div>
 
-    <!-- HEADER / NAVIGATION (CLEAN WHITE BACKGROUND WITH CONDENSED LOGO & LINKS) -->
-    <header class="bg-white text-black border-b border-black sticky top-0 z-40">
-        <div class="max-w-[1800px] mx-auto px-4 sm:px-8 h-16 sm:h-20 flex items-center justify-between">
-            
-            <!-- Left Navigation Menu (High-End Streetwear Font) -->
-            <nav class="hidden lg:flex items-center space-x-6 text-[11px] sm:text-xs font-monoSpace font-bold uppercase tracking-wider">
-                <button onclick="filterCategory('femme')" class="hover:opacity-60 transition flex items-center gap-1.5">
-                    FEMMES <span class="text-red-600 font-bold">+</span>
-                </button>
-                <button onclick="filterCategory('homme')" class="hover:opacity-60 transition flex items-center gap-1.5">
-                    HOMMES <span class="text-red-600 font-bold">+</span>
-                </button>
-                <button onclick="filterCategory('packs')" class="hover:opacity-60 transition flex items-center gap-1.5">
-                    PACKS EXCLUSIFS <span class="text-red-600 font-bold">+</span>
-                </button>
-                <button onclick="filterCategory('all')" class="hover:opacity-60 transition flex items-center gap-1.5">
-                    NEW-ARRIVALS <span class="text-red-600 font-bold">+</span>
-                </button>
-            </nav>
+    <!-- 2. NAVIGATION BAR -->
+    <header class="sticky top-0 z-40 bg-black/90 backdrop-blur-md border-b border-darkBorder">
+        <div class="max-w-[1700px] mx-auto px-4 sm:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Left Nav Links -->
+                <nav class="hidden lg:flex items-center space-x-6 text-[12px] font-extrabold tracking-wider uppercase">
+                    <a href="#catalog" onclick="filterProducts('femme')" class="hover:text-brandRed transition-colors">FEMMES</a>
+                    <span class="text-brandRed font-bold text-xs">+</span>
+                    <a href="#catalog" onclick="filterProducts('homme')" class="hover:text-brandRed transition-colors">HOMMES</a>
+                    <span class="text-brandRed font-bold text-xs">+</span>
+                    <a href="#catalog" onclick="filterProducts('new')" class="hover:text-brandRed transition-colors">NEW-ARRIVALS</a>
+                    <a href="#catalog" onclick="filterProducts('bestseller')" class="hover:text-brandRed transition-colors">BEST-SELLERS</a>
+                </nav>
 
-            <!-- Mobile Hamburger Button -->
-            <button onclick="toggleMobileMenu()" class="lg:hidden text-black focus:outline-none p-2">
-                <i class="fa-solid fa-bars-staggered text-xl"></i>
-            </button>
-
-            <!-- Center Brand Logo (Condense Bold - Birgamo Inspired) -->
-            <a href="#" class="font-bebas text-3xl sm:text-4xl tracking-[0.15em] text-black font-extrabold transform hover:scale-105 transition duration-200">
-                OZARO
-            </a>
-
-            <!-- Right Actions (Search, Account, Bag) -->
-            <div class="flex items-center space-x-4 sm:space-x-6 text-xs font-monoSpace font-bold uppercase tracking-wider">
-                <button onclick="scrollToProducts()" class="hidden sm:flex items-center gap-1.5 hover:opacity-60 transition">
-                    SEARCH <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-white p-2 focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
-                <a href="#about" class="hidden sm:flex items-center gap-1.5 hover:opacity-60 transition">
-                    ACCOUNT <i class="fa-regular fa-user text-xs"></i>
+
+                <!-- Center Stylized Logo -->
+                <a href="#" class="absolute left-1/2 -translate-x-1/2 flex flex-col items-center group">
+                    <span class="font-gothic text-4xl sm:text-5xl text-white group-hover:text-brandRed transition-all duration-300 logo-glow leading-none tracking-normal">
+                        Ozaro
+                    </span>
+                    <span class="font-display text-[9px] tracking-[0.4em] text-gray-400 group-hover:text-white uppercase font-black -mt-1">
+                        S T Y L E
+                    </span>
                 </a>
-                
-                <!-- Cart Trigger Button -->
-                <button onclick="toggleCart()" class="bg-black text-white px-3.5 py-2 hover:bg-neutral-800 transition flex items-center gap-2">
-                    <span>BAG</span>
-                    <span id="cart-badge" class="font-bold text-slate-300">(0)</span>
-                </button>
-            </div>
-        </div>
 
-        <!-- Mobile Drawer Navigation -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-black text-white border-b border-neutral-800 p-6 space-y-4 font-monoSpace text-xs uppercase tracking-widest">
-            <button onclick="filterCategory('all'); toggleMobileMenu();" class="block w-full text-left py-2 border-b border-neutral-900 hover:text-slate-400">+ TOUTES LES COLLECTIONS</button>
-            <button onclick="filterCategory('homme'); toggleMobileMenu();" class="block w-full text-left py-2 border-b border-neutral-900 hover:text-slate-400">+ MONTRES HOMMES</button>
-            <button onclick="filterCategory('femme'); toggleMobileMenu();" class="block w-full text-left py-2 border-b border-neutral-900 hover:text-slate-400">+ MONTRES FEMMES</button>
-            <button onclick="filterCategory('packs'); toggleMobileMenu();" class="block w-full text-left py-2 border-b border-neutral-900 hover:text-slate-400">+ PACKS CADEAUX & DROP</button>
-        </div>
-    </header>
+                <!-- Right Nav Controls -->
+                <div class="flex items-center space-x-6 text-[12px] font-extrabold tracking-wider uppercase">
+                    <button id="search-btn" class="hidden sm:flex items-center gap-1.5 hover:text-brandRed transition-colors">
+                        <span>SEARCH</span>
+                        <i data-lucide="search" class="w-4 h-4"></i>
+                    </button>
 
-    <!-- HERO EDITORIAL BANNER (VISION / TIME REBORN - BIRGAMO IMAGE STYLE) -->
-    <section class="relative bg-black min-h-[85vh] flex items-end justify-start overflow-hidden border-b border-neutral-800">
-        <!-- Hero Background Editorial Photo -->
-        <div class="absolute inset-0 z-0 opacity-75 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=2000&auto=format&fit=crop'); filter: grayscale(20%) contrast(110%);"></div>
-        
-        <!-- Dark Gradients Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-transparent z-10"></div>
-
-        <div class="max-w-[1800px] w-full mx-auto px-6 sm:px-12 py-16 sm:py-24 relative z-20">
-            <div class="max-w-3xl space-y-4">
-                
-                <!-- Category Tag / Drop Tag -->
-                <p class="font-monoSpace text-xs uppercase tracking-[0.3em] text-red-500 font-bold flex items-center gap-2">
-                    <span>#01</span> / <span>OZARO TIMEPIECES</span>
-                </p>
-
-                <!-- Giant Condensed Title -->
-                <h1 class="font-bebas text-6xl sm:text-8xl lg:text-9xl font-extrabold tracking-tight leading-[0.85] text-white uppercase drop-shadow-2xl">
-                    TIME<br>REBORN
-                </h1>
-
-                <!-- Subtitle Monospace -->
-                <p class="font-monoSpace text-sm sm:text-base text-neutral-300 max-w-lg pt-2 leading-relaxed font-light tracking-wide">
-                    Luxury timepieces built for those who see different. Sharp details, dark aesthetic, unmatched presence.
-                </p>
-
-                <!-- Action CTA Buttons -->
-                <div class="flex flex-wrap items-center gap-4 pt-6">
-                    <a href="#products-section" class="btn-silver-metallic font-monoSpace text-xs font-bold px-8 py-4 uppercase tracking-widest flex items-center gap-3">
-                        SHOP TIMEPIECES <i class="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
-                    <button onclick="filterCategory('packs')" class="btn-outline-high-end font-monoSpace text-xs font-bold px-8 py-4 uppercase tracking-widest">
-                        EXPLORE DROPS +
+                    <!-- Cart Trigger -->
+                    <button id="open-cart-btn" class="flex items-center gap-1.5 bg-white text-black px-4 py-2 font-black text-xs hover:bg-brandRed hover:text-white transition-all uppercase">
+                        <span>BAG</span>
+                        <span>(<span id="cart-count">0</span>)</span>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Side Drop Numbers (Aesthetic Indicator) -->
-        <div class="hidden xl:flex absolute right-12 bottom-16 z-20 flex-col items-end font-monoSpace text-xs text-neutral-500 space-y-2">
-            <span class="text-white font-bold border-r-2 border-white pr-2">01 / TIME REBORN</span>
-            <span class="pr-2">02 / CHRONO SILVER</span>
-            <span class="pr-2">03 / SPECIAL PACKS</span>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-black border-b border-darkBorder px-6 py-6 space-y-4 text-sm font-bold tracking-widest uppercase">
+            <a href="#catalog" onclick="filterProducts('femme'); toggleMobileMenu()" class="block hover:text-brandRed">FEMMES</a>
+            <a href="#catalog" onclick="filterProducts('homme'); toggleMobileMenu()" class="block hover:text-brandRed">HOMMES</a>
+            <a href="#catalog" onclick="filterProducts('new'); toggleMobileMenu()" class="block hover:text-brandRed">NEW ARRIVALS</a>
+            <a href="#catalog" onclick="filterProducts('bestseller'); toggleMobileMenu()" class="block hover:text-brandRed">BEST-SELLERS</a>
+        </div>
+    </header>
+
+    <!-- 3. HERO SECTION -->
+    <section id="hero" class="relative min-h-[85vh] lg:min-h-[90vh] flex items-end sm:items-center justify-start overflow-hidden border-b border-darkBorder bg-black">
+        <!-- Hero Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=2000&auto=format&fit=crop" 
+                 alt="Ozaro Style Editorial Watch Photo" 
+                 class="w-full h-full object-cover object-center filter brightness-[0.45] contrast-125 scale-105">
+            <div class="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent"></div>
+        </div>
+
+        <!-- Background Stylized Watermark -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none opacity-5 select-none z-0">
+            <h1 class="font-gothic text-[25vw] leading-none text-white whitespace-nowrap text-center">
+                Ozaro
+            </h1>
+        </div>
+
+        <!-- Hero Content Overlay -->
+        <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 py-16 sm:py-24 w-full">
+            <div class="max-w-2xl">
+                <p class="text-brandRed font-mono font-bold text-xs sm:text-sm tracking-widest uppercase mb-3">
+                    03 / LIMITED TIMEPIECES
+                </p>
+
+                <h1 class="font-condensed text-6xl sm:text-8xl md:text-9xl font-black uppercase tracking-tight text-white leading-none mb-4">
+                    UNSEEN SERIES
+                </h1>
+
+                <p class="text-gray-300 text-base sm:text-xl font-medium tracking-wide mb-8 max-w-lg">
+                    Collection exclusive pour Hommes & Femmes. Cliquez sur une montre pour personnaliser votre couleur et commander sur WhatsApp.
+                </p>
+
+                <!-- CTA Button (WhatsApp button removed as requested) -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                    <a href="#catalog" class="bg-white hover:bg-brandRed text-black hover:text-white font-extrabold px-10 py-4 text-xs sm:text-sm tracking-widest uppercase transition-all duration-200 flex items-center justify-center gap-3 group">
+                        <span>DÉCOUVRIR LES DROPS</span>
+                        <span class="group-hover:translate-x-1 transition-transform">→</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- MAIN PRODUCT CATALOG SECTION -->
-    <section id="products-section" class="max-w-[1800px] mx-auto px-4 sm:px-8 py-20">
-        
-        <!-- Section Header / Categories -->
-        <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-neutral-800 pb-8 mb-12">
+    <!-- 4. PRODUCT CATALOG -->
+    <section id="catalog" class="py-20 max-w-[1700px] mx-auto px-4 sm:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-darkBorder pb-6 gap-6">
             <div>
-                <p class="font-monoSpace text-xs uppercase tracking-widest text-neutral-500 font-semibold mb-1">CURRENT COLLECTION</p>
-                <h2 class="font-bebas text-4xl sm:text-5xl font-extrabold text-white tracking-wide uppercase">CATALOGUE DROP</h2>
+                <p class="text-brandRed text-xs font-mono font-bold uppercase tracking-widest mb-1">// CATALOGUE EXCLUSIF</p>
+                <h2 class="font-condensed text-4xl sm:text-6xl font-black uppercase tracking-tight text-white">
+                    DROP COLLECTION
+                </h2>
             </div>
 
-            <!-- Filter Buttons (Monospace High-End) -->
-            <div class="flex flex-wrap gap-2 mt-6 md:mt-0 font-monoSpace text-xs uppercase font-bold">
-                <button onclick="filterCategory('all')" id="tab-all" class="filter-tab px-5 py-2.5 bg-white text-black border border-white transition">TOUT (ALL)</button>
-                <button onclick="filterCategory('homme')" id="tab-homme" class="filter-tab px-5 py-2.5 bg-neutral-900 text-neutral-400 border border-neutral-800 hover:border-neutral-600 transition">HOMME</button>
-                <button onclick="filterCategory('femme')" id="tab-femme" class="filter-tab px-5 py-2.5 bg-neutral-900 text-neutral-400 border border-neutral-800 hover:border-neutral-600 transition">FEMME</button>
-                <button onclick="filterCategory('packs')" id="tab-packs" class="filter-tab px-5 py-2.5 bg-neutral-900 text-neutral-400 border border-neutral-800 hover:border-neutral-600 transition">PACKS (DROPS)</button>
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap gap-2 text-xs font-extrabold uppercase tracking-widest">
+                <button onclick="filterProducts('all')" id="filter-all" class="filter-btn px-4 py-2.5 bg-brandRed text-white">
+                    TOUT
+                </button>
+                <button onclick="filterProducts('homme')" id="filter-homme" class="filter-btn px-4 py-2.5 bg-darkCard border border-darkBorder text-gray-400 hover:text-white">
+                    HOMMES
+                </button>
+                <button onclick="filterProducts('femme')" id="filter-femme" class="filter-btn px-4 py-2.5 bg-darkCard border border-darkBorder text-gray-400 hover:text-white">
+                    FEMMES
+                </button>
+                <button onclick="filterProducts('limited')" id="filter-limited" class="filter-btn px-4 py-2.5 bg-darkCard border border-darkBorder text-gray-400 hover:text-white">
+                    LIMITED DROP
+                </button>
             </div>
         </div>
 
         <!-- Product Grid -->
-        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <!-- Dynamically populated via Javascript -->
         </div>
     </section>
 
-    <!-- WHY CHOOSE OZARO STYLE (STREETWEAR LUXURY REASSURANCE BANNER) -->
-    <section id="about" class="relative bg-neutral-950 py-28 border-y border-neutral-800 overflow-hidden">
-        <!-- High Contrast Background Image Overlay -->
-        <div class="absolute inset-0 bg-cover bg-center opacity-20 filter grayscale contrast-200" style="background-image: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=2000&auto=format&fit=crop');"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/90 to-black"></div>
-
-        <div class="max-w-[1800px] mx-auto px-6 sm:px-12 relative z-10">
-            
-            <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
-                <span class="font-monoSpace text-xs uppercase tracking-[0.4em] text-red-500 font-bold block">+ OZARO MANIFESTO +</span>
-                <h2 class="font-bebas text-5xl sm:text-7xl font-extrabold text-white tracking-wide uppercase">POURQUOI CHOISIR OZARO STYLE ?</h2>
-                <p class="font-monoSpace text-neutral-400 text-xs sm:text-sm font-light leading-relaxed tracking-wider">
-                    Une alliance entre la rigueur de la haute horlogerie et l'audace de la culture streetwear moderne. Chaque pièce est pensée pour s'imposer.
-                </p>
+    <!-- 5. EDITORIAL LOOKBOOK SECTION -->
+    <section id="lookbook" class="py-20 bg-black border-y border-darkBorder">
+        <div class="max-w-[1700px] mx-auto px-4 sm:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <p class="text-brandRed font-mono font-bold text-xs uppercase tracking-widest mb-2">// VISUAL IDENTITY</p>
+                <h2 class="font-condensed text-5xl sm:text-7xl font-black uppercase tracking-tight text-white">
+                    EDITORIAL LOOKBOOK
+                </h2>
             </div>
 
-            <!-- Features Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Feature Card 1 -->
-                <div class="bg-black/80 border border-neutral-800 p-8 hover:border-white transition duration-300">
-                    <div class="font-monoSpace text-red-500 font-bold text-xs mb-4">// 01</div>
-                    <h3 class="font-bebas text-2xl text-white tracking-wider uppercase mb-2">DESIGN Sharp & Minimal</h3>
-                    <p class="font-monoSpace text-neutral-400 text-xs leading-relaxed">Boîtiers en acier brossé, verres minéraux haute résistance et lignes d'inspiration architecturale.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="relative group overflow-hidden border border-darkBorder bg-darkCard aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop" alt="Lookbook 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter grayscale contrast-125 hover:grayscale-0">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent p-6 flex flex-col justify-end">
+                        <span class="text-brandRed font-mono text-xs font-bold">LOOK 01 / SHADOW</span>
+                        <h3 class="font-condensed text-2xl font-black uppercase">CHRONO BLACKOUT</h3>
+                    </div>
                 </div>
 
-                <!-- Feature Card 2 -->
-                <div class="bg-black/80 border border-neutral-800 p-8 hover:border-white transition duration-300">
-                    <div class="font-monoSpace text-red-500 font-bold text-xs mb-4">// 02</div>
-                    <h3 class="font-bebas text-2xl text-white tracking-wider uppercase mb-2">ÉDITIONS LIMITÉES</h3>
-                    <p class="font-monoSpace text-neutral-400 text-xs leading-relaxed">Produites en séries restreintes pour garantir à chaque détenteur une exclusivité totale à son poignet.</p>
+                <div class="relative group overflow-hidden border border-darkBorder bg-darkCard aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?q=80&w=800&auto=format&fit=crop" alt="Lookbook 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter grayscale contrast-125 hover:grayscale-0">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent p-6 flex flex-col justify-end">
+                        <span class="text-brandRed font-mono text-xs font-bold">LOOK 02 / FEMME</span>
+                        <h3 class="font-condensed text-2xl font-black uppercase">GOLD SPECTRA 36</h3>
+                    </div>
                 </div>
 
-                <!-- Feature Card 3 -->
-                <div class="bg-black/80 border border-neutral-800 p-8 hover:border-white transition duration-300">
-                    <div class="font-monoSpace text-red-500 font-bold text-xs mb-4">// 03</div>
-                    <h3 class="font-bebas text-2xl text-white tracking-wider uppercase mb-2">EXPRESS DELIVERY</h3>
-                    <p class="font-monoSpace text-neutral-400 text-xs leading-relaxed">Livraison ultra-rapide partout au Maroc avec inspection du colis avant paiement final à la livraison.</p>
-                </div>
-
-                <!-- Feature Card 4 -->
-                <div class="bg-black/80 border border-neutral-800 p-8 hover:border-white transition duration-300">
-                    <div class="font-monoSpace text-red-500 font-bold text-xs mb-4">// 04</div>
-                    <h3 class="font-bebas text-2xl text-white tracking-wider uppercase mb-2">VIP WHATSAPP SUPPORT</h3>
-                    <p class="font-monoSpace text-neutral-400 text-xs leading-relaxed">Accès direct et personnalisé avec notre équipe horlogère pour toute assistance ou commande sur mesure.</p>
+                <div class="relative group overflow-hidden border border-darkBorder bg-darkCard aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?q=80&w=800&auto=format&fit=crop" alt="Lookbook 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter grayscale contrast-125 hover:grayscale-0">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent p-6 flex flex-col justify-end">
+                        <span class="text-brandRed font-mono text-xs font-bold">LOOK 03 / AUTOMATIC</span>
+                        <h3 class="font-condensed text-2xl font-black uppercase">SKELETON PRO</h3>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER WITH FUNCTIONAL SOCIAL MEDIA BUTTONS -->
-    <footer class="bg-black text-white font-monoSpace text-xs border-t border-neutral-900">
-        <div class="max-w-[1800px] mx-auto px-6 sm:px-12 py-16">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+    <!-- 6. SINGLE PRODUCT DETAIL MODAL (WITH COLOR CHOICE) -->
+    <div id="product-modal" class="fixed inset-0 z-50 overflow-y-auto hidden">
+        <div id="modal-backdrop" class="fixed inset-0 bg-black/85 backdrop-blur-md transition-opacity"></div>
+
+        <div class="min-h-screen px-4 text-center flex items-center justify-center p-4">
+            <div class="inline-block w-full max-w-4xl bg-darkCard border border-darkBorder text-left overflow-hidden shadow-2xl transform transition-all relative z-10 my-8">
                 
-                <!-- Brand Info -->
-                <div class="space-y-4">
-                    <a href="#" class="font-bebas text-4xl text-white tracking-widest inline-block">OZARO</a>
-                    <p class="text-neutral-400 text-xs leading-relaxed">
-                        High-End Timepieces & Accessories. Crafted for those who move differently.
-                    </p>
-                    
-                    <!-- Direct Social Media Links (Active & Open in New Tab) -->
-                    <div class="pt-2">
-                        <p class="text-[10px] text-neutral-500 uppercase tracking-widest mb-3">FOLLOW US / REJOIGNEZ-NOUS</p>
-                        <div class="flex space-x-3">
-                            <!-- Instagram -->
-                            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-neutral-900 border border-neutral-800 hover:border-white hover:bg-white hover:text-black transition flex items-center justify-center text-sm" aria-label="Instagram Ozaro Style">
-                                <i class="fa-brands fa-instagram"></i>
-                            </a>
-                            <!-- Facebook -->
-                            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-neutral-900 border border-neutral-800 hover:border-white hover:bg-white hover:text-black transition flex items-center justify-center text-sm" aria-label="Facebook Ozaro Style">
-                                <i class="fa-brands fa-facebook-f"></i>
-                            </a>
-                            <!-- TikTok -->
-                            <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-neutral-900 border border-neutral-800 hover:border-white hover:bg-white hover:text-black transition flex items-center justify-center text-sm" aria-label="TikTok Ozaro Style">
-                                <i class="fa-brands fa-tiktok"></i>
-                            </a>
-                        </div>
+                <!-- Close Button -->
+                <button id="close-modal-btn" class="absolute top-4 right-4 z-20 text-gray-400 hover:text-white bg-black/50 p-2 border border-darkBorder hover:border-brandRed transition-colors">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+
+                <div id="modal-content" class="grid grid-cols-1 md:grid-cols-2">
+                    <!-- Dynamic details rendered in JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. INTERACTIVE CART DRAWER -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-opacity duration-300 opacity-0">
+        <div id="cart-backdrop" class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+
+        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+            <div id="cart-panel" class="w-screen max-w-md bg-darkBg border-l border-darkBorder pointer-events-auto transform translate-x-full transition-transform duration-300 flex flex-col justify-between">
+                
+                <div class="p-6 border-b border-darkBorder flex items-center justify-between">
+                    <h3 class="font-condensed text-2xl font-black uppercase text-white tracking-wider">MON PANIER</h3>
+                    <button id="close-cart-btn" class="text-gray-400 hover:text-white">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+
+                <div id="cart-items-container" class="p-6 flex-1 overflow-y-auto space-y-4">
+                    <!-- Populated via JS -->
+                </div>
+
+                <div class="p-6 border-t border-darkBorder bg-black space-y-4">
+                    <div class="flex justify-between text-xs uppercase font-extrabold text-gray-400">
+                        <span>SOUS-TOTAL</span>
+                        <span id="cart-subtotal" class="text-white">0 MAD</span>
                     </div>
+                    <div class="flex justify-between text-xs uppercase font-extrabold text-gray-400">
+                        <span>LIVRAISON</span>
+                        <span class="text-brandRed">GRATUITE</span>
+                    </div>
+                    <div class="border-t border-darkBorder pt-3 flex justify-between text-sm uppercase font-black text-white">
+                        <span>TOTAL</span>
+                        <span id="cart-total" class="text-brandRed text-lg">0 MAD</span>
+                    </div>
+
+                    <button onclick="sendCartToWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-4 text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        <span>COMMANDER SUR WHATSAPP</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEARCH MODAL -->
+    <div id="search-overlay" class="fixed inset-0 bg-black/95 z-50 hidden flex-col justify-start pt-24 px-4 backdrop-blur-md">
+        <button id="close-search-btn" class="absolute top-6 right-6 text-gray-400 hover:text-white">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <div class="max-w-2xl mx-auto w-full">
+            <h3 class="font-condensed text-3xl font-black text-white uppercase mb-6 text-center">RECHERCHER DANS LA COLLECTION</h3>
+            <div class="relative">
+                <input type="text" id="search-input" placeholder="RECHERCHE (EX: CHRONO, AUTOMATIC, GOLD...)" class="w-full bg-darkCard border border-darkBorder py-4 px-6 text-white uppercase font-bold placeholder-gray-600 focus:outline-none focus:border-brandRed text-sm">
+            </div>
+            <div id="search-results" class="mt-6 space-y-3 max-h-96 overflow-y-auto"></div>
+        </div>
+    </div>
+
+    <!-- 8. FOOTER WITH SOCIAL MEDIA BUTTONS -->
+    <footer class="bg-black border-t border-darkBorder pt-16 pb-8 text-xs font-bold uppercase tracking-widest text-gray-400">
+        <div class="max-w-[1700px] mx-auto px-4 sm:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <!-- Footer Stylized Logo -->
+                    <div class="flex flex-col mb-4">
+                        <span class="font-gothic text-4xl text-white logo-glow leading-none">Ozaro</span>
+                        <span class="font-display text-[9px] tracking-[0.4em] text-brandRed font-black -mt-1">S T Y L E</span>
+                    </div>
+                    <p class="text-[11px] text-gray-500 font-medium leading-relaxed uppercase">
+                        LIMITED TIMEPIECES CRAFTED IN THE SHADOWS. SHARP DETAILS & UNCOMPROMISING PRECISION.
+                    </p>
                 </div>
 
-                <!-- Navigation Quick Links -->
                 <div>
-                    <h4 class="text-white font-bold uppercase tracking-widest mb-6 border-b border-neutral-800 pb-2">+ COLLECTIONS</h4>
-                    <ul class="space-y-3 text-neutral-400">
-                        <li><button onclick="filterCategory('all'); scrollToProducts();" class="hover:text-white transition">Nouveautés Drops</button></li>
-                        <li><button onclick="filterCategory('homme'); scrollToProducts();" class="hover:text-white transition">Montres Hommes</button></li>
-                        <li><button onclick="filterCategory('femme'); scrollToProducts();" class="hover:text-white transition">Montres Femmes</button></li>
-                        <li><button onclick="filterCategory('packs'); scrollToProducts();" class="hover:text-white transition">Packs Offres Spéciales</button></li>
+                    <h4 class="text-white mb-4">NAVIGATE</h4>
+                    <ul class="space-y-2 text-[11px] text-gray-500">
+                        <li><a href="#catalog" onclick="filterProducts('homme')" class="hover:text-white">HOMMES</a></li>
+                        <li><a href="#catalog" onclick="filterProducts('femme')" class="hover:text-white">FEMMES</a></li>
+                        <li><a href="#catalog" onclick="filterProducts('limited')" class="hover:text-white">LIMITED DROPS</a></li>
                     </ul>
                 </div>
 
-                <!-- Legal / Help -->
                 <div>
-                    <h4 class="text-white font-bold uppercase tracking-widest mb-6 border-b border-neutral-800 pb-2">+ INFORMATIONS</h4>
-                    <ul class="space-y-3 text-neutral-400">
-                        <li><a href="#" class="hover:text-white transition">Guide des tailles</a></li>
-                        <li><a href="#" class="hover:text-white transition">Expédition & Livraison Maroc</a></li>
-                        <li><a href="#" class="hover:text-white transition">Politique de garantie (1 an)</a></li>
-                        <li><a href="#" class="hover:text-white transition">Conditions Générales de Vente</a></li>
-                    </ul>
+                    <h4 class="text-white mb-4">SERVICE CLIENT</h4>
+                    <p class="text-[11px] text-gray-500 mb-2">CASABLANCA, MOROCCO</p>
+                    <p class="text-[11px] text-emerald-400 font-bold mb-4">COMMANDES VIA WHATSAPP DIRECT</p>
                 </div>
 
-                <!-- Direct WhatsApp Order Info -->
+                <!-- SOCIAL MEDIA BUTTONS -->
                 <div>
-                    <h4 class="text-white font-bold uppercase tracking-widest mb-6 border-b border-neutral-800 pb-2">+ COMMANDE DIRECTE</h4>
-                    <p class="text-neutral-400 mb-4 leading-relaxed">Des questions sur un modèle ? Notre service client vous répond directement sur WhatsApp.</p>
-                    <a href="https://wa.me/212600000000?text=Bonjour%20Ozaro%20Style,%20j'ai%20une%20question." target="_blank" rel="noopener noreferrer" class="btn-silver-metallic py-3 px-5 text-xs font-bold uppercase tracking-widest inline-flex items-center gap-2">
-                        <i class="fa-brands fa-whatsapp text-sm"></i> CHAT WHATSAPP
-                    </a>
+                    <h4 class="text-white mb-4">SUIVEZ-NOUS</h4>
+                    <div class="flex flex-col gap-3">
+                        <!-- Instagram -->
+                        <a href="https://instagram.com" target="_blank" class="flex items-center gap-3 bg-darkCard hover:bg-brandRed text-white px-4 py-2.5 border border-darkBorder hover:border-brandRed transition-all duration-300 group">
+                            <i data-lucide="instagram" class="w-4 h-4 text-brandRed group-hover:text-white"></i>
+                            <span class="text-[11px] font-extrabold tracking-widest">INSTAGRAM</span>
+                        </a>
+
+                        <!-- Facebook -->
+                        <a href="https://facebook.com" target="_blank" class="flex items-center gap-3 bg-darkCard hover:bg-brandRed text-white px-4 py-2.5 border border-darkBorder hover:border-brandRed transition-all duration-300 group">
+                            <i data-lucide="facebook" class="w-4 h-4 text-brandRed group-hover:text-white"></i>
+                            <span class="text-[11px] font-extrabold tracking-widest">FACEBOOK</span>
+                        </a>
+
+                        <!-- TikTok -->
+                        <a href="https://tiktok.com" target="_blank" class="flex items-center gap-3 bg-darkCard hover:bg-brandRed text-white px-4 py-2.5 border border-darkBorder hover:border-brandRed transition-all duration-300 group">
+                            <svg class="w-4 h-4 fill-current text-brandRed group-hover:text-white" viewBox="0 0 24 24">
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 3 15.68 6.34 6.34 0 0 0 9.34 22a6.34 6.34 0 0 0 6.34-6.34V9.37a8.16 8.16 0 0 0 4.91 1.62V7.54a4.85 4.85 0 0 1-1-.85z"/>
+                            </svg>
+                            <span class="text-[11px] font-extrabold tracking-widest">TIKTOK</span>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Footer Bottom Note -->
-            <div class="border-t border-neutral-900 pt-8 flex flex-col sm:flex-row justify-between items-center text-neutral-600 text-[10px]">
-                <p>&copy; 2026 OZARO STYLE. ALL RIGHTS RESERVED. HIGH-END URBAN HOROLOGY.</p>
-                <p class="mt-2 sm:mt-0 uppercase tracking-widest">SEE DIFFERENT. MOVE DIFFERENT.</p>
+            <div class="border-t border-darkBorder pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] text-gray-600">
+                <p>&copy; 2026 OZARO STYLE. ALL RIGHTS RESERVED.</p>
+                <p>LIMITED PIECES • SHARP DETAILS</p>
             </div>
         </div>
     </footer>
 
-    <!-- PRODUCT DETAIL MODAL (DESIGNS & COLOUR SELECTION) -->
-    <div id="product-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/90 backdrop-blur-md transition-opacity">
-        <div class="bg-neutral-950 border border-neutral-800 max-w-3xl w-full max-h-[92vh] overflow-y-auto relative shadow-2xl">
-            
-            <!-- Close Modal Button -->
-            <button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-10 h-10 bg-black border border-neutral-700 hover:border-white text-white flex items-center justify-center transition">
-                <i class="fa-solid fa-xmark text-base"></i>
-            </button>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-6 sm:p-10">
-                <!-- Image Container -->
-                <div class="bg-black border border-neutral-800 p-6 flex items-center justify-center">
-                    <img id="modal-img" src="" alt="Watch Preview" class="w-full h-72 sm:h-80 object-contain">
-                </div>
-
-                <!-- Info & Purchasing Form -->
-                <div class="flex flex-col justify-between space-y-6">
-                    <div>
-                        <span id="modal-category" class="font-monoSpace text-[10px] uppercase font-bold tracking-widest text-red-500 bg-neutral-900 border border-neutral-800 px-2.5 py-1 inline-block mb-3">CATEGORY</span>
-                        <h3 id="modal-title" class="font-bebas text-3xl sm:text-4xl font-extrabold text-white tracking-wide mb-2">TITLE</h3>
-                        <p id="modal-price" class="font-monoSpace text-2xl font-bold text-white mb-4">0 MAD</p>
-                        <p id="modal-desc" class="font-monoSpace text-neutral-400 text-xs leading-relaxed mb-6">Description details...</p>
-
-                        <!-- Color Choice Radio Custom -->
-                        <div class="mb-6">
-                            <label class="block font-monoSpace text-xs uppercase tracking-wider text-neutral-300 mb-3 font-bold">
-                                COULEUR : <span id="selected-color-name" class="text-white font-extrabold">ARGENT</span>
-                            </label>
-                            <div id="modal-colors" class="flex gap-3">
-                                <!-- Colors dynamically injected -->
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Direct Actions -->
-                    <div class="space-y-3 font-monoSpace">
-                        <button onclick="addCurrentModalToCart()" class="w-full btn-silver-metallic py-3.5 text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-cart-plus"></i> AJOUTER AU PANIER
-                        </button>
-                        <button onclick="directOrderWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white py-3.5 text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2 transition shadow-lg">
-                            <i class="fa-brands fa-whatsapp text-base"></i> COMMANDER SUR WHATSAPP
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SHOPPING CART SLIDE-OVER DRAWER -->
-    <div id="cart-drawer" class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 opacity-0">
-        <!-- Overlay backdrop -->
-        <div id="cart-backdrop" onclick="toggleCart()" class="absolute inset-0 bg-black/80 backdrop-blur-xs"></div>
-
-        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10 pointer-events-auto">
-            <div class="w-screen max-w-md bg-black border-l border-neutral-800 text-white flex flex-col font-monoSpace">
-                
-                <!-- Drawer Header -->
-                <div class="p-6 border-b border-neutral-800 flex items-center justify-between">
-                    <div class="flex items-center gap-3">
-                        <i class="fa-solid fa-bag-shopping text-white text-lg"></i>
-                        <h3 class="font-bebas text-2xl font-bold tracking-wider">VOTRE PANIER</h3>
-                    </div>
-                    <button onclick="toggleCart()" class="text-neutral-400 hover:text-white transition">
-                        <i class="fa-solid fa-xmark text-xl"></i>
-                    </button>
-                </div>
-
-                <!-- Cart Items Container -->
-                <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
-                    <!-- Items rendered dynamically -->
-                </div>
-
-                <!-- Cart Footer -->
-                <div class="p-6 border-t border-neutral-800 bg-neutral-950 space-y-4">
-                    <div class="flex items-center justify-between text-sm">
-                        <span class="text-neutral-400 uppercase tracking-widest">TOTAL</span>
-                        <span id="cart-total" class="font-bold text-xl text-white">0 MAD</span>
-                    </div>
-
-                    <p class="text-[10px] text-neutral-500 text-center uppercase tracking-wider">Livraison gratuite partout au Maroc. Paiement cash à la livraison.</p>
-
-                    <!-- Order Button sending directly to WhatsApp -->
-                    <button onclick="checkoutWhatsApp()" class="w-full btn-silver-metallic py-4 text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2">
-                        <i class="fa-brands fa-whatsapp text-lg text-emerald-700"></i> COMMANDER VIA WHATSAPP
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- JAVASCRIPT APP LOGIC -->
+    <!-- JAVASCRIPT LOGIC -->
     <script>
-        // Store WhatsApp Phone Number
-        const WHATSAPP_PHONE = "212600000000"; // Remplacez par votre numéro WhatsApp réel
+        // CONFIGURATION: WhatsApp phone number
+        const WHATSAPP_PHONE = "212600000000";
 
-        // Product Catalog
+        // Product Database with color variants and images
         const products = [
             {
                 id: 1,
-                name: "OZARO VISION REBORN",
+                name: "OZARO CHRONO SHADOW BLACK",
                 category: "homme",
-                categoryLabel: "HOMME / NEW DROP",
-                price: 499,
+                price: 2400,
+                badge: "LIMITED DROP",
+                description: "Mouvement chronographe haute précision avec boîtier en acier inoxydable noir mat antireflet. Verre saphir inrayable et bracelet tactique.",
                 image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop",
-                description: "Garde-temps d'exception au boîtier octogonal en acier brossé. Cadran noir mat et aiguilles luminescentes argentées.",
+                type: "limited",
                 colors: [
-                    { name: "Silver Métallique", hex: "#d1d5db" },
-                    { name: "Black Matte", hex: "#171717" },
-                    { name: "Navy Blue", hex: "#1e3a8a" }
+                    { name: "Noir Mat", hex: "#111111" },
+                    { name: "Argent Acier", hex: "#c0c0c0" },
+                    { name: "Or Rose", hex: "#e0a96d" }
                 ]
             },
             {
                 id: 2,
-                name: "OZARO CHRONO METALLIC",
-                category: "homme",
-                categoryLabel: "HOMME / EDITION LIMITEE",
-                price: 599,
+                name: "OZARO ROSE GOLD ELEGANCE",
+                category: "femme",
+                price: 1850,
+                badge: "NEW DROP",
+                description: "Design raffiné et boîtier ultrafin. Cadran nacré serti de détails polis, étanchéité 5ATM et fermoir déployant de précision.",
                 image: "https://images.unsplash.com/photo-1539185441755-769473a23570?q=80&w=800&auto=format&fit=crop",
-                description: "Chronographe urbain d'inspiration streetwear. Triple sous-cadrans de précision et bracelet articulé en acier massif.",
+                type: "new",
                 colors: [
-                    { name: "Full Silver", hex: "#9ca3af" },
-                    { name: "Dark Graphite", hex: "#334155" }
+                    { name: "Or Rose", hex: "#e0a96d" },
+                    { name: "Argent Pur", hex: "#e5e5e5" },
+                    { name: "Noir Onyx", hex: "#1a1a1a" }
                 ]
             },
             {
                 id: 3,
-                name: "OZARO GRACE SILVER DROP",
+                name: "OZARO SILVER OYSTER 36",
                 category: "femme",
-                categoryLabel: "FEMME / ELEGANCE",
-                price: 449,
-                image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=800&auto=format&fit=crop",
-                description: "Design minimaliste d'une grande finesse. Cadran soleillé réflecteur de lumière et bracelet maille milanaise argentée.",
+                price: 1950,
+                badge: "BEST SELLER",
+                description: "Silhouette intemporelle de 36mm. Lunette cannelée, cadran brillant et maillons jubilés ajustables d'un confort exceptionnel.",
+                image: "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?q=80&w=800&auto=format&fit=crop",
+                type: "bestseller",
                 colors: [
-                    { name: "Pure Silver", hex: "#e2e8f0" },
-                    { name: "Rose Gold", hex: "#f43f5e" },
-                    { name: "Deep Black", hex: "#0f172a" }
+                    { name: "Argent Acier", hex: "#d1d5db" },
+                    { name: "Vert Émeraude", hex: "#064e3b" },
+                    { name: "Bleu Nuit", hex: "#1e3a8a" }
                 ]
             },
             {
                 id: 4,
-                name: "OZARO PEARL BLACK",
-                category: "femme",
-                categoryLabel: "FEMME / PRESTIGE",
-                price: 479,
-                image: "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?q=80&w=800&auto=format&fit=crop",
-                description: "Alliance parfaite entre audace et élégance. Cadran sombre serti d'index affûtés pour un style incomparable.",
+                name: "OZARO AUTOMATIC SKELETON PRO",
+                category: "homme",
+                price: 3100,
+                badge: "AUTOMATIC",
+                description: "Mouvement mécanique automatique squelette apparent. Réserve de marche 42h, fond de boîtier transparent en verre saphir.",
+                image: "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?q=80&w=800&auto=format&fit=crop",
+                type: "automatic",
                 colors: [
-                    { name: "Argent & Noir", hex: "#1e293b" },
-                    { name: "Silver White", hex: "#f8fafc" }
+                    { name: "Noir Carbone", hex: "#1f2937" },
+                    { name: "Argent / Or", hex: "#d97706" },
+                    { name: "Bleu Titane", hex: "#1e40af" }
                 ]
             },
             {
                 id: 5,
-                name: "PACK DUO PRESTIGE",
-                category: "packs",
-                categoryLabel: "PACK SPÉCIAL / COUPLE",
-                price: 799,
-                image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800&auto=format&fit=crop",
-                description: "Coffret collector comprenant 1 Montre Ozaro Homme + 1 Montre Ozaro Femme assortie. Emballage écrin d'exception.",
+                name: "OZARO SPEEDMASTER BLUE",
+                category: "homme",
+                price: 2200,
+                badge: "LIMITED DROP",
+                description: "Cadran bleu profond brossé soleil avec compteurs chronographes contrastés. Bracelet en cuir véritable surpiqué main.",
+                image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=800&auto=format&fit=crop",
+                type: "limited",
                 colors: [
-                    { name: "Duo Full Silver", hex: "#cbd5e1" },
-                    { name: "Duo Black & Silver", hex: "#000000" }
+                    { name: "Bleu Pro-Navy", hex: "#1e3a8a" },
+                    { name: "Noir Stealth", hex: "#0f172a" },
+                    { name: "Gris Anthracite", hex: "#475569" }
                 ]
             },
             {
                 id: 6,
-                name: "PACK GENTLEMAN COMPLETE",
-                category: "packs",
-                categoryLabel: "PACK SPÉCIAL / LIMITED",
-                price: 699,
-                image: "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?q=80&w=800&auto=format&fit=crop",
-                description: "Pack exclusif comprenant 1 Montre Chrono Ozaro + 1 Bracelet gourmette en acier argenté + 1 Porte-cartes en cuir noir.",
+                name: "OZARO NOIR MINIMALIST 34",
+                category: "femme",
+                price: 1650,
+                badge: "NEW DROP",
+                description: "Élégance minimaliste sans concessions. Boîtier ultrafin 34mm, cadran épuré et bracelet en maille milanaise ajustable.",
+                image: "https://images.unsplash.com/photo-1526045612212-70caf35c14df?q=80&w=800&auto=format&fit=crop",
+                type: "new",
                 colors: [
-                    { name: "Coffret Silver", hex: "#94a3b8" },
-                    { name: "Coffret Full Black", hex: "#0f172a" }
+                    { name: "Noir Mat", hex: "#0a0a0a" },
+                    { name: "Or Jaune 18k", hex: "#ca8a04" },
+                    { name: "Argent Brossé", hex: "#9ca3af" }
                 ]
             }
         ];
 
-        // App State
         let cart = [];
-        let activeCategory = 'all';
-        let currentModalProduct = null;
-        let selectedColor = null;
+        let selectedProductModal = null;
+        let activeColor = null;
+        let activeQuantity = 1;
 
         document.addEventListener('DOMContentLoaded', () => {
-            renderProducts();
-            updateCartUI();
+            lucide.createIcons();
+            renderProducts(products);
+            setupEventListeners();
         });
 
-        function renderProducts() {
-            const grid = document.getElementById('product-grid');
-            grid.innerHTML = '';
+        function renderProducts(items) {
+            const container = document.getElementById('product-grid');
+            container.innerHTML = '';
 
-            const filtered = activeCategory === 'all' 
-                ? products 
-                : products.filter(p => p.category === activeCategory);
-
-            filtered.forEach(product => {
+            items.forEach(product => {
                 const card = document.createElement('div');
-                card.className = "group bg-black border border-neutral-800 overflow-hidden hover:border-white transition duration-300 flex flex-col justify-between";
+                card.className = "group bg-darkCard border border-darkBorder hover:border-brandRed transition-all duration-300 flex flex-col justify-between cursor-pointer";
                 
-                card.innerHTML = `
-                    <div>
-                        <!-- Product Image Box -->
-                        <div class="relative bg-neutral-950 p-6 flex items-center justify-center cursor-pointer overflow-hidden border-b border-neutral-900" onclick="openProductModal(${product.id})">
-                            <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-contain group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-3 left-3 font-monoSpace text-[9px] uppercase tracking-widest font-bold bg-black text-neutral-300 border border-neutral-800 px-2 py-1">
-                                ${product.categoryLabel}
-                            </span>
-                        </div>
+                // Clicking the card opens the single product detail modal
+                card.onclick = (e) => {
+                    openProductModal(product.id);
+                };
 
-                        <!-- Info Area -->
-                        <div class="p-6">
-                            <h3 class="font-bebas text-2xl font-extrabold text-white tracking-wide mb-1 group-hover:text-slate-300 transition cursor-pointer" onclick="openProductModal(${product.id})">${product.name}</h3>
-                            <p class="font-monoSpace text-neutral-400 text-xs line-clamp-2 mb-4 leading-relaxed">${product.description}</p>
-                            
-                            <div class="flex items-center justify-between font-monoSpace mb-4">
-                                <span class="text-xl font-bold text-white">${product.price} MAD</span>
-                                <div class="flex gap-1.5">
-                                    ${product.colors.map(c => `<span class="w-3 h-3 rounded-full border border-neutral-600 inline-block" style="background-color:${c.hex}"></span>`).join('')}
-                                </div>
-                            </div>
+                card.innerHTML = `
+                    <div class="relative overflow-hidden aspect-square bg-black">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 filter grayscale contrast-125 group-hover:grayscale-0">
+                        <span class="absolute top-3 left-3 bg-brandRed text-white text-[9px] font-extrabold px-2 py-1 uppercase tracking-widest">${product.badge}</span>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="bg-white text-black font-extrabold text-[10px] px-4 py-2 uppercase tracking-widest shadow-lg">VOIR LE PRODUIT</span>
                         </div>
                     </div>
-
-                    <!-- Action Button -->
-                    <div class="px-6 pb-6 pt-0 font-monoSpace">
-                        <button onclick="openProductModal(${product.id})" class="w-full btn-silver-metallic py-3 text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2">
-                            VIEW DETAILS +
-                        </button>
+                    <div class="p-5 flex flex-col justify-between flex-grow space-y-4">
+                        <div>
+                            <span class="text-[10px] font-mono font-bold uppercase text-brandRed tracking-widest">${product.category}</span>
+                            <h3 class="font-condensed text-2xl font-black uppercase text-white tracking-wide mt-1 group-hover:text-brandRed transition-colors">${product.name}</h3>
+                        </div>
+                        <div class="flex items-center justify-between pt-3 border-t border-darkBorder gap-2">
+                            <span class="font-condensed text-2xl font-black text-white">${product.price} <span class="text-xs font-sans text-brandRed">MAD</span></span>
+                            <button onclick="event.stopPropagation(); openProductModal(${product.id});" class="bg-white hover:bg-brandRed hover:text-white text-black font-extrabold px-4 py-2 text-[10px] uppercase tracking-widest transition-all">
+                                CHOISIR
+                            </button>
+                        </div>
                     </div>
                 `;
-                grid.appendChild(card);
+                container.appendChild(card);
             });
-        }
-
-        function filterCategory(cat) {
-            activeCategory = cat;
-            
-            document.querySelectorAll('.filter-tab').forEach(tab => {
-                tab.className = "filter-tab px-5 py-2.5 bg-neutral-900 text-neutral-400 border border-neutral-800 hover:border-neutral-600 transition";
-            });
-
-            const activeTab = document.getElementById(`tab-${cat}`);
-            if (activeTab) {
-                activeTab.className = "filter-tab px-5 py-2.5 bg-white text-black border border-white transition";
-            }
-
-            renderProducts();
-        }
-
-        function scrollToProducts() {
-            document.getElementById('products-section').scrollIntoView({ behavior: 'smooth' });
+            lucide.createIcons();
         }
 
         function openProductModal(productId) {
             const product = products.find(p => p.id === productId);
             if (!product) return;
 
-            currentModalProduct = product;
-            selectedColor = product.colors[0];
+            selectedProductModal = product;
+            activeColor = product.colors[0].name;
+            activeQuantity = 1;
 
-            document.getElementById('modal-img').src = product.image;
-            document.getElementById('modal-title').textContent = product.name;
-            document.getElementById('modal-category').textContent = product.categoryLabel;
-            document.getElementById('modal-price').textContent = `${product.price} MAD`;
-            document.getElementById('modal-desc').textContent = product.description;
-
-            // Render Colors Options
-            const colorsContainer = document.getElementById('modal-colors');
-            colorsContainer.innerHTML = '';
-
-            product.colors.forEach((color, index) => {
-                const btn = document.createElement('button');
-                btn.type = 'button';
-                btn.className = `w-8 h-8 rounded-full border-2 transition-transform ${index === 0 ? 'scale-110 border-white ring-2 ring-slate-400' : 'border-neutral-700 opacity-70'}`;
-                btn.style.backgroundColor = color.hex;
-                btn.title = color.name;
-                btn.onclick = () => selectModalColor(color, btn);
-                colorsContainer.appendChild(btn);
-            });
-
-            document.getElementById('selected-color-name').textContent = selectedColor.name;
+            renderModalContent();
 
             const modal = document.getElementById('product-modal');
             modal.classList.remove('hidden');
-        }
-
-        function selectModalColor(color, element) {
-            selectedColor = color;
-            document.getElementById('selected-color-name').textContent = color.name;
-
-            const siblings = element.parentElement.children;
-            for (let btn of siblings) {
-                btn.className = "w-8 h-8 rounded-full border-2 border-neutral-700 opacity-70 transition-transform";
-            }
-            element.className = "w-8 h-8 rounded-full border-2 border-white ring-2 ring-slate-400 scale-110 transition-transform";
+            document.body.style.overflow = 'hidden';
+            lucide.createIcons();
         }
 
         function closeModal() {
-            document.getElementById('product-modal').classList.add('hidden');
+            const modal = document.getElementById('product-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            selectedProductModal = null;
         }
 
-        function addCurrentModalToCart() {
-            if (!currentModalProduct || !selectedColor) return;
+        function selectColor(colorName) {
+            activeColor = colorName;
+            renderModalContent();
+        }
 
-            const existingIndex = cart.findIndex(item => item.id === currentModalProduct.id && item.color.name === selectedColor.name);
+        function changeModalQty(delta) {
+            activeQuantity = Math.max(1, activeQuantity + delta);
+            renderModalContent();
+        }
 
-            if (existingIndex > -1) {
-                cart[existingIndex].quantity += 1;
+        function renderModalContent() {
+            const p = selectedProductModal;
+            if (!p) return;
+
+            const content = document.getElementById('modal-content');
+            const totalPrice = p.price * activeQuantity;
+
+            content.innerHTML = `
+                <!-- Product Image Column -->
+                <div class="relative bg-black aspect-square md:aspect-auto flex items-center justify-center p-6 border-b md:border-b-0 md:border-r border-darkBorder">
+                    <img src="${p.image}" alt="${p.name}" class="max-h-[450px] w-full object-cover object-center filter contrast-125">
+                    <span class="absolute top-4 left-4 bg-brandRed text-white text-[10px] font-extrabold px-3 py-1 uppercase tracking-widest">${p.badge}</span>
+                </div>
+
+                <!-- Product Details & Color Options Column -->
+                <div class="p-6 sm:p-8 flex flex-col justify-between space-y-6 bg-darkCard">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-mono font-bold uppercase text-brandRed tracking-widest">// ${p.category}</span>
+                            <span class="text-xs text-emerald-400 font-extrabold uppercase">EN STOCK</span>
+                        </div>
+                        
+                        <h2 class="font-condensed text-3xl sm:text-4xl font-black uppercase text-white tracking-wide mb-3">${p.name}</h2>
+                        
+                        <div class="font-condensed text-3xl font-black text-white mb-4">
+                            ${totalPrice} <span class="text-sm font-sans text-brandRed">MAD</span>
+                        </div>
+
+                        <p class="text-xs text-gray-400 font-medium leading-relaxed mb-6">
+                            ${p.description}
+                        </p>
+
+                        <!-- COLOR CHOICE SECTION -->
+                        <div class="space-y-3 mb-6">
+                            <label class="text-xs font-extrabold uppercase tracking-widest text-gray-300 block">
+                                COULEUR SÉLECTIONNÉE : <span class="text-brandRed font-black">${activeColor}</span>
+                            </label>
+                            
+                            <div class="flex flex-wrap gap-3">
+                                ${p.colors.map(c => {
+                                    const isSelected = activeColor === c.name;
+                                    return `
+                                        <button onclick="selectColor('${c.name}')" 
+                                                class="flex items-center gap-2 px-3 py-2 border text-xs font-bold uppercase transition-all ${
+                                                    isSelected 
+                                                    ? 'border-brandRed bg-brandRed/10 text-white ring-1 ring-brandRed' 
+                                                    : 'border-darkBorder bg-black/50 text-gray-400 hover:text-white hover:border-gray-500'
+                                                }">
+                                            <span class="w-3.5 h-3.5 rounded-full border border-white/20 inline-block" style="background-color: ${c.hex};"></span>
+                                            <span>${c.name}</span>
+                                        </button>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+
+                        <!-- QUANTITY SELECTOR -->
+                        <div class="space-y-3 mb-6">
+                            <label class="text-xs font-extrabold uppercase tracking-widest text-gray-300 block">
+                                QUANTITÉ :
+                            </label>
+                            <div class="flex items-center space-x-3">
+                                <button onclick="changeModalQty(-1)" class="w-10 h-10 bg-black border border-darkBorder hover:border-brandRed text-white font-bold text-lg flex items-center justify-center">-</button>
+                                <span class="font-bold text-base text-white px-4">${activeQuantity}</span>
+                                <button onclick="changeModalQty(1)" class="w-10 h-10 bg-black border border-darkBorder hover:border-brandRed text-white font-bold text-lg flex items-center justify-center">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ACTION BUTTONS -->
+                    <div class="space-y-3 pt-4 border-t border-darkBorder">
+                        <!-- DIRECT WHATSAPP ORDER BUTTON -->
+                        <button onclick="orderSelectedModalWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-4 text-xs uppercase tracking-widest transition-all flex items-center justify-center gap-2 shadow-lg">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                            <span>COMMANDER SUR WHATSAPP</span>
+                        </button>
+
+                        <!-- ADD TO BAG BUTTON -->
+                        <button onclick="addSelectedModalToCart()" class="w-full bg-white hover:bg-gray-200 text-black font-extrabold py-3.5 text-xs uppercase tracking-widest transition-all">
+                            + AJOUTER AU PANIER
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            lucide.createIcons();
+        }
+
+        function orderSelectedModalWhatsApp() {
+            if (!selectedProductModal) return;
+            const p = selectedProductModal;
+            const total = p.price * activeQuantity;
+
+            const text = `Bonjour OZARO STYLE,%0A%0AJe souhaite commander la montre suivante :%0A- *Modèle :* ${encodeURIComponent(p.name)}%0A- *Couleur :* ${encodeURIComponent(activeColor)}%0A- *Quantité :* ${activeQuantity}%0A- *Prix Total :* ${total} MAD%0A%0AMerci de me recontacter pour valider la livraison.`;
+            
+            window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${text}`, '_blank');
+        }
+
+        function addSelectedModalToCart() {
+            if (!selectedProductModal) return;
+            const p = selectedProductModal;
+
+            const cartKey = `${p.id}-${activeColor}`;
+            const existing = cart.find(item => item.cartKey === cartKey);
+
+            if (existing) {
+                existing.quantity += activeQuantity;
             } else {
                 cart.push({
-                    id: currentModalProduct.id,
-                    name: currentModalProduct.name,
-                    price: currentModalProduct.price,
-                    image: currentModalProduct.image,
-                    color: selectedColor,
-                    quantity: 1
+                    ...p,
+                    cartKey: cartKey,
+                    selectedColor: activeColor,
+                    quantity: activeQuantity
                 });
             }
 
             updateCartUI();
             closeModal();
-            toggleCart(true);
+            openCart();
         }
 
-        function updateCartQuantity(index, delta) {
-            if (cart[index]) {
-                cart[index].quantity += delta;
-                if (cart[index].quantity <= 0) {
-                    cart.splice(index, 1);
-                }
+        function filterProducts(type) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('bg-brandRed', 'text-white');
+                btn.classList.add('bg-darkCard', 'text-gray-400');
+            });
+
+            const activeBtn = document.getElementById(`filter-${type}`);
+            if (activeBtn) {
+                activeBtn.classList.add('bg-brandRed', 'text-white');
+                activeBtn.classList.remove('bg-darkCard', 'text-gray-400');
             }
+
+            if (type === 'all') {
+                renderProducts(products);
+            } else if (type === 'homme' || type === 'femme') {
+                renderProducts(products.filter(p => p.category === type));
+            } else {
+                renderProducts(products.filter(p => p.type === type || p.badge.toLowerCase().includes(type)));
+            }
+        }
+
+        function removeFromCart(cartKey) {
+            cart = cart.filter(i => i.cartKey !== cartKey);
             updateCartUI();
         }
 
-        function updateCartUI() {
-            const badge = document.getElementById('cart-badge');
-            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-            
-            badge.textContent = `(${totalItems})`;
+        function changeQuantity(cartKey, delta) {
+            const item = cart.find(i => i.cartKey === cartKey);
+            if (item) {
+                item.quantity += delta;
+                if (item.quantity <= 0) removeFromCart(cartKey);
+                else updateCartUI();
+            }
+        }
 
-            const itemsContainer = document.getElementById('cart-items');
-            itemsContainer.innerHTML = '';
+        function updateCartUI() {
+            const container = document.getElementById('cart-items-container');
+            const countEl = document.getElementById('cart-count');
+            const subtotalEl = document.getElementById('cart-subtotal');
+            const totalEl = document.getElementById('cart-total');
+
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            countEl.innerText = totalItems;
+            subtotalEl.innerText = `${totalPrice} MAD`;
+            totalEl.innerText = `${totalPrice} MAD`;
 
             if (cart.length === 0) {
-                itemsContainer.innerHTML = `
-                    <div class="text-center py-16 text-neutral-600 font-monoSpace">
-                        <i class="fa-solid fa-bag-shopping text-4xl mb-4 block text-neutral-700"></i>
-                        <p class="text-xs uppercase tracking-widest">VOTRE PANIER EST VIDE</p>
+                container.innerHTML = `
+                    <div class="text-center py-12 text-gray-600 font-bold uppercase text-xs">
+                        VOTRE PANIER EST VIDE
                     </div>
                 `;
             } else {
-                cart.forEach((item, index) => {
-                    const el = document.createElement('div');
-                    el.className = "flex items-center gap-4 bg-neutral-900/80 p-3 border border-neutral-800 font-monoSpace";
-                    el.innerHTML = `
-                        <img src="${item.image}" alt="${item.name}" class="w-14 h-14 object-contain bg-black p-1 border border-neutral-800">
+                container.innerHTML = cart.map(item => `
+                    <div class="flex items-center space-x-4 bg-black p-3 border border-darkBorder">
+                        <img src="${item.image}" class="w-16 h-16 object-cover">
                         <div class="flex-1 min-w-0">
-                            <h4 class="text-xs font-bold text-white truncate">${item.name}</h4>
-                            <p class="text-[10px] text-neutral-400 uppercase">COULEUR : <span class="text-white">${item.color.name}</span></p>
-                            <p class="text-xs font-bold text-white mt-1">${item.price * item.quantity} MAD</p>
+                            <h4 class="font-condensed text-lg font-black uppercase text-white truncate">${item.name}</h4>
+                            <p class="text-[10px] text-gray-400 uppercase font-bold">Couleur: <span class="text-brandRed">${item.selectedColor}</span></p>
+                            <p class="text-xs text-white font-bold mt-0.5">${item.price * item.quantity} MAD</p>
+                            <div class="flex items-center space-x-2 mt-2">
+                                <button onclick="changeQuantity('${item.cartKey}', -1)" class="w-5 h-5 bg-darkCard text-white text-xs font-bold border border-darkBorder">-</button>
+                                <span class="text-xs text-white font-bold">${item.quantity}</span>
+                                <button onclick="changeQuantity('${item.cartKey}', 1)" class="w-5 h-5 bg-darkCard text-white text-xs font-bold border border-darkBorder">+</button>
+                            </div>
                         </div>
-                        <div class="flex items-center gap-2 bg-black border border-neutral-800 p-1">
-                            <button onclick="updateCartQuantity(${index}, -1)" class="w-5 h-5 flex items-center justify-center text-xs text-neutral-400 hover:text-white">-</button>
-                            <span class="text-xs font-bold w-4 text-center">${item.quantity}</span>
-                            <button onclick="updateCartQuantity(${index}, 1)" class="w-5 h-5 flex items-center justify-center text-xs text-neutral-400 hover:text-white">+</button>
-                        </div>
-                    `;
-                    itemsContainer.appendChild(el);
-                });
+                        <button onclick="removeFromCart('${item.cartKey}')" class="text-gray-600 hover:text-brandRed p-1">
+                            <i data-lucide="trash-2" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                `).join('');
             }
 
-            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            document.getElementById('cart-total').textContent = `${totalPrice} MAD`;
+            lucide.createIcons();
         }
 
-        function toggleCart(forceOpen = false) {
-            const drawer = document.getElementById('cart-drawer');
-            if (forceOpen || drawer.classList.contains('opacity-0')) {
-                drawer.classList.remove('pointer-events-none', 'opacity-0');
-                drawer.classList.add('opacity-100');
-            } else {
-                drawer.classList.add('pointer-events-none', 'opacity-0');
-                drawer.classList.remove('opacity-100');
-            }
+        function sendCartToWhatsApp() {
+            if (cart.length === 0) return;
+
+            let orderList = "";
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                const subtotal = item.price * item.quantity;
+                total += subtotal;
+                orderList += `%0A${index + 1}. *${encodeURIComponent(item.name)}*%0A   - Couleur : ${encodeURIComponent(item.selectedColor)}%0A   - Qté : x${item.quantity} (${subtotal} MAD)`;
+            });
+
+            const text = `Bonjour OZARO STYLE,%0A%0AJe souhaite valider ma commande panier :${orderList}%0A%0A*TOTAL :* ${total} MAD%0A%0AMerci de me confirmer la disponibilité et les modalités de livraison !`;
+            window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${text}`, '_blank');
+        }
+
+        function openCart() {
+            document.getElementById('cart-drawer').classList.remove('pointer-events-none', 'opacity-0');
+            document.getElementById('cart-panel').classList.remove('translate-x-full');
+        }
+
+        function closeCart() {
+            document.getElementById('cart-panel').classList.add('translate-x-full');
+            setTimeout(() => {
+                document.getElementById('cart-drawer').classList.add('pointer-events-none', 'opacity-0');
+            }, 300);
         }
 
         function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+            document.getElementById('mobile-menu').classList.toggle('hidden');
         }
 
-        function checkoutWhatsApp() {
-            if (cart.length === 0) {
-                alert("Votre panier est vide. Veuillez ajouter un article avant de passer la commande.");
-                return;
-            }
+        function setupEventListeners() {
+            document.getElementById('open-cart-btn').addEventListener('click', openCart);
+            document.getElementById('close-cart-btn').addEventListener('click', closeCart);
+            document.getElementById('cart-backdrop').addEventListener('click', closeCart);
+            document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
 
-            let message = "Bonjour Ozaro Style ! ⌚✨\n\nJe souhaite valider ma commande pour les articles suivants :\n\n";
+            document.getElementById('close-modal-btn').addEventListener('click', closeModal);
+            document.getElementById('modal-backdrop').addEventListener('click', closeModal);
 
-            let total = 0;
-            cart.forEach((item, idx) => {
-                const subtotal = item.price * item.quantity;
-                total += subtotal;
-                message += `${idx + 1}. *${item.name}*\n   • Couleur : ${item.color.name}\n   • Quantité : ${item.quantity}\n   • Prix : ${subtotal} MAD\n\n`;
+            const searchOverlay = document.getElementById('search-overlay');
+            const searchInput = document.getElementById('search-input');
+            const searchResults = document.getElementById('search-results');
+
+            document.getElementById('search-btn').addEventListener('click', () => {
+                searchOverlay.classList.remove('hidden');
+                searchOverlay.classList.add('flex');
+                searchInput.focus();
             });
 
-            message += `------------------------------\n*PRIX TOTAL : ${total} MAD*\n------------------------------\n\nMerci de confirmer la livraison à mon adresse !`;
+            document.getElementById('close-search-btn').addEventListener('click', () => {
+                searchOverlay.classList.add('hidden');
+                searchOverlay.classList.remove('flex');
+            });
 
-            const encodedMessage = encodeURIComponent(message);
-            window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodedMessage}`, '_blank');
-        }
-
-        function directOrderWhatsApp() {
-            if (!currentModalProduct || !selectedColor) return;
-
-            const message = `Bonjour Ozaro Style ! ⌚✨\n\nJe souhaite commander directement cet article :\n\n• *Produit :* ${currentModalProduct.name}\n• *Couleur :* ${selectedColor.name}\n• *Prix :* ${currentModalProduct.price} MAD\n\nMerci de valider ma commande pour la livraison !`;
-
-            const encodedMessage = encodeURIComponent(message);
-            window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodedMessage}`, '_blank');
+            searchInput.addEventListener('input', (e) => {
+                const q = e.target.value.toLowerCase().trim();
+                if (!q) { searchResults.innerHTML = ''; return; }
+                const res = products.filter(p => p.name.toLowerCase().includes(q));
+                searchResults.innerHTML = res.map(p => `
+                    <div onclick="openProductModal(${p.id}); document.getElementById('search-overlay').classList.add('hidden');" class="flex items-center space-x-4 p-3 bg-darkCard border border-darkBorder hover:border-brandRed cursor-pointer">
+                        <img src="${p.image}" class="w-12 h-12 object-cover">
+                        <div>
+                            <h4 class="font-condensed text-lg font-black uppercase text-white">${p.name}</h4>
+                            <p class="text-xs text-brandRed font-bold">${p.price} MAD - Clic pour options</p>
+                        </div>
+                    </div>
+                `).join('');
+            });
         }
     </script>
 </body>
